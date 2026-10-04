@@ -209,78 +209,92 @@
 }
 </style>
 
+
+<style id="edition-buttons-bottom-align">
+/* Keep Premium/Beta and Platinum call-to-action bars pinned to card bottoms. */
+#botCatalog article.card .editions{
+  margin-top:auto!important;
+  padding-top:14px!important;
+}
+#comingSoon article.card .platinum-badge{
+  margin-top:auto!important;
+}
+</style>
+
+
+<style id="reversal-basic-free-treatment">
+/* Only the Reversal Basic FREE selector is green; the card stays standard BotZips blue. */
+#botCatalog article.reversal-basic-card .basic-free{
+  background:linear-gradient(180deg,rgba(30,112,75,.92),rgba(18,75,53,.96))!important;
+  border-color:rgba(83,210,145,.78)!important;
+}
+#botCatalog article.reversal-basic-card .basic-free strong{
+  color:#8af0ba!important;
+}
+#botCatalog article.reversal-basic-card .basic-free small{
+  color:#b9e8cf!important;
+  font-weight:900;
+}
+</style>
+
+
+<style id="platinum-button-bottom-fix">
+/* Pin Platinum status buttons to the bottom edge of Coming Soon cards. */
+#comingSoon article.platinum-card{
+  display:flex!important;
+  flex-direction:column!important;
+}
+#comingSoon article.platinum-card .platinum-badge{
+  order:99!important;
+  margin-top:auto!important;
+  margin-bottom:0!important;
+}
+</style>
+
 </head><body>
 <div class="release">BOTZIPS · DOWNLOAD • UNZIP • RUN</div><main class="shell">
 <div class="top"><div class="brand">BOT<span>ZIPS</span></div><span class="badge">AUTOMATED TRADING BOTS</span></div>
 <section class="hero">
 <div class="eyebrow">CHOOSE YOUR TRADING BOTS</div>
 <h1>Build your trading setup.</h1>
-<p>Select any bots you want, choose <strong>Basic</strong> or <strong>Premium</strong> for each one, and optionally add the BotZips Control Center. Your selections are collected below before download or checkout.</p>
+<p>Choose your BotZips beta software below. <strong>Reversal Bot Basic is free</strong>; Premium bots are available during beta for <strong>$10</strong>. You can also add the free BotZips Control Center.</p>
 </section>
 
 <section class="section" id="botCatalog">
-<div class="head"><span>TRADING BOTS</span><span class="badge">BASIC OR PREMIUM</span></div>
+<div class="head"><span>TRADING BOTS</span><span class="badge">BETA RELEASES</span></div>
 <div class="body grid">
+<article class="card bot-card reversal-basic-card" data-bot="Reversal Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">↶</span><div class="meta"><h2>Reversal Bot</h2><b>RSI · REVERSAL</b></div></div></div>
+<p><strong>Find the turn.</strong> Looks for reversal setups using RSI divergence and price confirmation.</p>
+<div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>RSI divergence + confirmation</li><li>HAL Intelligence</li><li>IBKR</li><li>Free Basic / Premium Beta</li></ul><div class="editions standalone-editions">
+<label class="basic-free"><input class="edition" type="radio" name="reversal-edition" value="Basic"><span><strong>BASIC</strong><small>FREE</small></span></label>
+<label class="premium"><input class="edition" type="radio" name="reversal-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label>
+</div></article>
 
 <article class="card bot-card" data-bot="Trend Bot">
 <div class="ct"><div class="bot-title"><span class="bot-icon">↗</span><div class="meta"><h2>Trend Bot</h2><b>TREND FOLLOWING</b></div></div></div>
 <p><strong>Find the trend.</strong> Scans for sustained directional movement and qualifying trend opportunities.</p>
 <div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Trend-following strategy</li><li>HAL Intelligence</li><li>IBKR</li><li>Basic / Premium</li></ul><div class="editions standalone-editions">
-<label><input class="edition" type="radio" name="trend-edition" value="Basic"><span><strong>BASIC</strong><small>FREE</small></span></label>
-<label class="premium"><input class="edition" type="radio" name="trend-edition" value="Premium"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
-</div></article>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Trend-following strategy</li><li>HAL Intelligence</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" type="radio" name="trend-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div></article>
 
 <article class="card bot-card" data-bot="ZigZag Bot">
 <div class="ct"><div class="bot-title"><span class="bot-icon">⌁</span><div class="meta"><h2>ZigZag Bot</h2><b>PRICE STRUCTURE</b></div></div></div>
 <p><strong>Trade the swings in between.</strong> Looks for price-structure opportunities between major trends and reversals.</p>
 <div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Price-structure strategy</li><li>HAL Intelligence</li><li>IBKR</li><li>Basic / Premium</li></ul><div class="editions standalone-editions">
-<label><input class="edition" type="radio" name="zigzag-edition" value="Basic"><span><strong>BASIC</strong><small>FREE</small></span></label>
-<label class="premium"><input class="edition" type="radio" name="zigzag-edition" value="Premium"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
-</div></article>
-
-<article class="card bot-card" data-bot="Reversal Bot">
-<div class="ct"><div class="bot-title"><span class="bot-icon">↶</span><div class="meta"><h2>Reversal Bot</h2><b>RSI · REVERSAL</b></div></div></div>
-<p><strong>Find the turn.</strong> Looks for reversal setups using RSI divergence and price confirmation.</p>
-<div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>RSI divergence + confirmation</li><li>HAL Intelligence</li><li>IBKR</li><li>Basic / Premium</li></ul><div class="editions standalone-editions">
-<label><input class="edition" type="radio" name="reversal-edition" value="Basic"><span><strong>BASIC</strong><small>FREE</small></span></label>
-<label class="premium"><input class="edition" type="radio" name="reversal-edition" value="Premium"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
-</div></article>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Price-structure strategy</li><li>HAL Intelligence</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" type="radio" name="zigzag-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div></article>
 
 <article class="card bot-card" data-bot="Scalp Bot">
 <div class="ct"><div class="bot-title"><span class="bot-icon">◎</span><div class="meta"><h2>Scalp Bot</h2><b>SCALPING</b></div></div></div>
 <p>Manual trade-staging and mini-scalping tool with chart-based entries and position management.</p>
 <div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Chart-based entries</li><li>Position management</li><li>IBKR</li><li>Basic / Premium</li></ul><div class="editions standalone-editions">
-<label><input class="edition" type="radio" name="scalp-edition" value="Basic"><span><strong>BASIC</strong><small>FREE</small></span></label>
-<label class="premium"><input class="edition" type="radio" name="scalp-edition" value="Premium"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
-</div></article>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Chart-based entries</li><li>Position management</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" type="radio" name="scalp-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div></article>
 
 <article class="card bot-card" data-bot="IF/Then Bot">
 <div class="ct"><div class="bot-title"><span class="bot-icon">⇄</span><div class="meta"><h2>IF/Then Bot</h2><b>RULE-BASED TRADING</b></div></div></div>
 <p>Build straightforward IF/THEN trade rules and run them as an individual trading tool.</p>
 <div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Rule-based IF/THEN logic</li><li>Custom trade conditions</li><li>IBKR</li><li>Basic / Premium</li></ul><div class="editions standalone-editions">
-<label><input class="edition" type="radio" name="ifthen-edition" value="Basic"><span><strong>BASIC</strong><small>FREE</small></span></label>
-<label class="premium"><input class="edition" type="radio" name="ifthen-edition" value="Premium"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
-</div></article>
-
-<article class="card control-card" data-bot="BotZips Control Center">
-<div class="ct"><div class="bot-title"><span class="bot-icon">▦</span><div class="meta"><h2>Control Center</h2><b>BOTZIPS MANAGEMENT</b></div></div></div>
-<p><strong>One place for all your bots.</strong> Launch, monitor and organize your installed BotZips bots from a single central control panel instead of opening each one separately.</p>
-<div class="tags"><span>Optional</span><span>Control Panel</span><span>Multi-Bot</span></div>
-<div class="bot-feature-title">Key features</div>
-<ul class="bot-list">
-<li>Launch installed BotZips bots</li>
-<li>See bot status at a glance</li>
-<li>Manage multiple bots from one place</li>
-<li>Works alongside each bot's own dashboard</li>
-</ul>
-<div class="editions premium-only standalone-editions">
-<label><input id="controlCenterPick" type="checkbox"><span><strong>ADD CONTROL CENTER</strong><small>DOWNLOAD WITH YOUR SELECTION</small></span></label>
-</div></article>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Rule-based IF/THEN logic</li><li>Custom trade conditions</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" type="radio" name="ifthen-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div></article>
 
 </div></section>
 
@@ -328,14 +342,14 @@
 
 <section class="section"><div class="head"><span>YOUR SELECTION</span><span class="badge">REVIEW BEFORE DOWNLOAD</span></div>
 <div class="body summary">
-<div class="box"><h3>Selected downloads</h3><div id="selectedList"><p>No bots selected yet.</p></div><div class="note">Basic selections do not require Bitcoin payment. If any selected bot is Premium, Premium checkout will appear when you continue.</div></div>
-<div class="box"><div class="free" id="readyLabel">MAKE A SELECTION</div><p id="selectionSummary">Choose Basic or Premium on any bot above.</p><button class="createBtn" id="continueSelection" disabled>CONTINUE WITH SELECTED ITEMS</button></div>
+<div class="box"><h3>Selected downloads</h3><div id="selectedList"><p>No bots selected yet.</p></div><div class="note">Reversal Basic and the Control Center are free. Any Premium Beta selection continues to Bitcoin checkout.</div></div>
+<div class="box"><div class="free" id="readyLabel">MAKE A SELECTION</div><p id="selectionSummary">Choose a beta bot or add the free Control Center.</p><button class="createBtn" id="continueSelection" disabled>CONTINUE WITH SELECTED ITEMS</button></div>
 </div></section>
 
 <section class="section checkout" id="bitcoinCheckout" style="display:none">
 <div class="head">PREMIUM · BITCOIN CHECKOUT</div>
 <div class="body">
-<p>Premium is temporarily $1 USD during beta testing. The $1 charge is intentional and is part of validating the Bitcoin payment, license issuance and Premium download flow. Already paid? Do not pay again — restore your original license below.</p>
+<p>Premium Beta access is $10 USD. Payment is processed in Bitcoin and unlocks the Premium installer and license flow. Already paid? Do not pay again — restore your original license below.</p>
 <button class="btn gold" id="quoteBtn">GENERATE BITCOIN QUOTE</button>
 <div class="payment-panel" id="paymentPanel">
 <div id="quoteDetails">Requesting quote…</div>
@@ -381,7 +395,7 @@
     const chosen=selections();
     if(!chosen.length){
       list.innerHTML='<p>No bots selected yet.</p>';
-      summary.textContent='Choose Basic or Premium on any bot above.';
+      summary.textContent='Choose a beta bot or add the free Control Center.';
       ready.textContent='MAKE A SELECTION';
       go.disabled=true;
       checkout.style.display='none';

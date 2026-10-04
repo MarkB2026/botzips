@@ -11,8 +11,8 @@
 .brand{font-size:24px;font-weight:1000;letter-spacing:1px}.brand span{color:var(--cyan)}.badge{border:1px solid #245064;background:#102633;color:#87e7fa;border-radius:999px;padding:7px 11px;font-weight:800;font-size:12px}
 .hero{padding:58px 0 34px;max-width:900px}.eyebrow{color:#67c7ee;font-size:11px;letter-spacing:1.9px;font-weight:900}.hero h1{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-1.8px;margin:10px 0 14px}.hero em{font-style:normal;color:var(--cyan)}.hero p{font-size:18px;color:#b8cbd8;max-width:800px}
 .section{background:linear-gradient(180deg,var(--panel),#0e161e);border:1px solid var(--line);border-radius:12px;margin:15px 0;overflow:hidden}.head{padding:15px 18px;border-bottom:1px solid var(--line);font-weight:900;letter-spacing:.45px;display:flex;justify-content:space-between;gap:10px;align-items:center}.body{padding:18px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{border:1px solid #304b5d;background:linear-gradient(155deg,#162530,#101922);border-radius:12px;padding:18px;min-height:245px;display:flex;flex-direction:column}.card:hover{border-color:#3c7691}.ct{display:flex;justify-content:space-between;gap:10px}.card h2{font-size:22px;margin:0}.card b{font-size:10px;letter-spacing:1px;color:#77dff4}.card p{color:#a9bdc9}.pick{width:20px;height:20px;accent-color:var(--cyan)}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}.tags span{border:1px solid #2b4555;background:#0d1820;border-radius:999px;padding:4px 8px;color:#9fb8c6;font-size:11px;font-weight:700}
-.editions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}.editions label{border:1px solid #334e60;border-radius:9px;padding:10px;background:#0d171f;display:flex;align-items:center;gap:8px;cursor:pointer}.editions label.premium{border-color:#665a38}.editions input{width:18px;height:18px;accent-color:var(--cyan)}.editions strong,.editions small{display:block}.editions small{color:#8fa6b4}.premium strong{color:#f0c96e}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{border:1px solid rgba(63,166,214,.42);background:linear-gradient(155deg,rgba(24,92,126,.34),rgba(13,45,64,.52));border-radius:12px;padding:18px;min-height:245px;display:flex;flex-direction:column}.card:hover{border-color:#3c7691}.ct{display:flex;justify-content:space-between;gap:10px}.card h2{font-size:22px;margin:0}.card b{font-size:10px;letter-spacing:1px;color:#77dff4}.card p{color:#a9bdc9}.pick{width:20px;height:20px;accent-color:var(--cyan)}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}.tags span{border:1px solid #2b4555;background:#0d1820;border-radius:999px;padding:4px 8px;color:#9fb8c6;font-size:11px;font-weight:700}
+.editions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}.editions label{border:1px solid #334e60;border-radius:9px;padding:10px;background:#0d171f;display:flex;align-items:center;gap:8px;cursor:pointer}.editions label.premium{border-color:#665a38}.editions input{width:18px;height:18px;accent-color:var(--cyan)}.editions strong,.editions small{display:block}.editions small{color:#8fa6b4}.premium strong{color:#f0c96e}.platinum-card{border-color:rgba(178,135,255,.48)!important;background:linear-gradient(155deg,rgba(115,72,180,.30),rgba(53,31,86,.52))!important;box-shadow:inset 0 0 30px rgba(145,92,246,.05)}.platinum-card:hover{border-color:rgba(194,158,255,.72)!important}.platinum-card .bot-icon,.platinum-card b{color:#c9adff!important}.platinum-badge{margin-top:14px;border:1px solid #8b95a1;border-radius:9px;padding:10px 12px;background:linear-gradient(180deg,#252c33,#171c21);color:#e6edf3;font-size:11px;font-weight:900;letter-spacing:.7px;text-align:center}
 .summary{display:grid;grid-template-columns:1.5fr 1fr;gap:15px}.box{border:1px solid #304858;border-radius:10px;background:#0e1820;padding:17px}.box h3{margin-top:0}.box p{color:#9db1bd}.free{font-size:27px;font-weight:950;color:var(--good)}.createBtn{border:0;border-radius:8px;padding:14px 18px;font-weight:900;background:linear-gradient(180deg,#39d4f0,#1299b9);color:#06171d;cursor:pointer;width:100%}.createBtn:disabled{opacity:.4;cursor:not-allowed}.btn{border-radius:8px;padding:13px 18px;font-weight:900;display:inline-block;background:linear-gradient(180deg,#39d4f0,#1299b9);color:#06171d;opacity:.45}.note{padding:12px 14px;border-left:3px solid #0b7e99;background:#0c151d;color:#a8bdc9;border-radius:4px}
 .checkout{border:1px dashed #4b6574;border-radius:10px;padding:18px;background:#0d161d}.checkout h3{margin:0 0 7px;color:#f0c96e}.checkout p{color:#a9bdc9}.footer{text-align:center;color:#738794;font-size:12px;padding:28px 0}
 @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.summary{grid-template-columns:1fr}}@media(max-width:620px){.grid{grid-template-columns:1fr}.editions{grid-template-columns:1fr}}
@@ -67,24 +67,22 @@
 .trio-intro{padding:14px 18px 0;text-align:center}
 .trio-intro strong{display:block;font-size:18px;letter-spacing:.2px;color:#eef7fb}
 .trio-intro span{display:block;margin-top:3px;color:#9fb0bd;font-size:12px}
-</style>
-<style>
-.bundle-showcase{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr);gap:26px;align-items:center}
-.bundle-preview{display:block;width:100%;border:1px solid #38566a;border-radius:10px;background:#09131b}
-.bundle-copy .eyebrow{color:#bba7e8}.bundle-copy h2{font-size:28px;line-height:1.15;margin:7px 0 10px}.bundle-copy p{color:#aebfca;margin:0 0 13px}
-.bundle-features{display:grid;grid-template-columns:1fr 1fr;gap:7px 12px;margin:14px 0 18px}.bundle-features span{font-size:11px;color:#c6d5de;padding-left:15px;position:relative}.bundle-features span:before{content:'✓';position:absolute;left:0;color:#55d694}
-.learn-more{display:inline-flex;align-items:center;justify-content:center;border:1px solid #675598;background:#1a1730;color:#d9ccff;border-radius:8px;padding:10px 14px;font-size:11px;font-weight:900;letter-spacing:.45px;text-decoration:none}
-.bundle-note{margin-top:11px!important;font-size:11px;color:#8399a7!important}
-@media(max-width:820px){.bundle-showcase{grid-template-columns:1fr}.bundle-features{grid-template-columns:1fr}}
+
+.feature-list{margin:14px 0 0;padding:11px 12px;border:1px solid rgba(91,190,230,.24);border-radius:9px;background:rgba(4,18,27,.34);display:grid;gap:7px}
+.feature-item{display:flex;align-items:center;gap:8px;color:#c7d8e2;font-size:11px;font-weight:750}
+.feature-dot{width:11px;height:11px;border:2px solid #64d6f0;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(6,20,28,.9);flex:0 0 auto}
+.platinum-card .feature-list{border-color:rgba(185,151,255,.28);background:rgba(34,20,55,.30)}
+.platinum-card .feature-dot{border-color:#c2a1ff}
+.beebot-card{border-color:rgba(245,196,70,.55)!important;background:linear-gradient(155deg,rgba(171,122,22,.30),rgba(76,54,12,.52))!important;box-shadow:inset 0 0 30px rgba(255,205,72,.06)}
+.beebot-card:hover{border-color:rgba(255,216,108,.82)!important}
+.beebot-card .bot-icon,.beebot-card b{color:#ffd76d!important}
+.beebot-card .feature-list{border-color:rgba(245,196,70,.30);background:rgba(57,39,7,.30)}
+.beebot-card .feature-dot{border-color:#ffd76d}
+.beebot-card .platinum-badge{border-color:#806927;background:linear-gradient(180deg,#332b14,#211b0d);color:#ffe29a}
+
 </style>
 
 
-<style>
-.bundle-image-wrap a{display:block;position:relative;text-decoration:none}
-.bundle-image-wrap .image-hint{position:absolute;right:10px;bottom:10px;padding:5px 8px;border:1px solid #42677b;border-radius:5px;background:rgba(6,17,24,.9);color:#91e8fa;font-size:9px;font-weight:900;letter-spacing:.55px;opacity:.88}
-.bundle-image-wrap a:hover .bundle-preview{border-color:#65dff6}
-.bundle-image-wrap a:hover .image-hint{opacity:1}
-</style>
 
 
 <style id="bitcoin-checkout-restored-css">
@@ -151,70 +149,165 @@
 }
 </style>
 
+
+<style id="bots-card-rebuild">
+#botCatalog .body.grid,#comingSoon .body.grid{
+  display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:18px!important;align-items:stretch!important
+}
+#botCatalog article.card,#comingSoon article.card{
+  min-width:0!important;width:100%!important;min-height:430px!important;
+  padding:22px!important;border-radius:14px!important;
+  display:flex!important;flex-direction:column!important;
+  background:linear-gradient(155deg,rgba(27,91,125,.30),rgba(15,39,55,.62))!important;
+  border:1px solid rgba(72,155,194,.48)!important
+}
+#comingSoon article.platinum-card{
+  background:linear-gradient(145deg,rgba(112,73,169,.30),rgba(43,31,67,.65))!important;
+  border-color:rgba(163,126,218,.58)!important
+}
+#comingSoon article.beebot-card{
+  background:linear-gradient(145deg,rgba(180,133,31,.30),rgba(68,51,17,.66))!important;
+  border-color:rgba(211,166,65,.62)!important
+}
+#botCatalog .bot-top,#comingSoon .bot-top{display:flex!important;gap:14px!important;align-items:center!important}
+#botCatalog .bot-icon,#comingSoon .bot-icon{
+  width:48px!important;height:48px!important;min-width:48px!important;flex:0 0 48px!important;
+  display:grid!important;place-items:center!important;border-radius:11px!important;
+  background:#173241!important;border:1px solid #35637b!important;color:#70dcf3!important;
+  font-size:22px!important;line-height:1!important
+}
+#comingSoon .platinum-card .bot-icon{background:#372b50!important;border-color:#9d7bc3!important;color:#d8c4ff!important}
+#comingSoon .beebot-card .bot-icon{background:#42351c!important;border-color:#ae8b3c!important;color:#f4d47b!important}
+#botCatalog .bot-name,#comingSoon .bot-name{font-size:22px!important;line-height:1.12!important;margin:0!important;color:#eef7fb!important}
+#botCatalog .bot-subtitle,#comingSoon .bot-subtitle{font-size:12px!important;font-weight:700!important;color:#bad0de!important;margin-top:4px!important}
+#botCatalog .bot-desc,#comingSoon .bot-desc{font-size:13px!important;line-height:1.55!important;color:#aabfce!important;margin:17px 0 10px!important}
+#botCatalog .bot-feature-title,#comingSoon .bot-feature-title{font-size:10px!important;letter-spacing:1.1px!important;text-transform:uppercase!important;color:#80cddd!important;font-weight:900!important;margin:5px 0 7px!important}
+#botCatalog .bot-list,#comingSoon .bot-list{list-style:none!important;padding:0!important;margin:0 0 14px!important;display:grid!important;gap:6px!important}
+#botCatalog .bot-list li,#comingSoon .bot-list li{font-size:12px!important;color:#d1dfeb!important;line-height:1.4!important;padding-left:18px!important;position:relative!important}
+#botCatalog .bot-list li:before,#comingSoon .bot-list li:before{content:'✓'!important;color:#56d7b0!important;position:absolute!important;left:0!important;font-weight:900!important}
+#botCatalog .bot-tags,#comingSoon .bot-tags{display:flex!important;flex-wrap:wrap!important;gap:7px!important;margin:4px 0 12px!important}
+#botCatalog .bot-tags span,#comingSoon .bot-tags span{border:1px solid #3a586a!important;border-radius:5px!important;color:#c3e1ec!important;font-size:10px!important;padding:4px 7px!important;background:rgba(255,255,255,.025)!important}
+#botCatalog .editions{margin-top:auto!important;padding-top:14px!important}
+#comingSoon .platinum-badge{margin-top:auto!important}
+@media(max-width:930px){#botCatalog .body.grid,#comingSoon .body.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:650px){#botCatalog .body.grid,#comingSoon .body.grid{grid-template-columns:1fr!important}}
+</style>
+
 </head><body>
 <div class="release">BOTZIPS · DOWNLOAD • UNZIP • RUN</div><main class="shell">
 <div class="top"><div class="brand">BOT<span>ZIPS</span></div><span class="badge">AUTOMATED TRADING BOTS</span></div>
-<section class="hero"><div class="eyebrow">BUILD YOUR TRADING SETUP</div><h1>Choose your trading bots.</h1><p>Start with one bot or combine compatible Premium bots to <strong>make your Botfolio</strong>. You can always add more bots later.</p></section>
+<section class="hero">
+<div class="eyebrow">CHOOSE YOUR TRADING BOTS</div>
+<h1>Build your trading setup.</h1>
+<p>Select any bots you want, choose <strong>Basic</strong> or <strong>Premium</strong> for each one, and optionally add the BotZips Control Center. Your selections are collected below before download or checkout.</p>
+</section>
 
-<section class="section botfolio-section"><div class="head"><span>CHOOSE COMPATIBLE TRADING BOTS</span><span class="badge">ADD MORE ANY TIME</span></div>
-<div class="trio-intro"><strong>Trend. Reversal. Everything in between.</strong><span>Three complementary strategies designed to look for different types of market movement.</span></div>
+<section class="section" id="botCatalog">
+<div class="head"><span>TRADING BOTS</span><span class="badge">BASIC OR PREMIUM</span></div>
 <div class="body grid">
-<article class="card"><div class="bot-banner"><div class="ct"><div class="bot-title"><span class="bot-icon">↗</span><div class="meta"><h2>Trend Bot</h2><b>TREND FOLLOWING</b></div></div><input class="pick" type="checkbox" aria-label="Select Trend Bot"></div>
-<p><strong>Find the trend.</strong> Scans for sustained directional movement and qualifying trend opportunities.</p></div><div class="tags"><span>Autonomous</span><span>IBKR</span></div>
-<div class="auto-premium">PREMIUM · MODE 3 AUTONOMOUS</div></article><article class="card"><div class="bot-banner"><div class="ct"><div class="bot-title"><span class="bot-icon">⌁</span><div class="meta"><h2>ZigZag Bot</h2><b>PRICE STRUCTURE</b></div></div><input class="pick" type="checkbox" aria-label="Select ZigZag Bot"></div>
-<p><strong>Trade the swings in between.</strong> Looks for price-structure opportunities between major trends and reversals.</p></div><div class="tags"><span>Autonomous</span><span>IBKR</span></div>
-<div class="auto-premium">PREMIUM · MODE 3 AUTONOMOUS</div></article><article class="card"><div class="bot-banner"><div class="ct"><div class="bot-title"><span class="bot-icon">↶</span><div class="meta"><h2>Reversal Bot</h2><b>RSI · REVERSAL</b></div></div><input class="pick" type="checkbox" aria-label="Select Reversal Bot"></div>
-<p><strong>Find the turn.</strong> Looks for reversal setups using RSI divergence and price confirmation.</p></div><div class="tags"><span>Autonomous</span><span>IBKR</span></div>
-<div class="auto-premium">PREMIUM · MODE 3 AUTONOMOUS</div></article></div></section>
 
-<section class="section" id="botfolioBundle">
-<div class="head"><span>BOTZIPS MULTI-BOT CONTROL</span><span class="badge">CENTRAL MANAGEMENT</span></div>
-<div class="body bundle-showcase">
-<div class="bundle-image-wrap">
-<a href="/assets/Controlpanel.png" target="_blank" rel="noopener" title="View Control Panel full size">
-<img class="bundle-preview" src="/assets/Controlpanel.png" alt="BotZips Control Center showing portfolio overview, bot controls, scanner status, symbol ownership and activity">
-<span class="image-hint">CLICK TO VIEW FULL SIZE ↗</span>
-</a>
-</div>
-<div class="bundle-copy">
-<div class="eyebrow">MORE THAN INDIVIDUAL BOT DOWNLOADS</div>
-<h2>One control center for your trading bots.</h2>
-<p>Combine compatible Premium bots under one centralized management layer. Instead of opening each bot separately to see what is happening, the Control Center brings them together in one view.</p>
-<div class="bundle-features"><span>Portfolio overview &amp; combined P&amp;L</span><span>Start and manage compatible bots</span><span>Scanner and bot status</span><span>Active symbol ownership</span><span>Shared activity feed</span><span>Multi-bot statistics &amp; visibility</span></div>
-<a class="learn-more" href="howitworks.html">SEE HOW MULTI-BOT MANAGEMENT WORKS →</a>
-<p class="bundle-note">Standalone bot downloads keep their own individual dashboards. The centralized Control Center and combined multi-bot view are available for compatible Premium bots.</p>
-</div></div></section>
-
-<section class="section" id="otherBots"><div class="head"><span>TRY AS A SINGLE BOT</span><span class="badge">STANDALONE</span></div><div class="body grid">
-<article class="card"><div class="ct"><div class="bot-title"><span class="bot-icon">↗</span><div class="meta"><h2>Trend Bot</h2><b>TREND FOLLOWING</b></div></div><input class="pick" type="checkbox" aria-label="Select Trend Bot Basic"></div>
-<p>Run it as a standalone bot. Choose the free Basic edition or the Premium standalone edition.</p><div class="tags"><span>Standalone</span><span>IBKR</span></div><div class="editions standalone-editions">
-<label><input type="checkbox"><span><strong>BASIC</strong><small>FREE · MODES 1 &amp; 2</small></span></label>
-<label class="premium"><input type="checkbox"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
-</div></article>
-<article class="card"><div class="ct"><div class="bot-title"><span class="bot-icon">⌁</span><div class="meta"><h2>ZigZag Bot</h2><b>PRICE STRUCTURE</b></div></div><input class="pick" type="checkbox" aria-label="Select ZigZag Bot Basic"></div>
-<p>Run it as a standalone bot. Choose the free Basic edition or the Premium standalone edition.</p><div class="tags"><span>Standalone</span><span>IBKR</span></div><div class="editions standalone-editions">
-<label><input type="checkbox"><span><strong>BASIC</strong><small>FREE · MODES 1 &amp; 2</small></span></label>
-<label class="premium"><input type="checkbox"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
-</div></article>
-<article class="card"><div class="ct"><div class="bot-title"><span class="bot-icon">↶</span><div class="meta"><h2>Reversal Bot</h2><b>RSI · REVERSAL</b></div></div><input class="pick" type="checkbox" aria-label="Select Reversal Bot Basic"></div>
-<p>Run it as a standalone bot. Choose the free Basic edition or the Premium standalone edition.</p><div class="tags"><span>Standalone</span><span>IBKR</span></div><div class="editions standalone-editions">
-<label><input type="checkbox"><span><strong>BASIC</strong><small>FREE · MODES 1 &amp; 2</small></span></label>
-<label class="premium"><input type="checkbox"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
+<article class="card bot-card" data-bot="Trend Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">↗</span><div class="meta"><h2>Trend Bot</h2><b>TREND FOLLOWING</b></div></div></div>
+<p><strong>Find the trend.</strong> Scans for sustained directional movement and qualifying trend opportunities.</p>
+<div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Trend-following strategy</li><li>HAL Intelligence</li><li>IBKR</li><li>Basic / Premium</li></ul><div class="editions standalone-editions">
+<label><input class="edition" type="radio" name="trend-edition" value="Basic"><span><strong>BASIC</strong><small>FREE</small></span></label>
+<label class="premium"><input class="edition" type="radio" name="trend-edition" value="Premium"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
 </div></article>
 
-<article class="card"><div class="ct"><div class="bot-title"><span class="bot-icon">◎</span><div class="meta"><h2>Scalp Bot</h2><b>SCALPING</b></div></div><input class="pick" type="checkbox" aria-label="Select Scalp Bot"></div>
-<p>Manual trade-staging and mini-scalping tool with chart-based entries and position management.</p><div class="tags"><span>Standalone</span><span>IBKR</span></div>
-<div class="editions"><label><input type="checkbox"><span><strong>BASIC</strong><small>FREE</small></span></label>
-<label class="premium"><input type="checkbox"><span><strong>PREMIUM</strong><small>PAID</small></span></label></div></article><article class="card"><div class="ct"><div class="bot-title"><span class="bot-icon">⇄</span><div class="meta"><h2>IF/Then Bot</h2><b>RULE-BASED TRADING</b></div></div><input class="pick" type="checkbox" aria-label="Select IF/Then Bot"></div>
-<p>Build straightforward IF/THEN trade rules and run them as an individual trading tool.</p><div class="tags"><span>Standalone</span><span>IBKR</span></div>
-<div class="editions"><label><input type="checkbox"><span><strong>BASIC</strong><small>FREE</small></span></label>
-<label class="premium"><input type="checkbox"><span><strong>PREMIUM</strong><small>PAID</small></span></label></div></article>
-<article class="card"><div class="ct"><div class="bot-title"><span class="bot-icon">＋</span><div class="meta"><h2>More Bots</h2><b>COMING LATER</b></div></div><input class="pick" type="checkbox" disabled></div><p>The catalog can expand without changing the basic selection-and-checkout layout.</p><div class="tags"><span>Coming Soon</span></div></article>
+<article class="card bot-card" data-bot="ZigZag Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">⌁</span><div class="meta"><h2>ZigZag Bot</h2><b>PRICE STRUCTURE</b></div></div></div>
+<p><strong>Trade the swings in between.</strong> Looks for price-structure opportunities between major trends and reversals.</p>
+<div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Price-structure strategy</li><li>HAL Intelligence</li><li>IBKR</li><li>Basic / Premium</li></ul><div class="editions standalone-editions">
+<label><input class="edition" type="radio" name="zigzag-edition" value="Basic"><span><strong>BASIC</strong><small>FREE</small></span></label>
+<label class="premium"><input class="edition" type="radio" name="zigzag-edition" value="Premium"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
+</div></article>
+
+<article class="card bot-card" data-bot="Reversal Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">↶</span><div class="meta"><h2>Reversal Bot</h2><b>RSI · REVERSAL</b></div></div></div>
+<p><strong>Find the turn.</strong> Looks for reversal setups using RSI divergence and price confirmation.</p>
+<div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>RSI divergence + confirmation</li><li>HAL Intelligence</li><li>IBKR</li><li>Basic / Premium</li></ul><div class="editions standalone-editions">
+<label><input class="edition" type="radio" name="reversal-edition" value="Basic"><span><strong>BASIC</strong><small>FREE</small></span></label>
+<label class="premium"><input class="edition" type="radio" name="reversal-edition" value="Premium"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
+</div></article>
+
+<article class="card bot-card" data-bot="Scalp Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">◎</span><div class="meta"><h2>Scalp Bot</h2><b>SCALPING</b></div></div></div>
+<p>Manual trade-staging and mini-scalping tool with chart-based entries and position management.</p>
+<div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Chart-based entries</li><li>Position management</li><li>IBKR</li><li>Basic / Premium</li></ul><div class="editions standalone-editions">
+<label><input class="edition" type="radio" name="scalp-edition" value="Basic"><span><strong>BASIC</strong><small>FREE</small></span></label>
+<label class="premium"><input class="edition" type="radio" name="scalp-edition" value="Premium"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
+</div></article>
+
+<article class="card bot-card" data-bot="IF/Then Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">⇄</span><div class="meta"><h2>IF/Then Bot</h2><b>RULE-BASED TRADING</b></div></div></div>
+<p>Build straightforward IF/THEN trade rules and run them as an individual trading tool.</p>
+<div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Rule-based IF/THEN logic</li><li>Custom trade conditions</li><li>IBKR</li><li>Basic / Premium</li></ul><div class="editions standalone-editions">
+<label><input class="edition" type="radio" name="ifthen-edition" value="Basic"><span><strong>BASIC</strong><small>FREE</small></span></label>
+<label class="premium"><input class="edition" type="radio" name="ifthen-edition" value="Premium"><span><strong>PREMIUM</strong><small>FULL VERSION</small></span></label>
+</div></article>
+
+<article class="card control-card" data-bot="BotZips Control Center">
+<div class="ct"><div class="bot-title"><span class="bot-icon">▦</span><div class="meta"><h2>Control Center</h2><b>BOTZIPS MANAGEMENT</b></div></div></div>
+<p>Launch and monitor your installed BotZips bots from one central control panel.</p>
+<div class="tags"><span>Optional</span><span>Control Panel</span></div>
+<div class="editions premium-only standalone-editions">
+<label><input id="controlCenterPick" type="checkbox"><span><strong>ADD CONTROL CENTER</strong><small>DOWNLOAD WITH YOUR SELECTION</small></span></label>
+</div></article>
+
 </div></section>
 
-<section class="section botfolio-section"><div class="head">YOUR SELECTED BOTS</div><div class="body summary">
-<div class="box"><h3>Selected bots</h3><div id="selectedList"><p>No compatible bots selected yet.</p></div><div class="note">You can always return and add more compatible bots later.</div></div>
-<div class="box"><div class="free">READY TO CREATE</div><p id="selectionSummary">Choose the compatible Premium bots you want to run together.</p><button class="createBtn" id="createBotfolio" disabled>CONTINUE WITH SELECTED BOTS</button></div>
+<section class="section" id="comingSoon">
+<div class="head"><span>MORE BOTS</span><span class="badge">COMING SOON</span></div>
+<div class="body grid">
+
+<article class="card">
+<div class="ct"><div class="bot-title"><span class="bot-icon">⚡</span><div class="meta"><h2>Breakout Bot</h2><b>BREAKOUT TRADING</b></div></div></div>
+<p>Built to look for price breaking out of established ranges and qualifying breakout setups.</p>
+<div class="tags"><span>Coming Soon</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Breakout strategy</li><li>HAL Intelligence</li><li>Coming Soon</li></ul></article>
+
+<article class="card platinum-card">
+<div class="ct"><div class="bot-title"><span class="bot-icon">»</span><div class="meta"><h2>Omni Bot</h2><b>LONG / SHORT TRADING</b></div></div></div>
+<p>Multi-strategy trading bot designed to scan for and manage long and short trading opportunities.</p>
+<div class="tags"><span>Coming Soon</span></div>
+<div class="platinum-badge">PLATINUM BOT · COMING SOON</div><div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Multi-strategy long / short</li><li>HAL Intelligence</li><li>Platinum</li><li>Coming Soon</li></ul></article>
+
+<article class="card">
+<div class="ct"><div class="bot-title"><span class="bot-icon">0</span><div class="meta"><h2>ZeRO Bot</h2><b>SHORT-DATED OPTIONS</b></div></div></div>
+<p>Short-dated options trading bot focused on 0–3 DTE opportunities.</p>
+<div class="tags"><span>Options</span><span>Coming Soon</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>0–3 DTE options</li><li>HAL Intelligence</li><li>Coming Soon</li></ul></article>
+
+<article class="card platinum-card beebot-card">
+<div class="ct"><div class="bot-title"><span class="bot-icon">⬡</span><div class="meta"><h2>BeeBot</h2><b>AUTOMATED TRADING</b></div></div></div>
+<p>Another BotZips automated trading strategy currently in development.</p>
+<div class="tags"><span>Coming Soon</span></div>
+<div class="platinum-badge">PLATINUM BOT · COMING SOON</div><div class="bot-feature-title">Key features</div><ul class="bot-list"><li>The HIVE data-sharing concept</li><li>HAL Intelligence</li><li>Platinum</li><li>Coming Soon</li></ul></article>
+
+<article class="card">
+<div class="ct"><div class="bot-title"><span class="bot-icon">◉</span><div class="meta"><h2>WheelBot</h2><b>OPTIONS WHEEL</b></div></div></div>
+<p>Options-focused bot built around the wheel strategy and position management.</p>
+<div class="tags"><span>Options</span><span>Coming Soon</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Options wheel strategy</li><li>Position management</li><li>Coming Soon</li></ul></article>
+
+<article class="card">
+<div class="ct"><div class="bot-title"><span class="bot-icon">$</span><div class="meta"><h2>Dividend Bot</h2><b>DIVIDEND TRACKING</b></div></div></div>
+<p>Dividend-focused automation and tracking tools for income-oriented portfolios.</p>
+<div class="tags"><span>Coming Soon</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Dividend tracking</li><li>Income-focused automation</li><li>Coming Soon</li></ul></article>
+
+</div></section>
+
+<section class="section"><div class="head"><span>YOUR SELECTION</span><span class="badge">REVIEW BEFORE DOWNLOAD</span></div>
+<div class="body summary">
+<div class="box"><h3>Selected downloads</h3><div id="selectedList"><p>No bots selected yet.</p></div><div class="note">Basic selections do not require Bitcoin payment. If any selected bot is Premium, Premium checkout will appear when you continue.</div></div>
+<div class="box"><div class="free" id="readyLabel">MAKE A SELECTION</div><p id="selectionSummary">Choose Basic or Premium on any bot above.</p><button class="createBtn" id="continueSelection" disabled>CONTINUE WITH SELECTED ITEMS</button></div>
 </div></section>
 
 <section class="section checkout" id="bitcoinCheckout" style="display:none">
@@ -244,41 +337,59 @@
 
 <script>
 (function(){
- const compatible=[...document.querySelectorAll('.section')][0].querySelectorAll('.card');
- const list=document.getElementById('selectedList'), summary=document.getElementById('selectionSummary');
- const create=document.getElementById('createBotfolio'), checkout=document.getElementById('bitcoinCheckout');
+  const cards=[...document.querySelectorAll('.bot-card')];
+  const control=document.getElementById('controlCenterPick');
+  const list=document.getElementById('selectedList');
+  const summary=document.getElementById('selectionSummary');
+  const ready=document.getElementById('readyLabel');
+  const go=document.getElementById('continueSelection');
+  const checkout=document.getElementById('bitcoinCheckout');
 
- function update(){
-   const chosen=[];
-   compatible.forEach(card=>{
-     const main=card.querySelector('.pick');
-     if(main.checked){
-       const name=card.querySelector('h2').textContent;
-       chosen.push({name,labels:['Premium · Mode 3 Autonomous']});
-     }
-   });
-   if(!chosen.length){
-     list.innerHTML='<p>No compatible bots selected yet.</p>';
-     summary.textContent='Choose the compatible Premium bots you want to run together.';
-     create.disabled=true; checkout.style.display='none'; return;
-   }
-   list.innerHTML='<ul>'+chosen.map(x=>'<li><strong>'+x.name+'</strong> — '+(x.labels.length?x.labels.join(' + '):'choose Basic or Premium')+'</li>').join('')+'</ul>';
-   const valid=chosen.every(x=>x.labels.length);
-   const premium=chosen.some(x=>x.labels.some(v=>v.startsWith('Premium')));
-   summary.textContent=valid?(premium?'Premium selected — Bitcoin checkout will open when you continue.':'Basic selections are free — no Bitcoin payment required.'):'Select Premium for each compatible bot.';
-   create.disabled=!valid;
- }
- compatible.forEach(card=>{
-   const main=card.querySelector('.pick');
-   main.addEventListener('change',update);
- });
- create.addEventListener('click',()=>{
-   const premium=[...compatible].some(card=>card.querySelector('.pick')?.checked);
-   checkout.style.display=premium?'block':'none';
-   if(premium) checkout.scrollIntoView({behavior:'smooth',block:'start'});
-   else alert('Your Basic bot selection is ready. Free download wiring comes next.');
- });
- update();
+  function selections(){
+    const chosen=[];
+    cards.forEach(card=>{
+      const edition=card.querySelector('.edition:checked');
+      if(edition) chosen.push({name:card.dataset.bot, edition:edition.value});
+    });
+    if(control && control.checked) chosen.push({name:'BotZips Control Center', edition:'Control Panel'});
+    return chosen;
+  }
+
+  function update(){
+    const chosen=selections();
+    if(!chosen.length){
+      list.innerHTML='<p>No bots selected yet.</p>';
+      summary.textContent='Choose Basic or Premium on any bot above.';
+      ready.textContent='MAKE A SELECTION';
+      go.disabled=true;
+      checkout.style.display='none';
+      return;
+    }
+    list.innerHTML='<ul>'+chosen.map(x=>'<li><strong>'+x.name+'</strong> — '+x.edition+'</li>').join('')+'</ul>';
+    const premium=chosen.some(x=>x.edition==='Premium');
+    ready.textContent=premium?'PREMIUM SELECTED':'READY TO DOWNLOAD';
+    summary.textContent=premium
+      ? 'Your selection includes Premium. Continue to Bitcoin checkout.'
+      : 'Your selected items do not require Bitcoin payment.';
+    go.disabled=false;
+    if(!premium) checkout.style.display='none';
+  }
+
+  document.querySelectorAll('.edition').forEach(el=>el.addEventListener('change',update));
+  if(control) control.addEventListener('change',update);
+
+  go.addEventListener('click',()=>{
+    const chosen=selections();
+    const premium=chosen.some(x=>x.edition==='Premium');
+    checkout.style.display=premium?'block':'none';
+    if(premium){
+      checkout.scrollIntoView({behavior:'smooth',block:'start'});
+    } else {
+      alert('Your Basic / Control Center selections are ready. Individual download endpoints can be connected as each bot installer is published.');
+    }
+  });
+
+  update();
 })();
 </script>
 

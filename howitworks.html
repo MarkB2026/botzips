@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>How Botfolio Works | Botfolios.com</title>
-<meta name="description" content="See how Botfolio coordinates multiple trading bots, protects existing positions, assigns symbol ownership, and keeps dividend holdings separated.">
+<title>BotZips Control Center | One Place for Your Bots</title>
+<meta name="description" content="See the BotZips Control Center: a free central launcher for opening and organizing your installed BotZips trading bots, with additional management features planned.">
 <style>
 :root{
   --bg:#09131b;--panel:#102536;--panel2:#132d3f;--line:#32708d;
@@ -66,121 +66,102 @@ footer{margin-top:28px;border-top:1px solid #304a5b;padding:22px 0;color:#8da0ae
 </head>
 <body>
 <nav class="site-nav" aria-label="Main navigation">
-  <a class="site-brand" href="index.html"><span class="logo-bot">BOT</span><span class="logo-folios">FOLIOS</span></a>
+  <a class="site-brand" href="index.html"><span class="logo-bot">BOT</span><span class="logo-folios">ZIPS</span></a>
   <div class="site-links">
     <a href="index.html">Home</a>
-    <a href="bots.html">Trading Bots</a>
-    <a href="tools.html">Trading Tools</a>
-    <a href="howitworks.html" aria-current="page">How It Works</a>
-    <a href="about.html">Why Botfolio?</a>
+    <a href="basic.html">Trading Bots</a>
+    <a href="control-center.html" aria-current="page">Control Center</a>
   </div>
 </nav>
 
 <main class="shell">
 <section class="hero">
-  <div class="eyebrow">MULTIPLE BOTS. ONE ACCOUNT. CLEAR OWNERSHIP.</div>
-  <h1>How Botfolio Works</h1>
-  <p>Compatible autonomous bots can scan at the same time. Botfolio coordinates which bot owns each symbol, protects positions that do not belong to a bot, and keeps every strategy in its own lane.</p>
+  <div class="eyebrow">FREE BOTZIPS MANAGEMENT TOOL</div>
+  <h1>BotZips Control Center</h1>
+  <p>One place to launch and organize your installed BotZips bots. The first beta keeps it simple: add your installed bots, see them together, and launch them from one central screen.</p>
 </section>
 
-<div class="rule"><strong>Every position has an owner. <span>No owner = protected.</span></strong></div>
+<div class="rule">
+  <strong>One control panel. <span>Your bots stay independent.</span></strong>
+</div>
 
 <section class="example">
- <div class="example-head"><div class="section-tag">EXAMPLE 1</div><h2>Multiple bots scanning different symbols</h2><p>TrendBot, ZigZagBot and ReversalBot can all scan simultaneously.</p></div>
- <div class="example-body">
-  <div class="flow">
-   <div class="bot"><strong>TrendBot</strong><div class="status">● SCANNING</div><div class="signal">MARA → LONG signal</div></div>
-   <div class="bot"><strong>ZigZagBot</strong><div class="status">● SCANNING</div><div class="signal">NVDA → LONG signal</div></div>
-   <div class="bot"><strong>ReversalBot</strong><div class="status">● SCANNING</div><div class="signal">TSLA → SHORT signal</div></div>
+  <div class="example-head">
+    <div class="section-tag">BETA RELEASE</div>
+    <h2>Central bot launcher</h2>
+    <p>The Control Center is free during beta and focuses on the job you need first: getting all your installed BotZips bots into one place.</p>
   </div>
-  <div class="arrow">↓</div>
-  <div class="ownership">
-   <div class="owner-card"><div class="symbol">MARA</div><div class="owner">OWNER: TrendBot</div></div>
-   <div class="owner-card"><div class="symbol">NVDA</div><div class="owner">OWNER: ZigZagBot</div></div>
-   <div class="owner-card"><div class="symbol">TSLA</div><div class="owner">OWNER: ReversalBot</div></div>
+  <div class="example-body">
+    <div class="flow">
+      <div class="bot"><strong>Reversal Bot</strong><div class="status">● INSTALLED</div><div class="signal">Launch dashboard</div></div>
+      <div class="bot"><strong>ZigZag Bot</strong><div class="status">● INSTALLED</div><div class="signal">Launch dashboard</div></div>
+      <div class="bot"><strong>Trend Bot</strong><div class="status">● INSTALLED</div><div class="signal">Launch dashboard</div></div>
+    </div>
+    <div class="callout">Each bot keeps its own strategy, settings and dashboard. Control Center simply gives you a central place to organize and launch them.</div>
   </div>
-  <div class="callout">Different symbols do not conflict. Each bot can continue scanning its full universe while managing the positions it owns.</div>
- </div>
-</section>
-
-<section class="example">
- <div class="example-head"><div class="section-tag">EXAMPLE 2</div><h2>Two bots want the same symbol</h2><p>The first authorized claim owns the symbol until its trade is completely closed.</p></div>
- <div class="example-body">
-  <div class="flow">
-   <div class="bot"><strong>TrendBot</strong><div class="status">10:31:42.125</div><div class="signal">MARA → LONG</div></div>
-   <div class="owner-card"><div class="symbol">MARA</div><div class="owner">CLAIMED BY TRENDBOT</div><div class="status">✓ ENTRY AUTHORIZED</div></div>
-   <div class="bot"><strong>ZigZagBot</strong><div class="status">10:31:43.410</div><div class="signal">MARA → SHORT<br><span class="blocked">✕ BLOCKED — already owned</span></div></div>
-  </div>
-  <div class="callout">ZigZagBot is not stopped. It simply cannot enter MARA while TrendBot owns MARA, and it continues scanning every other available symbol.</div>
-  <div class="priority">
-   <div class="head">TIER</div><div class="head">BOT</div><div class="head">TIE PRIORITY</div>
-   <div>1</div><div>TrendBot</div><div>Highest</div>
-   <div>2</div><div>ZigZagBot</div><div>Second</div>
-   <div>3</div><div>ReversalBot</div><div>Third</div>
-  </div>
-  <div class="callout">The tier can resolve effectively simultaneous requests. Normal non-simultaneous signals remain first valid claim wins.</div>
- </div>
 </section>
 
 <section class="example">
- <div class="example-head"><div class="section-tag">EXAMPLE 3</div><h2>Your existing shares stay protected</h2><p>Botfolio does not assume a position already in your brokerage account belongs to a trading bot.</p></div>
- <div class="example-body">
-  <div class="table-wrap"><table>
-   <thead><tr><th>SYMBOL</th><th>POSITION</th><th>CLASSIFICATION</th><th>AUTONOMOUS BOT ACCESS</th></tr></thead>
-   <tbody>
-    <tr><td>NVDA</td><td>100 shares</td><td class="protected">🔒 EXISTING / PROTECTED</td><td class="blocked">BLOCKED</td></tr>
-    <tr><td>AAPL</td><td>200 shares</td><td class="protected">🔒 EXISTING / PROTECTED</td><td class="blocked">BLOCKED</td></tr>
-    <tr><td>MARA</td><td>0 shares</td><td class="owned">○ FREE</td><td class="owned">AVAILABLE</td></tr>
-   </tbody>
-  </table></div>
-  <div class="callout">A bot cannot automatically adopt, sell, stop, trail or modify an existing protected position. Reassignment requires an explicit user action.</div>
- </div>
-</section>
-
-<section class="example">
- <div class="example-head"><div class="section-tag">EXAMPLE 4</div><h2>Dividend holdings have their own manager</h2><p>Dividend positions can be assigned exclusively to Dividend Manager and kept away from autonomous trading strategies.</p></div>
- <div class="example-body">
-  <div class="table-wrap"><table>
-   <thead><tr><th>SYMBOL</th><th>POSITION</th><th>OWNER</th><th>OTHER BOTS</th></tr></thead>
-   <tbody>
-    <tr><td>YMAG</td><td>10,000</td><td class="owned">Dividend Manager</td><td class="blocked">NO ACCESS</td></tr>
-    <tr><td>YMAX</td><td>10,000</td><td class="owned">Dividend Manager</td><td class="blocked">NO ACCESS</td></tr>
-    <tr><td>MSTY</td><td>2,500</td><td class="owned">Dividend Manager</td><td class="blocked">NO ACCESS</td></tr>
-    <tr><td>MARA</td><td>500</td><td class="owned">TrendBot</td><td class="blocked">NO ACCESS</td></tr>
-    <tr><td>NVDA</td><td>100</td><td class="protected">Protected / Existing</td><td class="blocked">NO ACCESS</td></tr>
-   </tbody>
-  </table></div>
-  <div class="callout"><strong>Dividend Manager manages dividend holdings.</strong> Trading bots manage their own trades. Existing positions remain protected.</div>
- </div>
-</section>
-
-<section class="example">
- <div class="example-head"><div class="section-tag">THE CONTROL LAYER</div><h2>Botfolio sits between strategy and execution</h2><p>Before an autonomous bot is allowed to create or manage a trade, ownership is checked.</p></div>
- <div class="example-body">
-  <div class="arch">
-   <div class="arch-box">TrendBot<br>ZigZagBot<br>ReversalBot</div><div class="arch-arrow">→</div>
-   <div class="arch-box">BOTFOLIO<br><span style="color:#67d8fc">Ownership Gate</span></div><div class="arch-arrow">→</div>
-   <div class="arch-box">Broker Hub</div><div class="arch-arrow">→</div>
-   <div class="arch-box">IBKR</div>
+  <div class="example-head">
+    <div class="section-tag">WHAT IT DOES NOW</div>
+    <h2>Simple by design</h2>
+    <p>The initial release is intentionally lightweight so the bot launch workflow can be tested before more management features are added.</p>
   </div>
-  <div class="table-wrap"><table>
-   <thead><tr><th>POSITION TYPE</th><th>DEFAULT OWNER</th><th>RULE</th></tr></thead>
-   <tbody>
-    <tr><td>Existing / manual holding</td><td class="protected">PROTECTED</td><td>No autonomous bot access</td></tr>
-    <tr><td>Dividend holding</td><td class="owned">DIVIDEND MANAGER</td><td>Dividend Manager only</td></tr>
-    <tr><td>Bot-created trade</td><td class="owned">CREATING BOT</td><td>Creating bot manages it</td></tr>
-    <tr><td>No position / no claim</td><td class="owned">FREE</td><td>Compatible bots may compete for ownership</td></tr>
-   </tbody>
-  </table></div>
- </div>
+  <div class="example-body">
+    <div class="ownership">
+      <div class="owner-card"><div class="symbol">ADD</div><div class="owner">Register an installed bot</div></div>
+      <div class="owner-card"><div class="symbol">VIEW</div><div class="owner">See your bots together</div></div>
+      <div class="owner-card"><div class="symbol">LAUNCH</div><div class="owner">Open a bot dashboard</div></div>
+    </div>
+    <div class="callout">No strategy is moved into Control Center. Your individual BotZips applications remain separate and can still be opened normally.</div>
+  </div>
+</section>
+
+<section class="example">
+  <div class="example-head">
+    <div class="section-tag">COMING UP</div>
+    <h2>Control Center updates are coming</h2>
+    <p>The beta launcher is the foundation. The Control Center screen will expand as the individual bots are tested and released.</p>
+  </div>
+  <div class="example-body">
+    <div class="table-wrap"><table>
+      <thead><tr><th>FEATURE</th><th>BETA</th><th>PLANNED UPDATE</th></tr></thead>
+      <tbody>
+        <tr><td>Central bot list</td><td class="owned">AVAILABLE</td><td>—</td></tr>
+        <tr><td>Launch installed bots</td><td class="owned">AVAILABLE</td><td>—</td></tr>
+        <tr><td>Persistent saved bot list</td><td class="owned">AVAILABLE</td><td>—</td></tr>
+        <tr><td>Richer bot status</td><td class="protected">BASIC STATUS</td><td>Expanded status</td></tr>
+        <tr><td>Activity / decision reporting</td><td>—</td><td class="protected">COMING</td></tr>
+        <tr><td>Positions and P&amp;L overview</td><td>—</td><td class="protected">COMING</td></tr>
+        <tr><td>Advanced multi-bot coordination</td><td>—</td><td class="protected">COMING</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout"><strong>Screenshot preview:</strong> the Control Center page can show the current beta screen now, with future screenshots added as new management features are released.</div>
+  </div>
+</section>
+
+<section class="example">
+  <div class="example-head">
+    <div class="section-tag">HOW IT FITS</div>
+    <h2>Your bots still run as their own applications</h2>
+    <p>Control Center sits beside the bots as a convenient launcher and management screen. It does not replace each bot's own dashboard.</p>
+  </div>
+  <div class="example-body">
+    <div class="arch">
+      <div class="arch-box">BotZips<br>Control Center</div><div class="arch-arrow">→</div>
+      <div class="arch-box">Choose Bot</div><div class="arch-arrow">→</div>
+      <div class="arch-box">Launch</div><div class="arch-arrow">→</div>
+      <div class="arch-box">Bot Dashboard</div>
+    </div>
+  </div>
 </section>
 
 <div class="bottom-rule">
- <h2>Bots only manage what they own.</h2>
- <p>If ownership is missing or Botfolio and the broker disagree, the safe response is to lock the symbol — not guess.</p>
+  <h2>Start simple. Add capability as the bots mature.</h2>
+  <p>The Control Center beta is free and gives BotZips users one convenient place to launch their installed bots.</p>
 </div>
 
-<footer>Choose your bots. Build your Botfolio. · Botfolios.com<br>Automated trading involves market, software and execution risk.</footer>
+<footer>BOTZIPS · DOWNLOAD • UNZIP • RUN<br>Trading software can execute orders when configured for live trading. Start in Observe or Paper and review settings before enabling live execution.</footer>
 </main>
 </body>
 </html>

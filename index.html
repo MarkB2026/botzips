@@ -532,11 +532,45 @@ body{background:radial-gradient(ellipse at 76% 0%,#102a3c 0%,#0a131b 52%,#090e13
   }
 }
 </style>
+
+<style id="wallstreetbots-final-hero-layout">
+/* Final hero: one WallStreetBots.org wordmark in the top navigation only. */
+.site-brand{letter-spacing:5px!important;font-style:normal!important;text-decoration:none!important;white-space:nowrap}
+.wsb-nav-wallstreet{color:#f5f8fb;font-weight:800}
+.wsb-nav-bots{color:#20d7ff;font-weight:900}
+.home-hero{
+  min-height:420px!important;
+  padding:58px 34px 42px!important;
+  background:
+    linear-gradient(90deg,rgba(6,22,34,.995) 0%,rgba(6,22,34,.98) 30%,rgba(6,22,34,.86) 40%,rgba(6,22,34,.38) 53%,rgba(6,22,34,.05) 68%,rgba(6,22,34,.02) 100%),
+    url("assets/wsbhero_nocandles.png") right center/auto 100% no-repeat!important;
+}
+.home-hero::before{display:none!important}
+.home-hero-copy{display:block!important;max-width:600px!important;position:relative;z-index:2}
+.home-hero-copy .eyebrow{display:none!important}
+.home-hero-copy h1{font-size:clamp(42px,4.4vw,64px)!important;line-height:1.05!important;margin:0 0 22px!important;max-width:590px!important;letter-spacing:-1.6px!important}
+.home-hero-copy h1 .cyan-line{display:block;color:#22d4f4}
+.home-hero-copy p{font-size:16px!important;line-height:1.65!important;color:#f0f6fa!important;max-width:590px!important;margin:0 0 20px!important;text-shadow:0 2px 10px #061622}
+.home-hero-copy p.hero-local{max-width:520px!important;margin-bottom:0!important}
+.home-hero-copy p.hero-local strong{color:#22d4f4}
+.home-hero-logo,.hero-trading-line{display:none!important}
+@media(max-width:900px){
+ .site-brand{letter-spacing:3px!important}
+ .home-hero{min-height:400px!important;padding:42px 26px 34px!important;background:linear-gradient(90deg,rgba(6,22,34,.995) 0%,rgba(6,22,34,.96) 50%,rgba(6,22,34,.30) 80%),url("assets/wsbhero_nocandles.png") 72% center/auto 100% no-repeat!important}
+ .home-hero-copy{max-width:560px!important}
+}
+@media(max-width:680px){
+ .site-brand{font-size:17px!important;letter-spacing:2px!important}
+ .home-hero{padding:30px 22px!important;background:linear-gradient(rgba(6,22,34,.91),rgba(6,22,34,.96)),url("assets/wsbhero_nocandles.png") 68% center/cover no-repeat!important}
+ .home-hero-copy h1{font-size:40px!important}
+ .home-hero-copy p{font-size:14px!important}
+}
+</style>
 </head>
  <body>
   <nav aria-label="Main navigation" class="site-nav">
     <a class="site-brand" href="index.html">
-      <span class="logo-bot">BOT</span><span class="logo-istics">Z<span class="logo-candle-i" aria-label="I"></span>PS</span>
+      <span class="wsb-nav-wallstreet">WALLSTREET</span><span class="wsb-nav-bots">BOTS.ORG</span>
     </a>
 
 
@@ -582,10 +616,11 @@ body{background:radial-gradient(ellipse at 76% 0%,#102a3c 0%,#0a131b 52%,#090e13
      <path d="M0 230 L115 225 L225 235 L320 211 L420 220 L505 182 L595 198 L690 143 L770 168 L855 112 L925 131 L1020 88 L1110 105 L1200 52 L1290 68 L1400 20" fill="none" stroke="url(#hero-line-fade)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
      </path>
     </svg>
-
-   
-
-  
+    <div class="home-hero-copy">
+      <h1>Your trading bots.<span class="cyan-line">Not public.</span></h1>
+      <p>Your trading strategy is valuable. When a bot runs on someone else’s servers, your signals, settings and trade instructions may pass through systems they control — potentially exposing what you’re planning to trade, when you’re planning to trade it, and how your strategy works.</p>
+      <p class="hero-local"><strong>WallStreetBots.org</strong> runs locally on your computer, away from prying eyes.<br>Your strategy. Your hardware. Your trades. Your control.</p>
+    </div>
 
 <div class="home-hero-logo">
   <img

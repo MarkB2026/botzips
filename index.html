@@ -495,6 +495,43 @@ body{background:radial-gradient(ellipse at 76% 0%,#102a3c 0%,#0a131b 52%,#090e13
 /* Intentionally no bottom wick. */
 </style>
 
+
+<style id="wallstreetbots-integrated-hero-v2">
+/* Integrated WallStreetBots hero: artwork becomes part of the hero background, not a stamped logo. */
+.home-hero{
+  display:block!important;
+  min-height:390px!important;
+  padding:34px 34px 32px!important;
+  background:
+    linear-gradient(90deg,rgba(9,27,40,.99) 0%,rgba(9,27,40,.96) 36%,rgba(9,27,40,.60) 52%,rgba(9,27,40,.08) 72%,rgba(9,27,40,.04) 100%),
+    url("assets/wsbhero_nocandles.png") right center/auto 100% no-repeat!important;
+}
+.home-hero::before{
+  background:linear-gradient(90deg,rgba(8,25,37,.70) 0%,rgba(8,25,37,.24) 48%,rgba(8,25,37,0) 72%)!important;
+}
+.home-hero-copy{max-width:690px;position:relative;z-index:2}
+.home-hero-copy p{max-width:650px}
+.home-hero-logo{display:none!important}
+.hero-trading-line{display:none!important}
+@media(max-width:900px){
+  .home-hero{
+    min-height:360px!important;
+    background:
+      linear-gradient(90deg,rgba(9,27,40,.99) 0%,rgba(9,27,40,.93) 52%,rgba(9,27,40,.30) 76%,rgba(9,27,40,.16) 100%),
+      url("assets/wsbhero_nocandles.png") 72% center/auto 100% no-repeat!important;
+  }
+  .home-hero-copy{max-width:620px}
+}
+@media(max-width:680px){
+  .home-hero{
+    min-height:0!important;
+    padding:26px 22px 28px!important;
+    background:
+      linear-gradient(rgba(9,27,40,.93),rgba(9,27,40,.96)),
+      url("assets/wsbhero_nocandles.png") 62% center/cover no-repeat!important;
+  }
+}
+</style>
 </head>
  <body>
   <nav aria-label="Main navigation" class="site-nav">

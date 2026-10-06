@@ -339,10 +339,10 @@
 <div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Price-structure strategy</li><li>HAL Intelligence</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" type="radio" name="zigzag-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div></article>
 
 <article class="card bot-card" data-bot="Scalp Bot">
-<div class="ct"><div class="bot-title"><span class="bot-icon">◎</span><div class="meta"><h2>Scalp Bot</h2><b>SCALPING</b></div></div></div>
-<p>Manual trade-staging and mini-scalping tool with chart-based entries and position management.</p>
+<div class="ct"><div class="bot-title"><span class="bot-icon">◎</span><div class="meta"><h2>Scalp Bot</h2><b>MANUAL SCALPER</b></div></div></div>
+<p><strong>Stage the trade yourself.</strong> Manual chart-based scalping tool for precise entries, protective stops and hands-on position management.</p>
 <div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Chart-based entries</li><li>Position management</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" type="radio" name="scalp-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div></article>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Manual chart-based trade staging</li><li>Protective stops + position management</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" type="radio" name="scalp-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div></article>
 
 <article class="card bot-card" data-bot="IF/Then Bot">
 <div class="ct"><div class="bot-title"><span class="bot-icon">⇄</span><div class="meta"><h2>IF/Then Bot</h2><b>RULE-BASED TRADING</b></div></div></div>
@@ -373,10 +373,10 @@
 
 <section class="momentum-scanner-showcase" id="openMomentumScanner">
   <div>
-    <div class="momentum-kicker">Market Scanner · Charting Companion</div>
+    <div class="momentum-kicker">Desktop Market Scanner · Live Technical Charting</div>
     <div class="momentum-premium-badge">PREMIUM BETA · $10 · NO FREE VERSION</div>
-    <h2>Open Momentum Scanner — <em>Find the move before you stage the trade.</em></h2>
-    <p>Scan active momentum candidates, narrow them with scalp-focused filters, then inspect the setup on a full technical chart without leaving the workflow.</p>
+    <h2>Open Momentum Scanner — <em>Find, filter and watch momentum live.</em></h2>
+    <p>Scan active momentum candidates, narrow them with scalp-focused filters, then inspect price action on a live technical chart with a dynamically updating forming candle.</p>
     <div class="momentum-features">
       <span>Pre-market gain &amp; RVOL scanning</span>
       <span>Price, volume &amp; market-cap filters</span>
@@ -384,10 +384,11 @@
       <span>SMA, EMA, VWAP &amp; Bollinger overlays</span>
       <span>RSI, MACD &amp; ATR lower panels</span>
       <span>Interactive zoom, pan &amp; crosshair</span>
+      <span>Live IBKR price feed + dynamic forming candle</span>
       <span>Extended-hours chart context</span>
       <span>On-demand symbol news</span>
     </div>
-    <p class="momentum-link"><strong>Built to pair with Scalp Bot:</strong> Scan → Chart → Qualify → stage the setup in Scalp Bot → Review → Trade. The scanner finds and evaluates candidates; Scalp Bot handles trade staging and position management.</p>
+    <p class="momentum-link"><strong>Standalone desktop scanner:</strong> Scan → Filter → Chart → Qualify. Live IBKR pricing drives the current forming candle so you can watch the setup develop directly on the chart.</p>
   </div>
   <div class="momentum-media">
     <a href="assets/images/momentum scanner.png" target="_blank" rel="noopener" aria-label="View Open Momentum Scanner screenshot">
@@ -398,6 +399,37 @@
       <video muted playsinline preload="metadata" poster="assets/images/momentum scanner.png"><source src="assets/videos/BotZips_Open_Momentum_Scanner_Presentable.mp4" type="video/mp4"></video>
       <span class="momentum-play"><i>▶</i></span>
       <span class="momentum-media-label">WATCH VIDEO ↗</span>
+    </a>
+  </div>
+</section>
+
+<section class="momentum-scanner-showcase" id="openMomentumBot">
+  <div>
+    <div class="momentum-kicker">Automated Scalper · Opening Momentum + Reversal</div>
+    <div class="momentum-premium-badge">PREMIUM BETA · AUTOMATED TRADING BOT</div>
+    <h2>Open Momentum Bot — <em>Scan it. Arm it. Let the pattern play.</em></h2>
+    <p>Built from the Open Momentum Scanner workflow with autonomous execution added for the opening momentum cycle. The bot watches live IBKR data, manages the opening long, waits for completed-candle reversal confirmation, then manages the short side before finishing for the day.</p>
+    <div class="momentum-features">
+      <span>Live IBKR engine + chart feeds</span>
+      <span>Dynamic live forming 5-minute candle</span>
+      <span>Opening momentum long automation</span>
+      <span>Broker-held protective stops</span>
+      <span>Automatic trailing-stop management</span>
+      <span>Completed 5m reversal confirmation</span>
+      <span>Confirmed reversal short automation</span>
+      <span>One-cycle LONG → SHORT → DONE design</span>
+    </div>
+    <p class="momentum-link"><strong>Automated scalper:</strong> Scan → Chart → Qualify → Arm → LONG → confirmed reversal → SHORT → Done. Trading decisions remain rule-based while the live chart shows the same IBKR price feed the strategy is seeing.</p>
+  </div>
+  <div class="momentum-media">
+    <a href="assets/images/momentum scanner.png" target="_blank" rel="noopener" aria-label="View Open Momentum Bot chart">
+      <img src="assets/images/momentum scanner.png" alt="BotZips Open Momentum Bot">
+      <span class="momentum-media-label">LIVE CHART WORKFLOW ↗</span>
+    </a>
+    <a href="assets/videos/BotZips_Open_Momentum_Scanner_Presentable.mp4" target="_blank" rel="noopener" aria-label="Watch Open Momentum workflow video">
+      <video muted playsinline preload="metadata" poster="assets/images/momentum scanner.png"><source src="assets/videos/BotZips_Open_Momentum_Scanner_Presentable.mp4" type="video/mp4"></video>
+      <span class="momentum-play"><i>▶</i></span>
+      <span class="momentum-media-label">WATCH WORKFLOW ↗</span>
     </a>
   </div>
 </section>

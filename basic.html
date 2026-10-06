@@ -593,7 +593,7 @@ $('premiumDownload').onclick=async()=>{try{await installer('premium',premiumKey)
 $('restoreBtn').onclick=async()=>{
   const key=$('restoreKey').value.trim().toUpperCase();if(!licensePattern.test(key)){setStatus('restoreStatus','Enter your complete original Premium license key.',true);return}
   const b=$('restoreBtn');$('restoredDownload').hidden=true;$('restoredDownload').disabled=true;b.disabled=true;setStatus('restoreStatus','Checking your license…');
-  try{const r=await fetch(WORKER+'/premium/activate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({license_key:key})}),v=await r.json();if(!r.ok||!v.ok||!v.active)throw Error(v.error||'License not active');premiumKey=key;$('restoredDownload').disabled=false;$('restoredDownload').hidden=false;setStatus('restoreStatus','✓ Premium unlocked. No additional payment required.')}
+  try{const r=await fetch(WORKER+'/premium/recover',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({license_key:key})}),v=await r.json();if(!r.ok||!v.ok||!v.active)throw Error(v.error||'License not active');premiumKey=key;$('restoredDownload').disabled=false;$('restoredDownload').hidden=false;setStatus('restoreStatus','✓ Premium unlocked. No additional payment required.')}
   catch(e){setStatus('restoreStatus','Restore failed: '+e.message,true)}
   finally{b.disabled=false}
 };

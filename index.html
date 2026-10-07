@@ -359,7 +359,15 @@ body{background:radial-gradient(ellipse at 76% 0%,#102a3c 0%,#0a131b 52%,#090e13
 .home-more .philosophy,.home-more .diy-section{margin:0}
 .home-primary a:focus-visible,.home-more summary:focus-visible{outline:2px solid #72d9f7;outline-offset:3px}
 @media(max-width:900px){.local-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:680px){.home-primary{grid-template-columns:1fr}.local-grid{grid-template-columns:1fr}.home-primary article{min-height:0}.local-advantage{padding:19px}.home-hero-logo{display:none}}
+@media(max-width:680px){
+  .home-primary{grid-template-columns:1fr}
+  .local-grid{grid-template-columns:1fr}
+  .home-primary article{min-height:0}
+  .local-advantage{padding:19px}
+  .home-hero-logo{display:flex;justify-content:center;margin-top:18px}
+  .home-hero-logo picture{display:block;width:100%;max-width:430px}
+  .home-hero-logo picture img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+}
   </style>
   <style>
    /* Homepage v1.6.31: identical primary navigation button dimensions */
@@ -623,10 +631,13 @@ body{background:radial-gradient(ellipse at 76% 0%,#102a3c 0%,#0a131b 52%,#090e13
     </div>
 
 <div class="home-hero-logo">
-  <img
-    src="assets/wsblogo.png"
-    alt="WallStreetBots.org"
-    style="width:100%; max-width:650px; height:auto;">
+  <picture>
+    <source media="(max-width: 680px)" srcset="assets/wsblogo-mobile.png">
+    <img
+      src="assets/wsblogo.png"
+      alt="WallStreetBots.org"
+      style="width:100%; max-width:650px; height:auto;">
+  </picture>
  
 </header>
 <section aria-label="Choose bots or tools" class="home-primary">

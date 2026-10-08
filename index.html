@@ -594,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const host = window.location.hostname.toLowerCase().replace(/^www\./, '');
   const brand = ({wxy:'wxy',wxybots:'wxy',wallstreet:'wallstreet',wallstreetbots:'wallstreet',botzips:'botzips'})[String(brandParam || '').toLowerCase()]
     || (host === 'wxybots.com' ? 'wxy' : host === 'wallstreetbots.org' ? 'wallstreet' : 'botzips');
-  const filenames = {wxy:'wxylogo.png',wallstreet:'wsbhero_nocandles.png',botzips:'logo.png'};
+  const filenames = {wxy:'assets/wxylogo.png',wallstreet:'assets/wsbhero_nocandles.png',botzips:'assets/logo.png'};
   const labels = {wxy:'WXYBots logo',wallstreet:'WallStreetBots logo',botzips:'BotZips logo'};
   img.alt = labels[brand];
   img.onerror = function () { img.onerror = null; img.src = fallback; };

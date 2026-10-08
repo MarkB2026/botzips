@@ -339,6 +339,15 @@
 @media(max-width:560px){.beta-feature-download{width:100%;font-size:12px;padding:13px 10px}.beta-download-arrow{font-size:24px}}
 </style><style id="momentum-live-demo-link-style">
 .momentum-live-demo{display:inline-flex;align-items:center;gap:10px;margin:12px 0 5px;padding:11px 16px;border:1px solid #62d8f5;border-radius:9px;background:linear-gradient(120deg,rgba(25,129,187,.36),rgba(15,62,96,.7));color:#e5f8ff!important;font-weight:900;text-decoration:none!important;box-shadow:0 4px 16px #0003}.momentum-live-demo:hover{background:linear-gradient(120deg,rgba(34,160,219,.55),rgba(20,83,124,.8));border-color:#a3ecff}.momentum-live-demo .demo-play{font-size:19px;color:#7fe8ff}.momentum-demo-note{display:block;font-size:11px;color:#a6c4d3;margin:2px 0 10px}
+</style><style id="wider-bot-cards-20261008">
+/* Wider catalog cards: two columns on desktop, one on smaller screens. */
+@media(min-width:851px){
+ #botCatalog .body.grid,#comingSoon .body.grid,#comingSoonMore .body.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:850px){
+ #botCatalog .body.grid,#comingSoon .body.grid,#comingSoonMore .body.grid{grid-template-columns:1fr!important;}
+}
+/* The chart promotion should remain within the two-column layout. */
 </style></head><body>
 <div class="release">WallStreetBots.org · DESKTOP TRADING SOFTWARE · SIMPLE INSTALLATION</div><main class="shell">
 <div class="top"><div class="brand">WALLSTREET<span>BOTS</span></div><span class="badge">AUTOMATED TRADING BOTS</span></div>
@@ -397,7 +406,7 @@
 <p><strong>Momentum meets autonomy.</strong> Scan and filter candidates, qualify a setup, then automate the opening long and confirmed reversal short cycle.</p>
 <div class="tags"><span>IBKR</span><span>Automated Trading Bot</span></div>
 <div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Momentum scanner + candidate filters</li><li>Opening long / confirmed reversal short</li><li>Protective stops + trailing management</li><li>Live chart + activity updates</li></ul>
-<a class="momentum-live-demo" href="assets/videos/demo_account_hidden.mp4" target="_blank" rel="noopener"><span class="demo-play" aria-hidden="true">▶</span> WATCH LIVE DEMO ↗</a><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" name="momentum-edition" type="radio" value="Premium"/><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article>
+<a class="momentum-live-demo" href="assets/videos/demo_change_stop_order_momentum_bot.mp4" target="_blank" rel="noopener"><span class="demo-play" aria-hidden="true">▶</span> WATCH LIVE DEMO ↗</a><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" name="momentum-edition" type="radio" value="Premium"/><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article>
 <article class="card control-card" data-bot="WallStreetBots.org Control Center">
 <a aria-label="Learn more about WallStreetBots.org Control Center" class="control-card-link" href="howitworks.html">
 <div class="ct"><div class="bot-title"><span class="bot-icon">▦</span><div class="meta"><h2>Control Center</h2><b>WallStreetBots.org MANAGEMENT</b></div></div></div>

@@ -584,7 +584,24 @@ body{background:radial-gradient(ellipse at 76% 0%,#102a3c 0%,#0a131b 52%,#090e13
 .home-hero-logo img{width:115%!important;max-width:620px!important;max-height:none!important;height:auto!important;margin-left:-6%!important;mix-blend-mode:normal!important;filter:none!important;-webkit-mask-image:radial-gradient(ellipse 72% 75% at 50% 50%,#000 43%,rgba(0,0,0,.97) 58%,rgba(0,0,0,.60) 77%,transparent 99%)!important;mask-image:radial-gradient(ellipse 72% 75% at 50% 50%,#000 43%,rgba(0,0,0,.97) 58%,rgba(0,0,0,.60) 77%,transparent 99%)!important}
 @media(max-width:900px){.home-hero{grid-template-columns:1fr!important;gap:16px!important}.home-hero .home-hero-logo{display:flex!important;justify-content:center!important}.home-hero-logo img{width:100%!important;max-width:510px!important;margin:0 auto!important}.home-hero-copy p,.home-hero-copy p.hero-local{font-size:15px!important}}
 @media(max-width:560px){.home-hero{padding:22px!important}.home-hero-logo img{max-width:100%!important}.home-hero-copy p,.home-hero-copy p.hero-local{font-size:14px!important;line-height:1.62!important;margin-bottom:14px!important}}
-</style></head>
+</style><script id="domain-hero-brand-routing">
+/* Shared homepage branding. GoDaddy masked forwarding: ?brand=wxy or ?brand=wallstreet */
+document.addEventListener('DOMContentLoaded', function () {
+  const img = document.querySelector('.home-hero-logo img');
+  if (!img) return;
+  const fallback = img.getAttribute('src'); // retain original embedded logo
+  const brandParam = new URLSearchParams(window.location.search).get('brand');
+  const host = window.location.hostname.toLowerCase().replace(/^www\./, '');
+  const brand = ({wxy:'wxy',wxybots:'wxy',wallstreet:'wallstreet',wallstreetbots:'wallstreet',botzips:'botzips'})[String(brandParam || '').toLowerCase()]
+    || (host === 'wxybots.com' ? 'wxy' : host === 'wallstreetbots.org' ? 'wallstreet' : 'botzips');
+  const filenames = {wxy:'wxylogo.png',wallstreet:'wsbhero_nocandles.png',botzips:'logo.png'};
+  const labels = {wxy:'WXYBots logo',wallstreet:'WallStreetBots logo',botzips:'BotZips logo'};
+  img.alt = labels[brand];
+  img.onerror = function () { img.onerror = null; img.src = fallback; };
+  img.src = filenames[brand];
+});
+</script>
+</head>
 <body>
 <nav aria-label="Main navigation" class="site-nav">
 <a class="site-brand" href="index.html">
@@ -701,35 +718,5 @@ body{background:radial-gradient(ellipse at 76% 0%,#102a3c 0%,#0a131b 52%,#090e13
     Choose your bots. Build your WallStreetBots. · WallStreetBots.org
    </div>
 </div>
-
-<!-- Domain-aware hero branding; original embedded image remains a reliable fallback. -->
-<script id="domain-hero-branding">
-(function () {
-  // Explicit brand query is reliable with GoDaddy masked forwarding.
-  var files = {wxy:'wxylogo.png', wallstreetbots:'wsbhero_nocandles.png', botzips:'logo.png'};
-  var params = new URLSearchParams(window.location.search);
-  var aliases = {wxy:'wxy',wxybots:'wxy',wallstreetbots:'wallstreetbots',wsb:'wallstreetbots',botzips:'botzips'};
-  var requested = aliases[(params.get('brand') || '').toLowerCase()];
-  var host = window.location.hostname.toLowerCase().replace(/^www\./,'');
-  var refHost = '';
-  try { refHost = new URL(document.referrer).hostname.toLowerCase().replace(/^www\./,''); } catch(e) {}
-  var brand = requested ||
-    (host === 'wxybots.com' || refHost === 'wxybots.com' ? 'wxy' :
-     host === 'botzips.com' ? 'botzips' : 'wallstreetbots');
-  function init() {
-    var img = document.querySelector('.home-hero-logo img');
-    if (!img) return;
-    var fallback = img.src;
-    img.alt = brand === 'wxy' ? 'WXYBots logo' : brand === 'botzips' ? 'BotZips logo' : 'WallStreetBots logo';
-    // Check that the external file exists before replacing the embedded fallback.
-    var test = new Image();
-    test.onload = function () { img.src = test.src; };
-    test.onerror = function () { img.src = fallback; };
-    test.src = files[brand];
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
 </body>
 </html>

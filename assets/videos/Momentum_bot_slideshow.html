@@ -22,6 +22,18 @@ button:disabled{opacity:.45;cursor:default}
 #play.on{background:#2a5d92}
 .count{font-size:17px;font-variant-numeric:tabular-nums;min-width:64px;text-align:center}
 .hint{color:var(--muted);font-size:12px;width:100%;text-align:center;margin-top:-4px}
+
+/* Shared preview geometry: equal screenshot and control areas */
+html,body{height:100%;overflow:hidden}
+body{display:flex;flex-direction:column}
+.stage{flex:1 1 auto;min-height:0;overflow:auto;display:flex;align-items:center;justify-content:center;padding:12px;background:#070d17}
+.stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;cursor:zoom-in}
+.stage.zoom{align-items:flex-start;justify-content:flex-start}
+.stage.zoom img{max-width:none;max-height:none;cursor:zoom-out}
+.bar,.controls{flex:0 0 80px;height:80px;min-height:80px;max-height:80px;box-sizing:border-box;display:flex;align-content:center;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;padding:8px 12px;background:#0e1a2b}
+.bar button,.controls button{font:600 13px 'Segoe UI',Arial,sans-serif;min-width:82px;padding:8px 12px}
+.bar .hint,.controls #caption{flex-basis:100%;width:100%;margin:0;min-width:0;text-align:center;font-size:11px;line-height:14px}
+.bar .count,.controls #count{min-width:56px;text-align:center;font-size:14px}
 </style></head>
 <body>
 <main class="stage" id="stage"><img id="slide" alt="Scanner screenshot"></main>

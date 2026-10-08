@@ -1,7 +1,1 @@
-MyBotBuilder RSI Divergence website navigation update
-
-Upload index.html, bots.html, basic.html, and build.html to the website root. Keep your existing styles.css and assets/videos folder. Copy assets/mybotbuilder-logo.png if missing.
-
-The homepage START A BUILD and hero buttons, and the Reversal Bot product card, all link to basic.html?v=1.6.1. basic.html is explicitly labeled as the RSI Divergence builder. build.html is retained as a legacy RSI threshold page with a link to the divergence builder.
-
-NOTE: These are website/UI changes. They do not modify Python strategy logic, verify deployment, or make unreleased Bollinger/multi-strategy functionality live.
+Replace your existing index.html with this index.html. Keep your assets folder, including assets/wsbhero_nocandles.png. The homepage fix is already embedded in index.html; no stylesheet change is needed. homepage-responsive.css is an optional copy of the applied rules, for reference. Existing links, analytics, bot builder, payment and scripts are retained. The separately supplied global CSS was not changed.

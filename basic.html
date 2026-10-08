@@ -2,7 +2,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FT272GQ5T5"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-FT272GQ5T5');</script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Trading Bots | BotZips</title>
+<title>Trading Bots | WallStreetBots.org</title>
 <style>
 :root{--bg:#090f14;--panel:#101922;--line:#29404f;--text:#eef7fb;--muted:#91a6b4;--cyan:#25c7e8;--good:#55d694;--gold:#e8b95a;--purple:#9b6cff;--purple2:#6f45d8}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 70% 0,#112a39 0,#090f14 34%);color:var(--text);font:14px/1.55 Segoe UI,Arial,sans-serif}
@@ -203,7 +203,7 @@
 
 
 <style id="control-center-hub-treatment">
-/* Control Center: same BotZips blue family, but visually heavier to read as the hub. */
+/* Control Center: same WallStreetBots.org blue family, but visually heavier to read as the hub. */
 #botCatalog article.control-card{
   background:linear-gradient(155deg,rgba(20,83,118,.78),rgba(10,42,61,.92))!important;
   border:2px solid rgba(80,181,224,.78)!important;
@@ -230,7 +230,7 @@
 
 
 <style id="reversal-basic-free-treatment">
-/* Only the Reversal Basic FREE selector is green; the card stays standard BotZips blue. */
+/* Only the Reversal Basic FREE selector is green; the card stays standard WallStreetBots.org blue. */
 #botCatalog article.reversal-basic-card .basic-free{
   background:linear-gradient(180deg,rgba(30,112,75,.92),rgba(18,75,53,.96))!important;
   border-color:rgba(83,210,145,.78)!important;
@@ -305,13 +305,19 @@
   font-size:10px;font-weight:900;letter-spacing:.8px;
 }
 </style>
+<style id="wsb-feature-banners">
+.wsb-feature{margin:22px 0;padding:30px;border:1px solid #31586e;border-radius:14px;background:linear-gradient(145deg,#102839,#0c1925);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;align-items:center}
+.wsb-feature>div{min-width:0}.wsb-feature h2{font-size:clamp(25px,3vw,36px);line-height:1.12;margin:10px 0 16px}.wsb-feature h2 em{font-style:normal;color:#25c7e8}.wsb-feature p{color:#b9ccd8;line-height:1.65}.wsb-feature a{color:#8ee6ff}.feature-visual{padding:18px;border:1px solid #345368;border-radius:12px;background:#08131e}.visual-top{font-size:12px;font-weight:850;color:#d5efff;display:flex;justify-content:space-between;gap:12px;margin-bottom:16px}.visual-top span{font-size:9px;color:#77c7da}.feature-visual svg,.feature-visual img{display:block;width:100%;height:auto;object-fit:contain}.feature-visual small{display:block;margin-top:14px;color:#8aa7b9;font-size:11px}.trade-level{padding:24px 8px;margin:15px 0;border-bottom:2px solid;font-weight:800;font-size:13px}.trade-level span{float:right;font-weight:400;font-size:11px}.target{color:#5ce2aa;background:#10382c}.entry{color:#8ad9ff;background:#102c40}.stop{color:#ff9ea8;background:#391b28}.hive-preview{padding:16px;margin:12px 0;border:1px solid #345368;border-radius:9px}.hive-preview strong{color:#7ce5ef}.hive-preview p{font-size:13px;margin:8px 0}
+@media(max-width:850px){.wsb-feature{grid-template-columns:1fr;padding:22px;gap:20px}}
+@media(max-width:560px){.wsb-feature{padding:18px}.wsb-feature .momentum-features{grid-template-columns:1fr}.trade-level span{float:none;display:block;margin-top:8px}}
+</style>
 </head><body>
-<div class="release">BOTZIPS · DOWNLOAD • UNZIP • RUN</div><main class="shell">
+<div class="release">WallStreetBots.org · DOWNLOAD • UNZIP • RUN</div><main class="shell">
 <div class="top"><div class="brand">BOT<span>ZIPS</span></div><span class="badge">AUTOMATED TRADING BOTS</span></div>
 <section class="hero">
 <div class="eyebrow">CHOOSE YOUR TRADING BOTS</div>
 <h1>Build your trading setup.</h1>
-<p>Choose your BotZips beta software below. <strong>Reversal Bot Basic is free</strong>; Premium bots are available during beta for <strong>$10</strong>. You can also add the free BotZips Control Center.</p>
+<p>Choose your WallStreetBots.org beta software below. <strong>Reversal Bot Basic is free</strong>; Premium bots are available during beta for <strong>$10</strong>. You can also add the free WallStreetBots.org Control Center.</p>
 </section>
 
 <section class="section" id="botCatalog">
@@ -338,8 +344,8 @@
 <div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
 <div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Price-structure strategy</li><li>HAL Intelligence</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" type="radio" name="zigzag-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div></article>
 
-<article class="card bot-card" data-bot="Scalp Bot">
-<div class="ct"><div class="bot-title"><span class="bot-icon">◎</span><div class="meta"><h2>Scalp Bot</h2><b>MANUAL SCALPER</b></div></div></div>
+<article class="card bot-card" id="miniScalperCard" data-bot="Scalp Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">◎</span><div class="meta"><h2>Mini Scalper</h2><b>MANUAL SCALPER</b></div></div></div>
 <p><strong>Stage the trade yourself.</strong> Manual chart-based scalping tool for precise entries, protective stops and hands-on position management.</p>
 <div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
 <div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Manual chart-based trade staging</li><li>Protective stops + position management</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" type="radio" name="scalp-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div></article>
@@ -351,14 +357,20 @@
 <div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Rule-based IF/THEN logic</li><li>Custom trade conditions</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" type="radio" name="ifthen-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div></article>
 
 
-<article class="card control-card" data-bot="BotZips Control Center">
-  <a class="control-card-link" href="howitworks.html" aria-label="Learn more about BotZips Control Center">
-    <div class="ct"><div class="bot-title"><span class="bot-icon">▦</span><div class="meta"><h2>Control Center</h2><b>BOTZIPS MANAGEMENT</b></div></div></div>
-    <p><strong>One place for all your bots.</strong> Launch, monitor and organize your installed BotZips bots from a single central control panel.</p>
+<article class="card bot-card" id="momentumCard" data-bot="Open Momentum Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">↗</span><div class="meta"><h2>Momentum Bot</h2><b>AUTOMATED SCALPING</b></div></div></div>
+<p><strong>Momentum meets autonomy.</strong> Scan and filter candidates, qualify a setup, then automate the opening long and confirmed reversal short cycle.</p>
+<div class="tags"><span>IBKR</span><span>Automated Trading Bot</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Momentum scanner + candidate filters</li><li>Opening long / confirmed reversal short</li><li>Protective stops + trailing management</li><li>Live chart + activity updates</li></ul>
+<div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" type="radio" name="momentum-edition" value="Premium"><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div></article>
+<article class="card control-card" data-bot="WallStreetBots.org Control Center">
+  <a class="control-card-link" href="howitworks.html" aria-label="Learn more about WallStreetBots.org Control Center">
+    <div class="ct"><div class="bot-title"><span class="bot-icon">▦</span><div class="meta"><h2>Control Center</h2><b>WallStreetBots.org MANAGEMENT</b></div></div></div>
+    <p><strong>One place for all your bots.</strong> Launch, monitor and organize your installed WallStreetBots.org bots from a single central control panel.</p>
     <div class="tags"><span>FREE</span><span>Control Panel</span><span>Learn More →</span></div>
     <div class="bot-feature-title">Key features</div>
     <ul class="bot-list">
-      <li>Launch installed BotZips bots</li>
+      <li>Launch installed WallStreetBots.org bots</li>
       <li>See your bots together</li>
       <li>Persistent saved bot list</li>
       <li>More management features coming</li>
@@ -371,69 +383,10 @@
 
 </div></section>
 
-<section class="momentum-scanner-showcase" id="openMomentumScanner">
-  <div>
-    <div class="momentum-kicker">Desktop Market Scanner · Live Technical Charting</div>
-    <div class="momentum-premium-badge">PREMIUM BETA · $10 · NO FREE VERSION</div>
-    <h2>Open Momentum Scanner — <em>Find, filter and watch momentum live.</em></h2>
-    <p>Scan active momentum candidates, narrow them with scalp-focused filters, then inspect price action on a live technical chart with a dynamically updating forming candle.</p>
-    <div class="momentum-features">
-      <span>Pre-market gain &amp; RVOL scanning</span>
-      <span>Price, volume &amp; market-cap filters</span>
-      <span>5m, 30m, 1h, 4h &amp; Daily charts</span>
-      <span>SMA, EMA, VWAP &amp; Bollinger overlays</span>
-      <span>RSI, MACD &amp; ATR lower panels</span>
-      <span>Interactive zoom, pan &amp; crosshair</span>
-      <span>Live IBKR price feed + dynamic forming candle</span>
-      <span>Extended-hours chart context</span>
-      <span>On-demand symbol news</span>
-    </div>
-    <p class="momentum-link"><strong>Standalone desktop scanner:</strong> Scan → Filter → Chart → Qualify. Live IBKR pricing drives the current forming candle so you can watch the setup develop directly on the chart.</p>
-  </div>
-  <div class="momentum-media">
-    <a href="assets/images/momentum scanner.png" target="_blank" rel="noopener" aria-label="View Open Momentum Scanner screenshot">
-      <img src="assets/images/momentum scanner.png" alt="BotZips Open Momentum Scanner">
-      <span class="momentum-media-label">VIEW SCREENSHOT ↗</span>
-    </a>
-    <a href="assets/videos/BotZips_Open_Momentum_Scanner_Presentable.mp4" target="_blank" rel="noopener" aria-label="Watch Open Momentum Scanner video">
-      <video muted playsinline preload="metadata" poster="assets/images/momentum scanner.png"><source src="assets/videos/BotZips_Open_Momentum_Scanner_Presentable.mp4" type="video/mp4"></video>
-      <span class="momentum-play"><i>▶</i></span>
-      <span class="momentum-media-label">WATCH VIDEO ↗</span>
-    </a>
-  </div>
-</section>
-
-<section class="momentum-scanner-showcase" id="openMomentumBot">
-  <div>
-    <div class="momentum-kicker">Automated Scalper · Opening Momentum + Reversal</div>
-    <div class="momentum-premium-badge">PREMIUM BETA · AUTOMATED TRADING BOT</div>
-    <h2>Open Momentum Bot — <em>Momentum meets Autonomy.</em></h2>
-    <p>Built from the Open Momentum Scanner workflow with autonomous execution added for the opening momentum cycle. The bot watches live IBKR data, manages the opening long, waits for completed-candle reversal confirmation, then manages the short side before finishing for the day.</p>
-    <div class="momentum-features">
-      <span>Live IBKR engine + chart feeds</span>
-      <span>Dynamic live forming 5-minute candle</span>
-      <span>Opening momentum long automation</span>
-      <span>Broker-held protective stops</span>
-      <span>Automatic trailing-stop management</span>
-      <span>Completed 5m reversal confirmation</span>
-      <span>Confirmed reversal short automation</span>
-      <span>One-cycle LONG → SHORT → DONE design</span>
-    </div>
-    <p class="momentum-link"><strong>Automated scalper:</strong> Scan → Chart → Qualify → Arm → LONG → confirmed reversal → SHORT → Done. Trading decisions remain rule-based while the live chart shows the same IBKR price feed the strategy is seeing.</p>
-  </div>
-  <div class="momentum-media">
-    <a href="assets/images/momentum bot.png" target="_blank" rel="noopener" aria-label="View Open Momentum Bot chart">
-      <img src="assets/images/momentum bot.png" alt="BotZips Open Momentum Bot">
-      <span class="momentum-media-label">LIVE CHART WORKFLOW ↗</span>
-    </a>
-    <a href="assets/videos/BotZips_Open_Momentum_Scanner_Presentable.mp4" target="_blank" rel="noopener" aria-label="Watch Open Momentum workflow video">
-      <video muted playsinline preload="metadata" poster="assets/images/momentum bot2.png"><source src="assets/videos/BotZips_Open_Momentum_Scanner_Presentable.mp4" type="video/mp4"></video>
-      <span class="momentum-play"><i>▶</i></span>
-      <span class="momentum-media-label">WATCH WORKFLOW ↗</span>
-    </a>
-  </div>
-</section>
-
+<section class="wsb-feature" id="advancedChart"><div><div class="momentum-kicker">Standalone desktop chart · Beta</div><h2>Your broker’s prices. <em>Your chart. Your drawings.</em></h2><p>Advanced Chart brings broker-connected pricing, technical indicators and editable drawing tools into a workspace running on your computer. Your drawings are not uploaded to WallStreetBots.org.</p><div class="momentum-features"><span>IBKR + MT5 market-data connections</span><span>Optional Yahoo backup, with source shown</span><span>Trendlines, rectangles, channels + triangles</span><span>Fibonacci tools + five-point Cypher ratios</span><span>Editable Wyckoff schematic</span><span>SMA, EMA, VWAP, Bollinger, RSI, MACD + ATR</span><span>5m, 30m, 1h, 4h + daily charts</span><span>Zoom, pan, crosshair + chart pop-out</span></div><p class="momentum-link">Real-time pricing uses your broker’s enabled market-data subscription. Yahoo backup may be delayed. This standalone chart is a planning tool; it does not submit orders.</p></div><div class="feature-visual" aria-label="Illustration of chart drawing tools"><div class="visual-top">ADVANCED CHART <span>LOCAL WORKSPACE</span></div><svg viewBox="0 0 520 240" role="img" aria-label="Illustrative chart with X A B C D drawing"><g stroke="#244153"><path d="M20 40H500M20 90H500M20 140H500M20 190H500"/></g><path d="M20 170L55 140L80 155L110 90L140 110L180 80L205 100L245 60L285 90L330 75L370 100L410 55L460 70L500 35" fill="none" stroke="#2dd6ac" stroke-width="3"/><path d="M90 180L190 50L280 160L360 85L450 185L280 160Z" fill="#608eff22" stroke="#80a7ff" stroke-width="2"/><g fill="#dce9ff" font-size="16"><text x="82" y="205">X</text><text x="185" y="38">A</text><text x="275" y="180">B</text><text x="355" y="72">C</text><text x="445" y="205">D</text></g></svg><small>Drawing-tool illustration</small></div></section>
+<section class="wsb-feature" id="chartTrading"><div><div class="momentum-kicker">Mini Scalper · Trade from the chart</div><h2>Place it on the chart. <em>Manage it on the chart.</em></h2><p>Build your entry, protective stop and profit-taking setup directly against the price action. Adjust the levels on the chart and manage the trade in the same workspace.</p><div class="momentum-features"><span>Click-to-chart trade setup</span><span>Adjustable entry, stop + profit levels</span><span>Hands-on position management</span><span>Chart trading planned for other bots</span></div><p class="momentum-link"><a href="#miniScalperCard">View Mini Scalper in the bot collection ↑</a></p></div><div class="feature-visual"><div class="visual-top">MINI SCALPER <span>CHART TRADING</span></div><div class="trade-level target">TAKE PROFIT <span>Drag to adjust</span></div><div class="trade-level entry">ENTRY <span>Place your setup</span></div><div class="trade-level stop">PROTECTIVE STOP <span>Manage your risk</span></div><small>Workflow illustration</small></div></section>
+<section class="wsb-feature" id="openMomentumBot"><div><div class="momentum-kicker">Momentum Bot · Automated opening cycle</div><h2>Set your rules. <em>Let Momentum manage the cycle.</em></h2><p>Scan momentum candidates, apply your filters and qualify the setup. Once armed, Momentum manages the opening long, watches for completed-candle reversal confirmation and manages the short side before finishing the cycle.</p><div class="momentum-features"><span>Pre-market gain + relative-volume scanning</span><span>Price, volume + market-cap filters</span><span>Opening momentum long automation</span><span>Broker-held protective stops</span><span>Automatic trailing-stop management</span><span>Completed 5-minute reversal confirmation</span><span>Confirmed reversal short automation</span><span>Scanner/results + chart/positions pages</span></div><p class="momentum-link">Scan → Filter → Qualify → Arm → LONG → confirmed reversal → SHORT → DONE.<br><a href="#momentumCard">View Momentum Bot in the bot collection ↑</a></p></div><div class="feature-visual"><a href="assets/images/momentum bot.png" target="_blank" rel="noopener"><img src="assets/images/momentum bot.png" alt="WallStreetBots.org Momentum Bot chart and trading workflow" loading="lazy"></a><small>Momentum Bot · live chart workflow</small></div></section>
+<section class="wsb-feature" id="theHive"><div><div class="momentum-kicker">The Hive · Planned community features</div><h2>Share the setup. <em>Build the picture together.</em></h2><p>A shared trading room, updated automatically by participating bots. The Hive is planned to bring together symbol metrics, shared setups and current community activity—without requiring a running chat feed.</p><div class="momentum-features"><span>Pool symbol metrics + recorded outcomes</span><span>Share selected strategy setups</span><span>Discover popular symbols and setups</span><span>Sharing designed to run in the background</span></div><p class="momentum-link">Concept preview: shared intelligence and setups are planned features. Participation is intended to be opt-in; private chart drawings remain separate from setups you choose to share.</p></div><div class="feature-visual"><div class="visual-top">THE HIVE <span>CONCEPT PREVIEW</span></div><div class="hive-preview"><strong>Shared setup</strong><p>Symbol · timeframe · entry conditions<br>Stop / target · strategy settings</p></div><div class="hive-preview"><strong>Popular now</strong><p>Participating setups · symbol activity<br>Pooled metrics · recorded outcomes</p></div><small>Illustrative fields; no live community data shown</small></div></section>
 <section class="section" id="comingSoon">
 <div class="head"><span>MORE BOTS</span><span class="badge">COMING SOON</span></div>
 <div class="body grid">
@@ -458,7 +411,7 @@
 
 <article class="card platinum-card beebot-card">
 <div class="ct"><div class="bot-title"><span class="bot-icon">⬡</span><div class="meta"><h2>BeeBot</h2><b>AUTOMATED TRADING</b></div></div></div>
-<p>Another BotZips automated trading strategy currently in development.</p>
+<p>Another WallStreetBots.org automated trading strategy currently in development.</p>
 <div class="tags"><span>Coming Soon</span></div>
 <div class="platinum-badge">PLATINUM BOT · COMING SOON</div><div class="bot-feature-title">Key features</div><ul class="bot-list"><li>The HIVE data-sharing concept</li><li>HAL Intelligence</li><li>Platinum</li><li>Coming Soon</li></ul></article>
 
@@ -523,7 +476,7 @@
       const edition=card.querySelector('.edition:checked');
       if(edition) chosen.push({name:card.dataset.bot, edition:edition.value});
     });
-    if(control && control.checked) chosen.push({name:'BotZips Control Center', edition:'Control Panel'});
+    if(control && control.checked) chosen.push({name:'WallStreetBots.org Control Center', edition:'Control Panel'});
     return chosen;
   }
 

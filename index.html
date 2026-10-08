@@ -705,26 +705,29 @@ body{background:radial-gradient(ellipse at 76% 0%,#102a3c 0%,#0a131b 52%,#090e13
 <!-- Domain-aware hero branding; original embedded image remains a reliable fallback. -->
 <script id="domain-hero-branding">
 (function () {
+  // Explicit brand query is reliable with GoDaddy masked forwarding.
   var files = {wxy:'wxylogo.png', wallstreetbots:'wsbhero_nocandles.png', botzips:'logo.png'};
-  var host = location.hostname.toLowerCase().replace(/^www\./,'');
-  var params = new URLSearchParams(location.search);
-  var requested = (params.get('brand') || '').toLowerCase();
-  var brand = ({wxy:'wxy',wxybots:'wxy',wallstreetbots:'wallstreetbots',botzips:'botzips'})[requested] ||
-    (host === 'wxybots.com' ? 'wxy' : host === 'botzips.com' ? 'botzips' : 'wallstreetbots');
+  var params = new URLSearchParams(window.location.search);
+  var aliases = {wxy:'wxy',wxybots:'wxy',wallstreetbots:'wallstreetbots',wsb:'wallstreetbots',botzips:'botzips'};
+  var requested = aliases[(params.get('brand') || '').toLowerCase()];
+  var host = window.location.hostname.toLowerCase().replace(/^www\./,'');
+  var refHost = '';
+  try { refHost = new URL(document.referrer).hostname.toLowerCase().replace(/^www\./,''); } catch(e) {}
+  var brand = requested ||
+    (host === 'wxybots.com' || refHost === 'wxybots.com' ? 'wxy' :
+     host === 'botzips.com' ? 'botzips' : 'wallstreetbots');
   function init() {
     var img = document.querySelector('.home-hero-logo img');
     if (!img) return;
-    var original = img.getAttribute('src'); // Original embedded image works without extra files.
-    var candidate = files[brand];
+    var fallback = img.src;
     img.alt = brand === 'wxy' ? 'WXYBots logo' : brand === 'botzips' ? 'BotZips logo' : 'WallStreetBots logo';
-    if (!candidate) return;
-    // Preload so a missing PNG never replaces the working hero with a broken-image icon.
-    var preload = new Image();
-    preload.onload = function () { img.src = candidate; };
-    preload.onerror = function () { img.src = original; };
-    preload.src = candidate;
+    // Check that the external file exists before replacing the embedded fallback.
+    var test = new Image();
+    test.onload = function () { img.src = test.src; };
+    test.onerror = function () { img.src = fallback; };
+    test.src = files[brand];
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
 </script>

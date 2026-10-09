@@ -587,6 +587,7 @@ body{background:radial-gradient(ellipse at 76% 0%,#102a3c 0%,#0a131b 52%,#090e13
 </style><script id="domain-hero-brand-routing">
 /* Shared homepage branding. GoDaddy masked forwarding: ?brand=wxy or ?brand=wallstreet */
 document.addEventListener('DOMContentLoaded', function () {
+  if (document.documentElement.classList.contains('botfolios-domain')) return;
   const img = document.querySelector('.home-hero-logo img');
   if (!img) return;
   const fallback = img.getAttribute('src'); // retain original embedded logo
@@ -606,7 +607,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <script id="botfolios-domain-detection">
 (function(){
   var host=window.location.hostname.toLowerCase().replace(/\.$/, '');
-  var isBotfolios=host==='botfolios.com'||host==='www.botfolios.com';
+  var requestedBrand=(new URLSearchParams(window.location.search).get('brand')||'').trim().toLowerCase();
+  var isBotfolios=requestedBrand==='botfolios'||(requestedBrand===''&&(host==='botfolios.com'||host==='www.botfolios.com'));
   document.documentElement.classList.toggle('botfolios-domain',isBotfolios);
   if(isBotfolios){
     document.title='Botfolios | Automated Trading';

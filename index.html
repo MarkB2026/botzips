@@ -403,6 +403,11 @@ body{background:radial-gradient(ellipse at 76% 0%,#102a3c 0%,#0a131b 52%,#090e13
 @media(max-width:1020px){.home-primary .illustrated-card>p{max-width:100%;padding-right:0}.home-primary .feature-art{opacity:.18;right:5px;top:90px;width:48%}}
 @media(max-width:680px){.home-primary .illustrated-card{min-height:0}.home-primary .feature-art{width:32%;opacity:.22}.home-primary .feature-chips span{white-space:normal}}
 </style>
+<style id="home-feature-chip-alignment">
+/* Align the feature chip rows across the two homepage product cards. */
+.home-primary .illustrated-card>.feature-chips{margin-top:auto;align-content:end;}
+.home-primary .illustrated-card>.path-button{margin-top:0;}
+</style>
 <style id="home-benefits-compact-style">
 /* Only the two former homepage information panels are consolidated. */
 .home-benefits{border:1px solid #32708d;background:linear-gradient(145deg,#122536,#101c29);border-radius:12px;padding:24px 28px;margin:0 0 18px}
@@ -596,7 +601,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.documentElement.dataset.siteBrand = brand;
   if (brand === 'botfolios') return; // Existing Botfolios embedded logo remains in use.
   const img = document.querySelector('.home-hero-logo img:not(.botfolios-hero-logo)');
-  const filenames = {wxy:'assets/wxylogo.png',wallstreet:'assets/wsbhero_nocandles.png',botzips:'assets/logo.png'};
+  const filenames = {wxy:'assets/wxylogo.png',wallstreet:'assets/wsbhero_nocandles.png',botzips:'logo.png'};
   const labels = {wxy:'WXYBots logo',wallstreet:'WallStreetBots logo',botzips:'BotZips logo'};
   if (img) { img.alt = labels[brand]; img.src = filenames[brand]; }
   const nav = document.querySelector('.site-nav .site-brand');

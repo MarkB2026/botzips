@@ -1,376 +1,32 @@
-<!DOCTYPE html>
-
-<html lang="en"><head>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FT272GQ5T5"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-FT272GQ5T5');</script>
-<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Trading Bots | WallStreetBots.org</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WallStreetBots.org — Trading Bots & Tools</title>
 <style>
-:root{--bg:#090f14;--panel:#101922;--line:#29404f;--text:#eef7fb;--muted:#91a6b4;--cyan:#25c7e8;--good:#55d694;--gold:#e8b95a;--purple:#9b6cff;--purple2:#6f45d8}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 70% 0,#112a39 0,#090f14 34%);color:var(--text);font:14px/1.55 Segoe UI,Arial,sans-serif}
-.release{background:linear-gradient(90deg,#123f57,#159bce,#123f57);padding:10px;text-align:center;font-weight:900;letter-spacing:.7px;border-bottom:1px solid #62d8f5}
-.shell{max-width:1180px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
-.brand{font-size:24px;font-weight:1000;letter-spacing:1px}.brand span{color:var(--cyan)}.badge{border:1px solid #245064;background:#102633;color:#87e7fa;border-radius:999px;padding:7px 11px;font-weight:800;font-size:12px}
-.hero{padding:58px 0 34px;max-width:900px}.eyebrow{color:#67c7ee;font-size:11px;letter-spacing:1.9px;font-weight:900}.hero h1{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-1.8px;margin:10px 0 14px}.hero em{font-style:normal;color:var(--cyan)}.hero p{font-size:18px;color:#b8cbd8;max-width:800px}
-.section{background:linear-gradient(180deg,var(--panel),#0e161e);border:1px solid var(--line);border-radius:12px;margin:15px 0;overflow:hidden}.head{padding:15px 18px;border-bottom:1px solid var(--line);font-weight:900;letter-spacing:.45px;display:flex;justify-content:space-between;gap:10px;align-items:center}.body{padding:18px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{border:1px solid rgba(63,166,214,.42);background:linear-gradient(155deg,rgba(24,92,126,.34),rgba(13,45,64,.52));border-radius:12px;padding:18px;min-height:245px;display:flex;flex-direction:column}.card:hover{border-color:#3c7691}.ct{display:flex;justify-content:space-between;gap:10px}.card h2{font-size:22px;margin:0}.card b{font-size:10px;letter-spacing:1px;color:#77dff4}.card p{color:#a9bdc9}.pick{width:20px;height:20px;accent-color:var(--cyan)}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}.tags span{border:1px solid #2b4555;background:#0d1820;border-radius:999px;padding:4px 8px;color:#9fb8c6;font-size:11px;font-weight:700}
-.editions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}.editions label{border:1px solid #334e60;border-radius:9px;padding:10px;background:#0d171f;display:flex;align-items:center;gap:8px;cursor:pointer}.editions label.premium{border-color:#665a38}.editions input{width:18px;height:18px;accent-color:var(--cyan)}.editions strong,.editions small{display:block}.editions small{color:#8fa6b4}.premium strong{color:#f0c96e}.platinum-card{border-color:rgba(178,135,255,.48)!important;background:linear-gradient(155deg,rgba(115,72,180,.30),rgba(53,31,86,.52))!important;box-shadow:inset 0 0 30px rgba(145,92,246,.05)}.platinum-card:hover{border-color:rgba(194,158,255,.72)!important}.platinum-card .bot-icon,.platinum-card b{color:#c9adff!important}.platinum-badge{margin-top:14px;border:1px solid #8b95a1;border-radius:9px;padding:10px 12px;background:linear-gradient(180deg,#252c33,#171c21);color:#e6edf3;font-size:11px;font-weight:900;letter-spacing:.7px;text-align:center}
-.summary{display:grid;grid-template-columns:1.5fr 1fr;gap:15px}.box{border:1px solid #304858;border-radius:10px;background:#0e1820;padding:17px}.box h3{margin-top:0}.box p{color:#9db1bd}.free{font-size:27px;font-weight:950;color:var(--good)}.createBtn{border:0;border-radius:8px;padding:14px 18px;font-weight:900;background:linear-gradient(180deg,#39d4f0,#1299b9);color:#06171d;cursor:pointer;width:100%}.createBtn:disabled{opacity:.4;cursor:not-allowed}.btn{border-radius:8px;padding:13px 18px;font-weight:900;display:inline-block;background:linear-gradient(180deg,#39d4f0,#1299b9);color:#06171d;opacity:.45}.note{padding:12px 14px;border-left:3px solid #0b7e99;background:#0c151d;color:#a8bdc9;border-radius:4px}
-.checkout{border:1px dashed #4b6574;border-radius:10px;padding:18px;background:#0d161d}.checkout h3{margin:0 0 7px;color:#f0c96e}.checkout p{color:#a9bdc9}.footer{text-align:center;color:#738794;font-size:12px;padding:28px 0}
-@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.summary{grid-template-columns:1fr}}@media(max-width:620px){.grid{grid-template-columns:1fr}.editions{grid-template-columns:1fr}}
-
-.bot-title{display:flex;align-items:center;gap:10px}.bot-icon{width:28px;height:28px;display:grid;place-items:center;color:#7eddf2;font-size:23px;font-weight:800;line-height:1;flex:0 0 auto}.bot-title h2{margin:0}.bot-title .meta{min-width:0}
-.bot-banner{margin:-18px -18px 0;padding:15px 18px 14px;background:transparent;border-bottom:1px solid rgba(167,139,250,.20);border-radius:11px 11px 0 0}
-.bot-banner .ct{align-items:flex-start}.bot-banner p{margin:9px 0 0;color:#b9b1c9}.bot-banner .bot-icon{color:#77dff4}.bot-banner .bot-title b{color:#bba7e8}
-.premium-only{grid-template-columns:1fr}.premium-only label{width:100%}
-.botfolio-section .card{
-  background:
-    linear-gradient(rgba(139,92,246,.12),rgba(139,92,246,.12)),
-    linear-gradient(155deg,#162530,#101922);
-  border-color:rgba(167,139,250,.32);
-}
-.botfolio-section .card:hover{border-color:rgba(167,139,250,.62)}
-.botfolio-section .tags{margin-top:14px}
-.botfolio-section .editions label.premium{
-  background:#17160f;
-  border-color:#665a38;
-}
-
-.auto-premium{
-  margin-top:14px;
-  border:1px solid #665a38;
-  border-radius:9px;
-  padding:10px 12px;
-  background:#17160f;
-  color:#f0c96e;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.35px;
-  text-align:center;
-}
-.basic-name{font-weight:700;color:#aabac4;font-size:.82em}
-
-/* Keep edition selectors aligned across the standalone cards. */
-.section .grid .card{height:100%}
-.standalone-editions{margin-top:14px}
-#otherBots .card .editions{margin-top:auto;padding-top:14px}
-
-/* Align the Premium info bars across all Botfolio cards. */
-.botfolio-section .card{display:flex;flex-direction:column}
-.botfolio-section .auto-premium{margin-top:auto}
-
-/* Keep the divider under each autonomous bot description perfectly aligned. */
-.botfolio-section .bot-banner{
-  min-height:190px;
-  display:flex;
-  flex-direction:column;
-}
-
-.trio-intro{padding:14px 18px 0;text-align:center}
-.trio-intro strong{display:block;font-size:18px;letter-spacing:.2px;color:#eef7fb}
-.trio-intro span{display:block;margin-top:3px;color:#9fb0bd;font-size:12px}
-
-.feature-list{margin:14px 0 0;padding:11px 12px;border:1px solid rgba(91,190,230,.24);border-radius:9px;background:rgba(4,18,27,.34);display:grid;gap:7px}
-.feature-item{display:flex;align-items:center;gap:8px;color:#c7d8e2;font-size:11px;font-weight:750}
-.feature-dot{width:11px;height:11px;border:2px solid #64d6f0;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(6,20,28,.9);flex:0 0 auto}
-.platinum-card .feature-list{border-color:rgba(185,151,255,.28);background:rgba(34,20,55,.30)}
-.platinum-card .feature-dot{border-color:#c2a1ff}
-.beebot-card{border-color:rgba(245,196,70,.55)!important;background:linear-gradient(155deg,rgba(171,122,22,.30),rgba(76,54,12,.52))!important;box-shadow:inset 0 0 30px rgba(255,205,72,.06)}
-.beebot-card:hover{border-color:rgba(255,216,108,.82)!important}
-.beebot-card .bot-icon,.beebot-card b{color:#ffd76d!important}
-.beebot-card .feature-list{border-color:rgba(245,196,70,.30);background:rgba(57,39,7,.30)}
-.beebot-card .feature-dot{border-color:#ffd76d}
-.beebot-card .platinum-badge{border-color:#806927;background:linear-gradient(180deg,#332b14,#211b0d);color:#ffe29a}
-
-</style>
-<style id="bitcoin-checkout-restored-css">
-.payment-panel{display:none;margin-top:14px;padding:16px;border:1px solid #45677b;border-radius:9px;background:#101f2b}
-.payment-panel.show{display:block}.payment-panel code{word-break:break-all;color:#b6e9ff}
-.copyrow{display:flex;justify-content:space-between;gap:12px;align-items:baseline;border-bottom:1px solid #263b48;padding:8px 0}
-.copyrow button{border:0;background:transparent;color:#86cfe9;text-decoration:underline;cursor:pointer}
-.field{display:grid;gap:6px;margin:13px 0;color:#b8c9d5}.field input{height:42px;border:1px solid #355061;border-radius:7px;background:#0b1219;color:#fff;padding:8px 10px;width:100%}
-.restore{margin-top:17px;padding:16px;border:1px solid #385263;border-radius:9px;background:#101d28}
-.restore-row{display:flex;gap:9px}.restore-row input{flex:1;height:42px;border:1px solid #355061;border-radius:7px;background:#0b1219;color:#fff;padding:8px 10px}
-.status{margin-top:12px;color:#9fd8e9;min-height:21px;white-space:pre-wrap}.error{color:#ffadad}
-.license{padding:12px;margin:12px 0;border:1px solid #3f8068;background:#122b25;border-radius:8px}.license code{overflow-wrap:anywhere}
-.fine{font-size:12px;color:#8fa4b1}
-.checkout .btn{border:0;border-radius:8px;padding:13px 18px;font-weight:900;cursor:pointer;background:linear-gradient(180deg,#39d4f0,#1299b9);color:#06171d}
-.checkout .btn.secondary{background:#193747;color:#d7f3ff;border:1px solid #3c7896}
-.checkout .btn.gold{background:linear-gradient(180deg,#ffdc89,#d8a638);color:#261a08}
-@media(max-width:560px){.restore-row{flex-direction:column}.checkout .btn{width:100%}}
-</style>
-<style id="bitcoin-button-visibility-fix">
-#bitcoinCheckout .btn{
-  background:linear-gradient(180deg,#42dcf4,#18afd0);
-  color:#04151b;
-  border:1px solid #69e7fb;
-  box-shadow:0 0 0 1px rgba(37,199,232,.18),0 4px 12px rgba(0,0,0,.22);
-  opacity:1;
-}
-#bitcoinCheckout .btn:hover{
-  filter:brightness(1.08);
-  transform:translateY(-1px);
-}
-#bitcoinCheckout .btn.gold{
-  background:linear-gradient(180deg,#ffe29a,#e8b44d);
-  color:#241805;
-  border-color:#ffe09a;
-}
-#bitcoinCheckout .btn.secondary{
-  background:#193747;
-  color:#bfefff;
-  border:1px solid #4c8ca9;
-}
-#bitcoinCheckout .btn:disabled{
-  opacity:.42;
-  filter:saturate(.55);
-  box-shadow:none;
-  cursor:not-allowed;
-}
-</style>
-<style id="premium-license-gate-fix">
-#premiumDownload[hidden],
-#restoredDownload[hidden],
-#issuedLicense[hidden]{
-  display:none !important;
-}
-#premiumDownload:disabled,
-#restoredDownload:disabled{
-  opacity:.38 !important;
-  filter:saturate(.45) !important;
-  cursor:not-allowed !important;
-  pointer-events:none !important;
-}
-</style>
-<style id="bots-card-rebuild">
-#botCatalog .body.grid,#comingSoon .body.grid,#comingSoonMore .body.grid{
-  display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
-  gap:18px!important;align-items:stretch!important
-}
-#botCatalog article.card,#comingSoon article.card,#comingSoonMore article.card{
-  min-width:0!important;width:100%!important;min-height:430px!important;
-  padding:22px!important;border-radius:14px!important;
-  display:flex!important;flex-direction:column!important;
-  background:linear-gradient(155deg,rgba(27,91,125,.30),rgba(15,39,55,.62))!important;
-  border:1px solid rgba(72,155,194,.48)!important
-}
-#comingSoon article.platinum-card{
-  background:linear-gradient(145deg,rgba(112,73,169,.30),rgba(43,31,67,.65))!important;
-  border-color:rgba(163,126,218,.58)!important
-}
-#comingSoon article.beebot-card{
-  background:linear-gradient(145deg,rgba(180,133,31,.30),rgba(68,51,17,.66))!important;
-  border-color:rgba(211,166,65,.62)!important
-}
-#botCatalog .bot-top,#comingSoon .bot-top{display:flex!important;gap:14px!important;align-items:center!important}
-#botCatalog .bot-icon,#comingSoon .bot-icon{
-  width:48px!important;height:48px!important;min-width:48px!important;flex:0 0 48px!important;
-  display:grid!important;place-items:center!important;border-radius:11px!important;
-  background:#173241!important;border:1px solid #35637b!important;color:#70dcf3!important;
-  font-size:22px!important;line-height:1!important
-}
-#comingSoon .platinum-card .bot-icon{background:#372b50!important;border-color:#9d7bc3!important;color:#d8c4ff!important}
-#comingSoon .beebot-card .bot-icon{background:#42351c!important;border-color:#ae8b3c!important;color:#f4d47b!important}
-#botCatalog .bot-name,#comingSoon .bot-name{font-size:22px!important;line-height:1.12!important;margin:0!important;color:#eef7fb!important}
-#botCatalog .bot-subtitle,#comingSoon .bot-subtitle{font-size:12px!important;font-weight:700!important;color:#bad0de!important;margin-top:4px!important}
-#botCatalog .bot-desc,#comingSoon .bot-desc{font-size:13px!important;line-height:1.55!important;color:#aabfce!important;margin:17px 0 10px!important}
-#botCatalog .bot-feature-title,#comingSoon .bot-feature-title{font-size:10px!important;letter-spacing:1.1px!important;text-transform:uppercase!important;color:#80cddd!important;font-weight:900!important;margin:5px 0 7px!important}
-#botCatalog .bot-list,#comingSoon .bot-list{list-style:none!important;padding:0!important;margin:0 0 14px!important;display:grid!important;gap:6px!important}
-#botCatalog .bot-list li,#comingSoon .bot-list li{font-size:12px!important;color:#d1dfeb!important;line-height:1.4!important;padding-left:18px!important;position:relative!important}
-#botCatalog .bot-list li:before,#comingSoon .bot-list li:before{content:'✓'!important;color:#56d7b0!important;position:absolute!important;left:0!important;font-weight:900!important}
-#botCatalog .bot-tags,#comingSoon .bot-tags{display:flex!important;flex-wrap:wrap!important;gap:7px!important;margin:4px 0 12px!important}
-#botCatalog .bot-tags span,#comingSoon .bot-tags span{border:1px solid #3a586a!important;border-radius:5px!important;color:#c3e1ec!important;font-size:10px!important;padding:4px 7px!important;background:rgba(255,255,255,.025)!important}
-#botCatalog .editions{margin-top:auto!important;padding-top:14px!important}
-#comingSoon .platinum-badge{margin-top:auto!important}
-@media(max-width:930px){#botCatalog .body.grid,#comingSoon .body.grid,#comingSoonMore .body.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:650px){#botCatalog .body.grid,#comingSoon .body.grid,#comingSoonMore .body.grid{grid-template-columns:1fr!important}}
-#comingSoonMore article.card{min-width:0;width:100%;min-height:430px;padding:22px;border-radius:14px;display:flex;flex-direction:column;background:linear-gradient(155deg,rgba(27,91,125,.30),rgba(15,39,55,.62));border:1px solid rgba(72,155,194,.48)}
-#comingSoonMore article.platinum-card{background:linear-gradient(145deg,rgba(112,73,169,.30),rgba(43,31,67,.65));border-color:rgba(163,126,218,.58)}
-#comingSoonMore article.beebot-card{background:linear-gradient(145deg,rgba(180,133,31,.30),rgba(68,51,17,.66));border-color:rgba(211,166,65,.62)}
-#comingSoonMore .bot-icon{width:48px;height:48px;min-width:48px;display:grid;place-items:center;border-radius:11px;background:#173241;border:1px solid #35637b;color:#70dcf3;font-size:22px}
-#comingSoonMore .platinum-card .bot-icon{background:#372b50;border-color:#9d7bc3;color:#d8c4ff}
-#comingSoonMore .beebot-card .bot-icon{background:#42351c;border-color:#ae8b3c;color:#f4d47b}
-#comingSoonMore .platinum-badge{margin-top:auto}
-</style>
-<style id="control-center-hub-treatment">
-/* Control Center: same WallStreetBots.org blue family, but visually heavier to read as the hub. */
-#botCatalog article.control-card{
-  background:linear-gradient(155deg,rgba(20,83,118,.78),rgba(10,42,61,.92))!important;
-  border:2px solid rgba(80,181,224,.78)!important;
-  box-shadow:
-    inset 0 0 34px rgba(37,199,232,.045),
-    0 0 0 1px rgba(37,199,232,.06)!important;
-}
-#botCatalog article.control-card:hover{
-  border-color:rgba(108,210,244,.95)!important;
-}
-</style>
-<style id="edition-buttons-bottom-align">
-/* Keep Premium/Beta and Platinum call-to-action bars pinned to card bottoms. */
-#botCatalog article.card .editions{
-  margin-top:auto!important;
-  padding-top:14px!important;
-}
-#comingSoon article.card .platinum-badge{
-  margin-top:auto!important;
-}
-</style>
-<style id="reversal-basic-free-treatment">
-/* Only the Reversal Basic FREE selector is green; the card stays standard WallStreetBots.org blue. */
-#botCatalog article.reversal-basic-card .basic-free{
-  background:linear-gradient(180deg,rgba(30,112,75,.92),rgba(18,75,53,.96))!important;
-  border-color:rgba(83,210,145,.78)!important;
-}
-#botCatalog article.reversal-basic-card .basic-free strong{
-  color:#8af0ba!important;
-}
-#botCatalog article.reversal-basic-card .basic-free small{
-  color:#b9e8cf!important;
-  font-weight:900;
-}
-</style>
-<style id="platinum-button-bottom-fix">
-/* Pin Platinum status buttons to the bottom edge of Coming Soon cards. */
-#comingSoon article.platinum-card{
-  display:flex!important;
-  flex-direction:column!important;
-}
-#comingSoon article.platinum-card .platinum-badge{
-  order:99!important;
-  margin-top:auto!important;
-  margin-bottom:0!important;
-}
-</style>
-<style id="control-center-card-link">
-#botCatalog .control-card-link{
-  color:inherit!important;
-  text-decoration:none!important;
-  display:flex!important;
-  flex-direction:column!important;
-  flex:1 1 auto!important;
-}
-#botCatalog .control-card-link:hover h2{color:#8eeaff!important}
-#botCatalog .control-card-link .tags span:last-child{
-  color:#8eeaff!important;
-  border-color:#3f7f9d!important;
-}
-</style>
-<style id="momentum-scanner-showcase-css">
-.momentum-scanner-showcase{margin:18px 0 15px;padding:25px;border:1px solid rgba(72,155,194,.58);border-radius:14px;background:radial-gradient(circle at 88% 10%,rgba(37,199,232,.12),transparent 30%),linear-gradient(155deg,rgba(27,91,125,.30),rgba(15,39,55,.70));display:grid;grid-template-columns:minmax(0,.92fr) minmax(440px,1.08fr);gap:28px;align-items:center}
-.momentum-kicker{color:#77dff4;font-size:10px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase}
-.momentum-scanner-showcase h2{font-size:30px;line-height:1.08;margin:7px 0 10px}.momentum-scanner-showcase h2 em{font-style:normal;color:var(--cyan)}
-.momentum-scanner-showcase p{color:#a9bdc9;margin:0 0 13px}
-.momentum-features{display:grid;grid-template-columns:1fr 1fr;gap:7px 16px;margin:15px 0 18px}
-.momentum-features span{font-size:11px;color:#d1dfeb;padding-left:17px;position:relative}.momentum-features span:before{content:'✓';position:absolute;left:0;color:#56d7b0;font-weight:900}
-.momentum-link{padding:11px 12px;border:1px solid #31566a;border-radius:9px;background:#0b1821;color:#b8cbd8!important;font-size:12px}.momentum-link strong{color:#eef7fb}
-.momentum-media{display:grid;grid-template-columns:1fr 1fr;gap:11px}
-.momentum-media a{display:block;position:relative;overflow:hidden;border:1px solid #355d72;border-radius:10px;background:#071018;min-height:190px}
-.momentum-media img,.momentum-media video{display:block;width:100%;height:100%;min-height:190px;object-fit:cover}
-.momentum-media-label{position:absolute;left:9px;bottom:9px;padding:5px 8px;border-radius:6px;background:#071018e8;border:1px solid #42677a;color:#eef7fb;font-size:9px;font-weight:900;letter-spacing:.7px}
-.momentum-play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}.momentum-play i{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#071018dd;border:1px solid #70dcf3;color:#70dcf3;font-style:normal;font-size:20px;padding-left:3px}
-@media(max-width:900px){.momentum-scanner-showcase{grid-template-columns:1fr}.momentum-media a{min-height:220px}}
-@media(max-width:600px){.momentum-features,.momentum-media{grid-template-columns:1fr}.momentum-scanner-showcase{padding:18px}}
-</style>
-<style id="beebot-premium-bottom-fix">
-#comingSoon .beebot-card{display:flex!important;flex-direction:column!important}
-#comingSoon .beebot-card .platinum-badge{order:99!important;margin-top:auto!important;margin-bottom:0!important}
-</style>
-<style id="momentum-premium-beta-css">
-.momentum-premium-badge{
-  display:inline-block;margin:9px 0 2px;padding:5px 9px;
-  border:1px solid #665a38;border-radius:6px;
-  background:#17160f;color:#f0c96e;
-  font-size:10px;font-weight:900;letter-spacing:.8px;
-}
-</style>
-<style id="wsb-feature-banners">
-.wsb-feature{margin:22px 0;padding:30px;border:1px solid #31586e;border-radius:14px;background:linear-gradient(145deg,#102839,#0c1925);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;align-items:center}
-.wsb-feature>div{min-width:0}.wsb-feature h2{font-size:clamp(25px,3vw,36px);line-height:1.12;margin:10px 0 16px}.wsb-feature h2 em{font-style:normal;color:#25c7e8}.wsb-feature p{color:#b9ccd8;line-height:1.65}.wsb-feature a{color:#8ee6ff}.feature-visual{padding:18px;border:1px solid #345368;border-radius:12px;background:#08131e}.visual-top{font-size:12px;font-weight:850;color:#d5efff;display:flex;justify-content:space-between;gap:12px;margin-bottom:16px}.visual-top span{font-size:9px;color:#77c7da}.feature-visual svg,.feature-visual img{display:block;width:100%;height:auto;object-fit:contain}.feature-visual small{display:block;margin-top:14px;color:#8aa7b9;font-size:11px}.trade-level{padding:24px 8px;margin:15px 0;border-bottom:2px solid;font-weight:800;font-size:13px}.trade-level span{float:right;font-weight:400;font-size:11px}.target{color:#5ce2aa;background:#10382c}.entry{color:#8ad9ff;background:#102c40}.stop{color:#ff9ea8;background:#391b28}.hive-preview{padding:16px;margin:12px 0;border:1px solid #345368;border-radius:9px}.hive-preview strong{color:#7ce5ef}.hive-preview p{font-size:13px;margin:8px 0}
-@media(max-width:850px){.wsb-feature{grid-template-columns:1fr;padding:22px;gap:20px}}
-@media(max-width:560px){.wsb-feature{padding:18px}.wsb-feature .momentum-features{grid-template-columns:1fr}.trade-level span{float:none;display:block;margin-top:8px}}
-</style>
-<style id="feature-graphic-refinements">.hive-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.hive-stats>div{background:#122a35;border:1px solid #355569;padding:12px 7px;border-radius:8px;text-align:center}.hive-stats small{font-size:9px;margin:0}.hive-stats strong{display:block;font-size:22px;color:#ffd36b}.hive-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:11px}.hive-table th,.hive-table td{text-align:left;padding:10px 6px;border-bottom:1px solid #2a4354}.hive-table th{color:#9bc8d8;font-size:9px}.hive-bar{height:9px;background:linear-gradient(90deg,#18b6db,#ffd05b);border-radius:4px}.hal-flow{display:grid;justify-items:center;gap:7px;padding:14px}.hal-flow div{width:85%;text-align:center;border:1px solid #3a687e;background:#112c3b;border-radius:8px;padding:12px;font-weight:850;letter-spacing:1px}.hal-flow span{color:#59cfe9}.hal-flow .hal-focus{border-color:#5bd7ee;color:#71e6ff;background:#12425b;box-shadow:0 0 18px #20a5d333}@media(max-width:500px){.hive-stats strong{font-size:17px}.hive-table{font-size:10px}}</style><style id="hive-diagram-mobile">#theHive .feature-visual{overflow:hidden}#theHive .feature-visual svg{max-width:100%}@media(max-width:560px){#theHive .feature-visual{padding:12px}#theHive .visual-top{font-size:11px;gap:8px}#theHive .visual-top span{font-size:8px}}</style><style id="advanced-chart-catalog-promo-css">
-#botCatalog .advanced-chart-promo{grid-column:span 2;min-width:0;min-height:430px;border:1px solid #3888a6;border-radius:14px;padding:22px;background:radial-gradient(circle at 86% 15%,rgba(40,183,229,.14),transparent 40%),linear-gradient(135deg,#10334a,#0b1d2a);display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.9fr);gap:20px;align-items:center;overflow:hidden}
-#botCatalog .advanced-chart-promo h2{font-size:clamp(24px,2.7vw,34px);line-height:1.12;margin:8px 0 12px}
-#botCatalog .advanced-chart-promo h2 em{font-style:normal;color:#63dff5}
-#botCatalog .advanced-chart-promo p{color:#b5ccda;font-size:13px;line-height:1.6}
-#botCatalog .chart-promo-eyebrow{font-size:10px;font-weight:900;letter-spacing:1.4px;color:#70e0f6}
-#botCatalog .chart-promo-points{display:grid;gap:8px;margin:14px 0 19px;color:#d3e8f1;font-size:12px}
-#botCatalog .chart-promo-points span:before{content:'✓';color:#5ee0b0;font-weight:900;margin-right:9px}
-#botCatalog .chart-promo-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-#botCatalog .chart-promo-actions a,#botCatalog .chart-promo-actions button{display:inline-flex;justify-content:center;align-items:center;min-height:42px;padding:10px 15px;border-radius:8px;font-size:12px;font-weight:900;text-decoration:none}
-#botCatalog .chart-promo-actions .chart-view{color:#051922;background:linear-gradient(#5be0f5,#1bb3d5);border:1px solid #6ceaff}
-#botCatalog .chart-promo-actions .chart-download{background:#102d3e;color:#9bb7c7;border:1px solid #41657a;cursor:not-allowed;opacity:.8}
-#botCatalog .chart-promo-note{font-size:10px!important;color:#91aebf!important;margin-top:12px!important}
-#botCatalog .chart-promo-screen{border:1px solid #3b718c;border-radius:12px;background:#07151f;padding:10px;box-shadow:0 12px 32px #0005;min-width:0}
-#botCatalog .chart-promo-screen .screen-head{font-size:10px;color:#90d6ed;padding:5px 6px 11px;display:flex;justify-content:space-between;gap:8px}
-#botCatalog .chart-promo-screen svg{width:100%;height:auto;display:block}
-@media(max-width:950px){#botCatalog .advanced-chart-promo{grid-template-columns:1fr}}
-@media(max-width:650px){#botCatalog .advanced-chart-promo{grid-column:span 1;padding:18px}}
-</style><style id="compatibility-strips-20261008">
-.compat-strip{display:flex;flex-wrap:wrap;align-items:center;gap:7px 9px;padding:11px 13px;margin-top:15px;border:1px solid #365d70;border-radius:9px;background:#081c28;color:#c7e6f1;font-size:11px;line-height:1.5}
-.compat-strip .compat-label{font-size:10px;font-weight:900;letter-spacing:.9px;color:#6fdaf1;text-transform:uppercase;margin-right:4px}
-.compat-strip .compat-pill{border:1px solid #3b6275;background:#102d3d;border-radius:5px;padding:4px 8px;font-weight:750}
-.compat-strip .compat-pill.ready{border-color:#307c89;color:#b4f4ff;background:#103a45}
-.compat-strip .compat-pill.testing{border-color:#886a36;color:#ffda94;background:#362a16}
-.compat-strip .compat-pill.install{border-color:#347a5d;color:#a9f1c9;background:#133529}
-.compat-strip .compat-note{width:100%;color:#92aab8;font-size:10px}
-.wsb-feature .compat-strip{grid-column:1/-1;margin-top:0}
-#botCatalog article.card .compat-strip,#comingSoon article.card .compat-strip,#comingSoonMore article.card .compat-strip{margin-top:12px}
-#botCatalog .advanced-chart-promo .compat-strip{grid-column:1/-1;margin-top:0}
-@media(max-width:560px){.compat-strip{gap:6px;padding:10px}.compat-strip .compat-pill{font-size:10px}}
-</style><style id="one-click-feature-emphasis">
-/* Installation is a major product feature, not compatibility fine print. */
-.compat-strip .compat-pill.install{order:20;flex-basis:100%;display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:9px 11px;margin-top:4px;border:1px solid rgba(73,180,224,.48);border-radius:8px;background:linear-gradient(110deg,rgba(26,106,148,.25),rgba(20,82,121,.36));color:#c7f1ff;font-size:clamp(12px,1.2vw,14px);font-weight:850;letter-spacing:.2px;box-shadow:none}
-.compat-strip .compat-pill.install::before{content:'✓';display:inline-grid;place-items:center;flex:none;width:19px;height:19px;border-radius:50%;background:rgba(51,179,225,.24);border:1px solid rgba(100,214,248,.55);color:#85e3ff;font-size:13px;font-weight:900}
-.compat-strip .compat-note{order:21;font-size:12px;line-height:1.5;color:#b9d0db;text-align:center}
-@media(max-width:560px){.compat-strip .compat-pill.install{font-size:12px;padding:9px 8px}.compat-strip .compat-note{font-size:11px}}
-</style><style id="beta-feature-download-css">
-.beta-feature-download{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:15px;padding:13px 22px;border-radius:9px;border:1px solid #9aeeff;background:linear-gradient(180deg,#64e5ff,#19a8ed);box-shadow:0 5px 20px rgba(31,179,255,.27),inset 0 1px 0 rgba(255,255,255,.24);color:#041c30!important;font-weight:900;font-size:14px;letter-spacing:.45px;text-decoration:none!important;box-shadow:0 5px 18px #0004;transition:filter .15s,transform .15s}
-.beta-feature-download:hover:not([aria-disabled="true"]){filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 7px 26px rgba(31,179,255,.38)}
-.beta-feature-download[aria-disabled="true"]{opacity:.78;cursor:not-allowed;filter:saturate(.75)}
-.beta-feature-download-note{display:block;margin-top:7px;font-size:11px;color:#91b2c3}
-</style><style id="beta-download-highlight-20261008">
-.beta-feature-download{gap:13px;padding:14px 21px;font-size:14px;line-height:1.3;box-shadow:0 5px 20px rgba(31,179,255,.26)!important}
-.beta-download-arrow{font-size:27px;font-weight:1000;line-height:1;display:inline-block;flex:none}
-.beta-feature-download[data-beta-download="advancedChart"]{background:linear-gradient(180deg,#64e5ff,#19a8ed);border-color:#9aeeff;color:#041c30!important;box-shadow:0 5px 22px rgba(31,179,255,.33)!important}
-.beta-feature-download[data-beta-download="miniScalper"],.beta-feature-download[data-beta-download="openMomentumBot"]{background:linear-gradient(180deg,#64e5ff,#19a8ed);border-color:#9aeeff;color:#041c30!important;box-shadow:0 5px 22px rgba(31,179,255,.33)!important}
-.beta-feature-download[data-beta-download="openMomentumBot"]:hover{filter:brightness(1.1);transform:translateY(-2px)}
-@media(max-width:560px){.beta-feature-download{width:100%;font-size:12px;padding:13px 10px}.beta-download-arrow{font-size:24px}}
-</style><style id="momentum-live-demo-link-style">
-.momentum-live-demo{display:inline-flex;align-items:center;gap:10px;margin:12px 0 5px;padding:11px 16px;border:1px solid #62d8f5;border-radius:9px;background:linear-gradient(120deg,rgba(25,129,187,.36),rgba(15,62,96,.7));color:#e5f8ff!important;font-weight:900;text-decoration:none!important;box-shadow:0 4px 16px #0003}.momentum-live-demo:hover{background:linear-gradient(120deg,rgba(34,160,219,.55),rgba(20,83,124,.8));border-color:#a3ecff}.momentum-live-demo .demo-play{font-size:19px;color:#7fe8ff}.momentum-demo-note{display:block;font-size:11px;color:#a6c4d3;margin:2px 0 10px}
-</style><style id="wider-bot-cards-20261008">
-/* Wider catalog cards: two columns on desktop, one on smaller screens. */
-@media(min-width:851px){
- #botCatalog .body.grid,#comingSoon .body.grid,#comingSoonMore .body.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
-}
-@media(max-width:850px){
- #botCatalog .body.grid,#comingSoon .body.grid,#comingSoonMore .body.grid{grid-template-columns:1fr!important;}
-}
-/* The chart promotion should remain within the two-column layout. */
-</style><style>
-.release-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:17px}
-.release-button{padding:13px 14px;border-radius:9px;font-size:12px;font-weight:900;flex:1;min-width:165px;opacity:1!important;cursor:not-allowed}
-.release-button.free{border:1px solid #62dbef;background:linear-gradient(180deg,#238fa8,#125a70);color:#d6faff}
-.release-button.premium{border:1px solid #957b42;background:linear-gradient(180deg,#584623,#2c251b);color:#ffe2a4}
-.release-pending{pointer-events:none;cursor:not-allowed;opacity:.7}
-#introBots .card{border-color:#347c79!important}
-#introBots .bot-icon{color:#77e3b8!important}
-#advancedChartRelease .advanced-chart-promo{grid-column:1/-1}
-#controlDownload .card{max-width:590px}
-#introBots .card .release-actions,#advancedBots .card .release-actions{margin-top:auto}
-#introBots .body.grid,#advancedBots .body.grid,#controlDownload .body.grid,#advancedChartRelease .body.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-@media(max-width:800px){#introBots .body.grid,#advancedBots .body.grid,#controlDownload .body.grid,#advancedChartRelease .body.grid{grid-template-columns:1fr!important}}
+:root{--bg:#071019;--panel:#10202c;--line:#2c4a5e;--white:#eff9ff;--muted:#a5bcc9;--cyan:#43d9f1;--green:#65dfa8;--gold:#f4c66e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font:15px/1.55 system-ui,Segoe UI,Arial,sans-serif}button{font:inherit}a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:auto;padding:0 24px}.topbar{position:sticky;top:0;z-index:10;background:#08131bf2;border-bottom:1px solid #244050;backdrop-filter:blur(14px)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 0}.brand{font-weight:950;letter-spacing:.6px;font-size:21px}.brand b{color:var(--cyan)}.links{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;font-weight:800;color:#b8d0dd}.links a:hover{color:var(--cyan)}
+.hero{padding:82px 0 58px}.eyebrow{font-size:11px;color:var(--cyan);letter-spacing:2px;font-weight:900}.hero h1{font-size:clamp(40px,6vw,76px);letter-spacing:-3px;line-height:1.04;margin:15px 0;max-width:850px}.hero h1 em{color:var(--cyan);font-style:normal}.hero p{max-width:720px;color:#b7cad6;font-size:18px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.pill{display:inline-block;padding:12px 19px;border-radius:8px;background:var(--cyan);color:#06202b;font-weight:900}.pill.secondary{background:#152b39;border:1px solid #385b6c;color:#e7f7ff}
+.section{padding:52px 0;border-top:1px solid #1c3443}.heading{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:23px}.heading h2{font-size:clamp(27px,3.3vw,39px);letter-spacing:-1px;margin:4px 0}.heading p{color:var(--muted);margin:0;max-width:550px}.kicker{font-size:11px;letter-spacing:1.6px;color:var(--cyan);font-weight:900}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.product{display:flex;flex-direction:column;min-height:290px;padding:23px;border:1px solid #355366;border-radius:13px;background:linear-gradient(145deg,#122d3f,#0d1d29)}.product-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.glyph{font-size:32px;color:#7ee5f7}.status{font-size:10px;letter-spacing:.6px;font-weight:900;color:#9be3ef;text-align:right}.product h3{font-size:25px;margin:19px 0 5px}.lead{color:#b9cfdb;margin:0 0 24px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}.actions button,.small-card button,.feature button{border:1px solid #4e7a90;border-radius:7px;background:#1b455a;color:#e9faff;padding:10px 12px;font-size:11px;font-weight:900;cursor:pointer}.actions button:disabled,.feature button:disabled{cursor:not-allowed;opacity:.65}.actions button.more,.small-card button.more,.feature button.more{background:transparent;border-color:#365467;color:#aee9f7;opacity:1;cursor:pointer}.actions button.upgrade{color:#f9d38b;border-color:#816939;background:#352a18}
+.feature{padding:29px;border-radius:16px;border:1px solid #35586d;background:linear-gradient(120deg,#123044,#0b1c29);display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}.feature h3{font-size:clamp(27px,3.4vw,42px);line-height:1.1;letter-spacing:-1.2px;margin:10px 0}.feature p{color:#b4cbd8;max-width:640px}.feature ul{padding-left:20px;color:#d1e8f2}.feature-visual{min-height:230px;border:1px solid #2f5266;border-radius:12px;background:radial-gradient(circle at 70% 40%,#1b607d,#0b1b29 65%);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;text-align:center}.feature-visual .big{font-size:75px;color:#64e1f2;font-weight:900;line-height:1}.feature-visual span{font-size:12px;color:#a9cbdc;letter-spacing:2px;font-weight:800;margin-top:16px}.feature .actions{margin-top:20px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}.tile{padding:29px;background:#102331;border:1px solid #325064;border-radius:14px}.tile h3{font-size:28px;margin:10px 0}.tile p{color:#adc4d0}.tile .symbol{font-size:50px;color:var(--cyan)}.small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.small-card{padding:19px;border:1px solid #304c5d;border-radius:10px;background:#0f202c;display:flex;flex-direction:column;gap:10px}.small-card strong{font-size:19px}.small-card span{color:#a9c0cd;font-size:13px;flex:1}.small-card button{align-self:flex-start}
+footer{border-top:1px solid #254051;padding:35px 0;color:#8faab9;font-size:12px}.notice{font-size:12px;color:#91aeba}
+dialog{max-width:580px;width:calc(100% - 32px);border:1px solid #5a9db6;border-radius:14px;background:#102330;color:#f0f9ff;padding:28px;box-shadow:0 20px 90px #000b}dialog::backdrop{background:#000b}dialog h2{font-size:29px;margin:0 0 12px}dialog p{color:#b6ccd8}dialog li{margin:6px 0}dialog .close{background:var(--cyan);border:0;border-radius:7px;padding:9px 16px;font-weight:900;cursor:pointer}.modal-info[hidden]{display:none}.feature-visual svg{display:block;width:100%;height:auto;max-height:260px}.hive-diagram svg{display:block;width:100%;height:auto;max-height:235px}.hive-diagram{margin:-10px 0 18px;background:#081c29;border:1px solid #2c5367;border-radius:10px;padding:12px}.hal-art{display:block;width:100%;height:auto;max-height:235px;margin:-10px 0 18px}.install-footnote{border-top:1px solid #35586d;padding-top:14px;font-size:12px;color:#b2d6e4}
+@media(max-width:880px){.cards,.small-grid{grid-template-columns:repeat(2,1fr)}.feature{grid-template-columns:1fr}.links{gap:10px}}@media(max-width:610px){.cards,.small-grid,.pair{grid-template-columns:1fr}.hero{padding:55px 0}.hero h1{letter-spacing:-1.5px}.nav{align-items:flex-start;flex-direction:column}.wrap{padding:0 16px}.heading{display:block}.feature{padding:22px}}
 </style></head><body>
-<div class="release">WallStreetBots.org · DESKTOP TRADING SOFTWARE · SIMPLE INSTALLATION</div><main class="shell">
-<div class="top"><div class="brand">WALLSTREET<span>BOTS</span></div><span class="badge">AUTOMATED TRADING BOTS</span></div>
-<section class="hero">
-<div class="eyebrow">FREE BETA RELEASES · PREMIUM UPGRADES · COMING SOON</div>
-<h1>Build your trading setup.</h1>
-<p>Explore our free introductory bots, then step up to advanced strategy bots and charting. Free Beta and Premium upgrade downloads are being prepared; buttons will be activated when verified packages are uploaded.</p>
-</section>
-<section class="wsb-feature" id="advancedChart"><div><div class="momentum-kicker">Standalone desktop chart · Beta</div><h2> <em>Your chart. Your drawings.</em></h2><p>Use your broker-connected market data in a private desktop charting workspace. Free Beta includes core charting; additional Premium drawing and analysis features are planned.</p><div class="momentum-features"><span>IBKR + MT5 market-data connections</span><span>Optional Yahoo backup, with source shown</span><span>Trendlines, rectangles, channels + triangles</span><span>Fibonacci tools + five-point Cypher ratios</span><span>Editable Wyckoff schematic</span><span>SMA, EMA, VWAP, Bollinger, RSI, MACD + ATR</span><span>5m, 30m, 1h, 4h + daily charts</span><span>Zoom, pan, crosshair + chart pop-out</span></div><p class="momentum-link">Real-time pricing uses your broker’s enabled market-data subscription. Yahoo backup may be delayed. This standalone chart is a planning tool; it does not submit orders.</p><a aria-disabled="true" class="release-pending beta-feature-download" data-beta-download="advancedChart" href="#releaseCatalog">ADVANCED CHART · FREE BETA / PREMIUM</a><small class="beta-feature-download-note" data-beta-status="advancedChart">Downloads will be linked when tested ZIPs are uploaded.</small></div><div aria-label="Illustration of chart drawing tools" class="feature-visual"><div class="visual-top">ADVANCED CHART <span>LOCAL WORKSPACE</span></div><svg aria-label="Illustrative chart with X A B C D drawing" role="img" viewbox="0 0 520 240"><g stroke="#244153"><path d="M20 40H500M20 90H500M20 140H500M20 190H500"></path></g><path d="M20 170L55 140L80 155L110 90L140 110L180 80L205 100L245 60L285 90L330 75L370 100L410 55L460 70L500 35" fill="none" stroke="#2dd6ac" stroke-width="3"></path><path d="M90 180L190 50L280 160L360 85L450 185L280 160Z" fill="#608eff22" stroke="#80a7ff" stroke-width="2"></path><g fill="#dce9ff" font-size="16"><text x="82" y="205">X</text><text x="185" y="38">A</text><text x="275" y="180">B</text><text x="355" y="72">C</text><text x="445" y="205">D</text></g></svg><small>Drawing-tool illustration</small></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR</span><span class="compat-pill ready">MT5</span><span class="compat-pill ready">Yahoo backup</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Broker live data requires subscriptions; Yahoo backup may be delayed. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></section><section class="wsb-feature" id="openMomentumBot"><div><div class="momentum-kicker">Momentum Bot · Automated opening cycle</div><h2>Set your rules. <em>Let Momentum manage the cycle.</em></h2><p>Scan momentum candidates, apply your filters and qualify the setup. Once armed, Momentum manages the opening long, watches for completed-candle reversal confirmation and manages the short side before finishing the cycle.</p><div class="momentum-features"><span>Pre-market gain + relative-volume scanning</span><span>Price, volume + market-cap filters</span><span>Opening momentum long automation</span><span>Broker-held protective stops</span><span>Automatic trailing-stop management</span><span>Completed 5-minute reversal confirmation</span><span>Confirmed reversal short automation</span><span>Scanner/results + chart/positions pages</span></div><p class="momentum-link">Scan → Filter → Qualify → Arm → LONG → confirmed reversal → SHORT → DONE.<br/><a href="#momentumCard">View Momentum Bot in the bot collection ↑</a></p><a aria-disabled="true" class="release-pending beta-feature-download" data-beta-download="openMomentumBot" href="#releaseCatalog">MOMENTUM BOT · FREE BETA / PREMIUM</a><small class="beta-feature-download-note" data-beta-status="openMomentumBot">Downloads will be linked when tested ZIPs are uploaded.</small><a aria-label="Watch Momentum Bot live stop protection demo" class="momentum-live-demo" href="assets/videos/demo_change_stop_order_momentum_bot.mp4" rel="noopener" target="_blank"><span aria-hidden="true" class="demo-play">▶</span> WATCH LIVE STOP-PROTECTION DEMO ↗</a><small class="momentum-demo-note">See stop tightening on the chart and the broker order update.</small></div><div class="feature-visual"><svg aria-label="Illustrative Momentum Bot chart with opening long and confirmed reversal short" role="img" viewbox="0 0 600 320"><rect fill="#07131e" height="320" rx="10" width="600"></rect><g stroke="#1c3647" stroke-width="1"><path d="M20 55H580M20 110H580M20 165H580M20 220H580M20 275H580M100 20V300M200 20V300M300 20V300M400 20V300M500 20V300"></path></g><g stroke-width="2"><path d="M53 244V282M87 228V264M121 205V244M155 219V256M189 181V230M223 157V200M257 170V209M291 131V180M325 104V148M359 88V135M393 65V117M427 89V142M461 113V163M495 143V190M529 168V219" stroke="#59d5e8"></path></g><g><rect fill="#33c9db" height="18" width="12" x="47" y="254"></rect><rect fill="#33c9db" height="18" width="12" x="81" y="239"></rect><rect fill="#33c9db" height="20" width="12" x="115" y="216"></rect><rect fill="#d97d91" height="24" width="12" x="149" y="224"></rect><rect fill="#33c9db" height="26" width="12" x="183" y="194"></rect><rect fill="#33c9db" height="24" width="12" x="217" y="167"></rect><rect fill="#d97d91" height="23" width="12" x="251" y="178"></rect><rect fill="#33c9db" height="28" width="12" x="285" y="144"></rect><rect fill="#33c9db" height="25" width="12" x="319" y="115"></rect><rect fill="#33c9db" height="27" width="12" x="353" y="98"></rect><rect fill="#33c9db" height="28" width="12" x="387" y="78"></rect><rect fill="#d97d91" height="29" width="12" x="421" y="101"></rect><rect fill="#d97d91" height="28" width="12" x="455" y="126"></rect><rect fill="#d97d91" height="26" width="12" x="489" y="156"></rect><rect fill="#d97d91" height="28" width="12" x="523" y="182"></rect></g><path d="M38 263Q185 225 280 162T401 91Q464 106 550 193" fill="none" stroke="#37a5dd" stroke-width="2.5"></path><g font-family="Arial,sans-serif" font-size="13" font-weight="bold"><text fill="#9bdff2" x="22" y="30">ABC · 5 MIN · MOMENTUM CYCLE</text><rect fill="#104a50" height="28" rx="6" stroke="#2ecddd" width="127" x="190" y="117"></rect><text fill="#a3f5f8" x="202" y="135">OPENING LONG ↗</text><rect fill="#4b273a" height="28" rx="6" stroke="#d97d91" width="174" x="399" y="38"></rect><text fill="#ffd7e0" x="410" y="56">CONFIRMED REVERSAL ↘</text></g><circle cx="288" cy="158" fill="#38d5e0" r="8"></circle><circle cx="425" cy="105" fill="#df8497" r="8"></circle></svg><small>Momentum Bot · illustrative chart workflow (not live pricing)</small></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></section><section class="wsb-feature" id="chartTrading"><div><div class="momentum-kicker">Mini Scalper · Always free · Manual chart trading</div><h2>Place it on the chart. <em>Manage it on the chart.</em></h2><p>Build your entry, protective stop and profit-taking setup directly against the price action. Adjust the levels on the chart and manage the trade in the same workspace.</p><div class="momentum-features"><span>Click-to-chart trade setup</span><span>Adjustable entry, stop + profit levels</span><span>Hands-on position management</span><span>Chart trading planned for other bots</span></div><p class="momentum-link"><a href="#miniScalperCard">View Mini Scalper in the bot collection ↑</a></p><a aria-disabled="true" class="release-pending beta-feature-download" data-beta-download="miniScalper" href="#releaseCatalog">MINI SCALPER · ALWAYS FREE</a><small class="beta-feature-download-note" data-beta-status="miniScalper">Downloads will be linked when tested ZIPs are uploaded.</small></div><div class="feature-visual"><div class="visual-top">MINI SCALPER <span>ILLUSTRATIVE CHART INTERACTION</span></div><svg aria-label="Candlestick chart with selectable entry, stop loss, and take profit levels" role="img" viewbox="0 0 600 330"><rect fill="#07131e" height="330" rx="9" width="600"></rect><g stroke="#213c4c" stroke-width="1"><path d="M25 50H580M25 105H580M25 160H580M25 215H580M25 270H580M80 20V310M180 20V310M280 20V310M380 20V310M480 20V310"></path></g><g stroke-width="3"><path d="M58 250v35m28-49v39m28-55v36m56-80v54m28-64v52m56-55v53m28-90v56m56-45v65m56-100v62m56-75v61m56-100v75" stroke="#42dfad"></path><path d="M142 190v62m84-67v49m84-63v60m112-95v55" stroke="#ff758a"></path></g><g><rect fill="#42dfad" height="17" width="12" x="52" y="260"></rect><rect fill="#42dfad" height="23" width="12" x="80" y="246"></rect><rect fill="#42dfad" height="23" width="12" x="108" y="226"></rect><rect fill="#ff758a" height="25" width="12" x="136" y="211"></rect><rect fill="#42dfad" height="30" width="12" x="164" y="191"></rect><rect fill="#42dfad" height="25" width="12" x="192" y="176"></rect><rect fill="#ff758a" height="28" width="12" x="220" y="192"></rect><rect fill="#42dfad" height="29" width="12" x="248" y="174"></rect><rect fill="#42dfad" height="36" width="12" x="276" y="144"></rect><rect fill="#ff758a" height="27" width="12" x="304" y="164"></rect><rect fill="#42dfad" height="27" width="12" x="332" y="145"></rect><rect fill="#42dfad" height="30" width="12" x="360" y="126"></rect><rect fill="#ff758a" height="23" width="12" x="388" y="143"></rect><rect fill="#42dfad" height="35" width="12" x="416" y="118"></rect><rect fill="#42dfad" height="27" width="12" x="444" y="100"></rect><rect fill="#42dfad" height="29" width="12" x="472" y="82"></rect></g><path d="M25 64H580" stroke="#55e6a5" stroke-dasharray="8 5" stroke-width="2"></path><path d="M25 153H580" stroke="#6ecdf6" stroke-dasharray="8 5" stroke-width="2"></path><path d="M25 244H580" stroke="#ff8092" stroke-dasharray="8 5" stroke-width="2"></path><g font-family="Arial" font-size="12" font-weight="bold"><rect fill="#14573e" height="27" rx="5" width="163" x="410" y="49"></rect><text fill="#a4ffd4" x="422" y="67">TAKE PROFIT  12.80</text><rect fill="#164b68" height="27" rx="5" width="163" x="410" y="139"></rect><text fill="#d0f4ff" x="422" y="157">ENTRY  12.35  ◉</text><rect fill="#632d3c" height="27" rx="5" width="163" x="410" y="231"></rect><text fill="#ffd0d8" x="422" y="249">STOP LOSS  11.90</text><text fill="#83d9ef" x="28" y="25">ABC · 1 MIN · LONG SETUP</text></g><circle cx="398" cy="153" fill="none" r="12" stroke="#8de7ff" stroke-width="2"></circle><path d="M400 155l15 16" stroke="#fff" stroke-width="2"></path></svg><small>Example values only · click a level to stage, drag to adjust</small></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></section><section class="wsb-feature" id="theHive"><div><div class="momentum-kicker">The Hive · Planned community features</div><h2>Share the setup. <em>Build the picture together.</em></h2><p>The Hive is the planned shared-intelligence network powered by BeeBot. BeeBot will be the only bot with a direct Hive connection, keeping Reversal, Trend and ZigZag independent with their own local CSV trade histories. Members may optionally import historical CSV records through BeeBot.</p><div class="momentum-features"><span>BeeBot: exclusive direct Hive connection (planned)</span><span>Optional historical CSV import through BeeBot</span><span>Pool symbol metrics + recorded outcomes</span><span>Share selected strategy setups</span><span>Discover popular symbols and setups</span><span>Sharing designed to run in the background</span></div><p class="momentum-link">Planned: BeeBot handles opt-in Hive synchronization. Reversal, Trend and ZigZag remain standalone; no Hive integration or recurring CSV uploads required. Private chart drawings stay private unless explicitly shared.</p></div><div class="feature-visual"><div class="visual-top">THE HIVE <span>SHARED INTELLIGENCE · CONCEPT</span></div>
-<svg aria-label="BeeBot connects directly to The Hive and shares approved statistics; other trading bots keep local CSV histories" role="img" style="width:100%;height:auto;display:block" viewbox="0 0 600 440" xmlns="http://www.w3.org/2000/svg">
+<header class="topbar"><div class="wrap nav"><a class="brand" href="#">WALLSTREET<b>BOTS</b>.ORG</a><nav class="links"><a href="#free">Free Bots</a><a href="#premium">Trading Bots</a><a href="#chart">Advanced Chart</a><a href="#control">Control Panel</a><a href="#intelligence">HAL + Hive</a><a href="#other">Coming Soon</a></nav></div></header>
+<main class="wrap"><section class="hero"><div class="eyebrow">DESKTOP TRADING SOFTWARE · FREE BETA RELEASES</div><h1>Start free.<br><em>Trade your way.</em></h1><p>Start with a simple free bot. Move up to automated trading strategies, a private advanced chart, and tools built to manage your trading workspace. <strong>One-click Windows installers are planned for release—no manual Python or broker-library installation.</strong></p><div class="hero-actions"><a class="pill" href="#free">EXPLORE FREE BOTS ↓</a><a class="pill secondary" href="#premium">SEE ADVANCED BOTS →</a></div></section>
+<section class="section" id="free"><div class="heading"><div><div class="kicker">01 · ALWAYS FREE</div><h2>Free introductory bots</h2></div><p>Three simple tools to get started. No paid upgrades. One-click installers planned.</p></div><div class="cards"><article class="product"><div class="product-top"><span class="glyph">∿</span><span class="status">FREE FOREVER</span></div><h3>Mini RSI</h3><p class="lead">RSI signals. Automated paper trading.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="more" data-info="minirsi">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">⌁</span><span class="status">FREE FOREVER</span></div><h3>Mini Scalper</h3><p class="lead">One-click chart plans. Manual entries, stops and targets.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="more" data-info="miniscalper">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">⇄</span><span class="status">FREE FOREVER</span></div><h3>IF/Then Bot</h3><p class="lead">Build IF/THEN rules and test them with IBKR Paper.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="more" data-info="ifthenbot">MORE INFO ↗</button></div></article></div></section>
+<section class="section" id="premium"><div class="heading"><div><div class="kicker">02 · AUTOMATED STRATEGIES</div><h2>Trading bots</h2></div><p>Start with Free Beta. Premium upgrades unlock additional capabilities as they become available.</p></div><div class="cards"><article class="product"><div class="product-top"><span class="glyph">↗</span><span class="status">FREE BETA + PREMIUM</span></div><h3>Momentum Bot</h3><p class="lead">Scan momentum. Manage the opening long and reversal cycle.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="upgrade" disabled title="Premium release will be linked later">PREMIUM · COMING SOON</button><button class="more" data-info="momentumbot">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">↶</span><span class="status">FREE BETA + PREMIUM</span></div><h3>Reversal Bot</h3><p class="lead">RSI divergence and price confirmation to find reversals.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="upgrade" disabled title="Premium release will be linked later">PREMIUM · COMING SOON</button><button class="more" data-info="reversalbot">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">╱</span><span class="status">FREE BETA + PREMIUM</span></div><h3>Trend Bot</h3><p class="lead">Follow directional trends with configurable strategy controls.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="upgrade" disabled title="Premium release will be linked later">PREMIUM · COMING SOON</button><button class="more" data-info="trendbot">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">⌁</span><span class="status">FREE BETA + PREMIUM</span></div><h3>ZigZag Bot</h3><p class="lead">Trade swing structure between trends and reversals.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="upgrade" disabled title="Premium release will be linked later">PREMIUM · COMING SOON</button><button class="more" data-info="zigzagbot">MORE INFO ↗</button></div></article></div></section>
+<section class="section" id="chart"><div class="heading"><div><div class="kicker">03 · CHARTING</div><h2>Advanced Chart</h2></div></div><div class="feature"><div><div class="kicker">YOUR CHART · YOUR DRAWINGS</div><h3>Live broker-connected charts.<br>Private workspace.</h3><p>Chart with your broker's market data, technical indicators, drawing tools and editable setups. Your chart drawings stay on your computer.</p><ul><li>IBKR market-data connection; additional sources vary by build</li><li>Indicators, chart drawings, zoom and pan</li><li>Free Beta plus Premium drawing and analysis upgrades</li></ul><div class="actions"><button disabled>FREE BETA · ZIP PENDING</button><button class="upgrade" disabled>PREMIUM · COMING SOON</button><button class="more" data-info="chart">MORE INFO ↗</button></div></div><div class="feature-visual"><svg aria-label="Illustrative chart with X A B C D drawing" role="img" viewbox="0 0 520 240"><g stroke="#244153"><path d="M20 40H500M20 90H500M20 140H500M20 190H500"></path></g><path d="M20 170L55 140L80 155L110 90L140 110L180 80L205 100L245 60L285 90L330 75L370 100L410 55L460 70L500 35" fill="none" stroke="#2dd6ac" stroke-width="3"></path><path d="M90 180L190 50L280 160L360 85L450 185L280 160Z" fill="#608eff22" stroke="#80a7ff" stroke-width="2"></path><g fill="#dce9ff" font-size="16"><text x="82" y="205">X</text><text x="185" y="38">A</text><text x="275" y="180">B</text><text x="355" y="72">C</text><text x="445" y="205">D</text></g></svg><span>ADVANCED CHART · LOCAL WORKSPACE</span></div></div></section>
+<section class="section" id="control"><div class="heading"><div><div class="kicker">04 · FREE TOOL</div><h2>Control Panel</h2></div></div><div class="feature"><div><div class="kicker">ONE PLACE FOR YOUR BOTS</div><h3>Launch. Monitor.<br>Stay organized.</h3><p>A central desktop hub to launch and organize your WallStreetBots software. Completely free to download.</p><div class="actions"><button disabled>FREE DOWNLOAD · ZIP PENDING</button><button class="more" data-info="control">MORE INFO ↗</button></div></div><div class="feature-visual"><div class="big">▦</div><span>CONTROL PANEL · FREE</span></div></div></section>
+<section class="section" id="intelligence"><div class="heading"><div><div class="kicker">05 · THE TECHNOLOGY</div><h2>HAL + The Hive</h2></div><p>Intelligence inside the bots, and a planned community network to share useful trading insights.</p></div><div class="pair"><article class="tile"><svg class="hal-art" viewBox="0 0 480 225" role="img" aria-label="HAL intelligence flow diagram: market data and strategy signals flow through HAL evaluation to trade decisions" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="halg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1bc8e8"/><stop offset="1" stop-color="#9d75ff"/></linearGradient></defs>
+<rect x="4" y="4" width="472" height="217" rx="14" fill="#081b2a" stroke="#32586e"/>
+<g stroke="#2d718d" stroke-width="2" fill="none"><path d="M125 68H170L196 103"/><path d="M125 160H170L196 121"/><path d="M287 112H337"/></g>
+<g fill="#133044" stroke="#3c728e"><rect x="17" y="43" width="112" height="48" rx="7"/><rect x="17" y="135" width="112" height="48" rx="7"/><rect x="337" y="88" width="125" height="52" rx="7"/></g>
+<circle cx="240" cy="112" r="55" fill="#102d48" stroke="url(#halg)" stroke-width="3"/>
+<circle cx="240" cy="112" r="40" fill="none" stroke="#4ca6c6" stroke-dasharray="4 5"/>
+<g fill="#d8f8ff" font-family="Arial,sans-serif" text-anchor="middle"><text x="73" y="62" font-size="11" font-weight="bold">MARKET DATA</text><text x="73" y="77" font-size="9">Price · Volume</text><text x="73" y="154" font-size="11" font-weight="bold">STRATEGY</text><text x="73" y="169" font-size="9">Signals · Filters</text><text x="240" y="119" font-size="25" font-weight="900">HAL</text><text x="399" y="108" font-size="11" font-weight="bold">DECISIONS</text><text x="399" y="124" font-size="9">Evaluate · Log</text></g>
+<g fill="#59dcec"><circle cx="170" cy="68" r="3"/><circle cx="170" cy="160" r="3"/><circle cx="337" cy="112" r="3"/></g>
+<text x="240" y="198" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#9bc7db" letter-spacing="1.2">BOT INTELLIGENCE · CONCEPT DIAGRAM</text></svg><div class="kicker">HAL · BOT INTELLIGENCE</div><h3>Smarter decisions.</h3><p>HAL helps evaluate signals, market conditions and strategy decisions. Manual, Hybrid and Sentience capabilities vary by bot and edition.</p><button class="more" data-info="hal">MORE INFO ↗</button></article><article class="tile"><div class="hive-diagram"><svg aria-label="BeeBot connects directly to The Hive and shares approved statistics; other trading bots keep local CSV histories" role="img" style="width:100%;height:auto;display:block" viewbox="0 0 600 440" xmlns="http://www.w3.org/2000/svg">
 <defs><lineargradient id="hiveNode" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#153b4d"></stop><stop offset="1" stop-color="#0c2333"></stop></lineargradient></defs>
 <g fill="none" stroke="#348ba6" stroke-linecap="round" stroke-width="2"><path d="M95 105V138H300V178"></path><path d="M300 105V178"></path><path d="M505 105V138H300"></path><path d="M300 288V327"></path><path d="M102 327H498"></path><path d="M102 327V348M300 327V348M498 327V348"></path></g>
 <g font-family="Segoe UI,Arial,sans-serif" text-anchor="middle">
@@ -382,84 +38,19 @@
 <g fill="url(#hiveNode)" stroke="#328ba7" stroke-width="2"><rect height="64" rx="10" width="168" x="18" y="348"></rect><rect height="64" rx="10" width="168" x="216" y="348"></rect><rect height="64" rx="10" width="168" x="414" y="348"></rect></g>
 <g fill="#e6f7fd" font-size="16" font-weight="700"><text x="102" y="386">Symbol Stats</text><text x="300" y="386">Top Setups</text><text x="498" y="386">HIVE Trends</text></g>
 <text fill="#79c9db" font-size="12" x="300" y="153">BeeBot direct sync · optional CSV history import</text>
-</g></svg>
-<small>Concept illustration · only BeeBot connects to The Hive; other bots retain their local CSV histories. No live community data shown.</small></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">Local desktop tools</span><span class="compat-pill ready">No broker needed for this feature</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">BeeBot-only Hive synchronization and optional CSV imports are planned, not yet released; HAL capabilities depend on the bot. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></section><section class="wsb-feature" id="halIntelligence"><div><div class="momentum-kicker">HAL · Trading intelligence</div><h2>Meet HAL. <em>Intelligence behind the bots.</em></h2><p>HAL is the intelligence layer built into WallStreetBots trading workflows, helping evaluate signals, market conditions and strategy decisions according to the bot’s configured modes.</p><div class="momentum-features"><span>Signal evaluation and filtering</span><span>Market context and strategy checks</span><span>Manual, Hybrid and Sentience modes</span><span>Local-first bot decision workflows</span></div><p class="momentum-link">HAL features and available intelligence modes vary by bot and release.</p></div><div class="feature-visual"><div class="visual-top">HAL INTELLIGENCE <span>DECISION WORKFLOW</span></div><div class="hal-flow"><div>MARKET DATA</div><span>↓</span><div>STRATEGY SIGNALS</div><span>↓</span><div class="hal-focus">HAL · INTELLIGENCE</div><span>↓</span><div>BOT DECISION / BROKER</div></div><small>Conceptual workflow — not a live decision report</small></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">Local desktop tools</span><span class="compat-pill ready">No broker needed for this feature</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">BeeBot-only Hive synchronization and optional CSV imports are planned, not yet released; HAL capabilities depend on the bot. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></section><section class="section" id="introBots"><div class="head"><span>01 · FREE INTRODUCTORY BOTS</span><span class="badge">ALWAYS FREE · NO PREMIUM UPGRADE</span></div><div class="body grid"><article class="card bot-card" data-bot="Mini RSI"><div class="ct"><div class="bot-title"><span class="bot-icon">∿</span><div class="meta"><h2>Mini RSI</h2><b>INTRODUCTORY RSI TRADING BOT</b></div></div></div><p><strong>Start with RSI.</strong> Learn automated RSI signal trading with a simple paper-trading workflow.</p><div class="tags"><span>Always Free</span><span>IBKR Paper</span><span>Intro Bot</span></div><div class="bot-feature-title">Key features</div><ul class="bot-list"><li>RSI-based signals</li><li>Paper trading</li><li>Trade and decision logs</li><li>Simple introductory settings</li></ul><div class="release-actions"><button class="release-button free" disabled="" title="Installer ZIP not uploaded yet" type="button">FREE BETA · DOWNLOAD SOON</button></div></article><article class="card bot-card" data-bot="Mini Scalper" id="miniScalperCard">
-<div class="ct"><div class="bot-title"><span class="bot-icon">◎</span><div class="meta"><h2>Mini Scalper</h2><b>MANUAL SCALPER</b></div></div></div>
-<p><strong>Stage the trade yourself.</strong> Manual chart-based scalping tool for precise entries, protective stops and hands-on position management.</p>
-<div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Manual chart-based trade staging</li><li>Protective stops + position management</li><li>IBKR</li><li>Free introductory bot</li></ul><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div><div class="release-actions"><button class="release-button free" disabled="" title="Installer ZIP not uploaded yet" type="button">FREE BETA · DOWNLOAD SOON</button></div></article><article class="card bot-card" data-bot="IF/Then Bot">
-<div class="ct"><div class="bot-title"><span class="bot-icon">⇄</span><div class="meta"><h2>IF/Then Bot</h2><b>RULE-BASED TRADING</b></div></div></div>
-<p>Build straightforward IF/THEN trade rules and run them as an individual trading tool.</p>
-<div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Rule-based IF/THEN logic</li><li>Custom trade conditions</li><li>IBKR</li><li>Free introductory bot</li></ul><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div><div class="release-actions"><button class="release-button free" disabled="" title="Installer ZIP not uploaded yet" type="button">FREE BETA · DOWNLOAD SOON</button></div></article></div></section><section class="section" id="advancedBots"><div class="head"><span>02 · ADVANCED TRADING BOTS</span><span class="badge">FREE BETA + PREMIUM UPGRADES</span></div><div class="body grid"><article class="card bot-card" data-bot="Open Momentum Bot" id="momentumCard">
-<div class="ct"><div class="bot-title"><span class="bot-icon">↗</span><div class="meta"><h2>Momentum Bot</h2><b>AUTOMATED SCALPING</b></div></div></div>
-<p><strong>Momentum meets autonomy.</strong> Scan and filter candidates, qualify a setup, then automate the opening long and confirmed reversal short cycle.</p>
-<div class="tags"><span>IBKR</span><span>Automated Trading Bot</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Momentum scanner + candidate filters</li><li>Opening long / confirmed reversal short</li><li>Protective stops + trailing management</li><li>Live chart + activity updates</li></ul>
-<a class="momentum-live-demo" href="assets/videos/demo_change_stop_order_momentum_bot.mp4" rel="noopener" target="_blank"><span aria-hidden="true" class="demo-play">▶</span> WATCH LIVE DEMO ↗</a><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div><div class="release-actions"><button class="release-button free" disabled="" title="Installer ZIP not uploaded yet" type="button">FREE BETA · DOWNLOAD SOON</button><button class="release-button premium" disabled="" title="Installer ZIP not uploaded yet" type="button">PREMIUM UPGRADE · COMING SOON</button></div></article><article class="card bot-card reversal-basic-card" data-bot="Reversal Bot">
-<div class="ct"><div class="bot-title"><span class="bot-icon">↶</span><div class="meta"><h2>Reversal Bot</h2><b>RSI · REVERSAL</b></div></div></div>
-<p><strong>Find the turn.</strong> Looks for reversal setups using RSI divergence and price confirmation.</p>
-<div class="tags"><span>IBKR</span><span>Trading Bot</span><span>Local CSV Trade Database</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>RSI divergence + confirmation</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div><div class="release-actions"><button class="release-button free" disabled="" title="Installer ZIP not uploaded yet" type="button">FREE BETA · DOWNLOAD SOON</button><button class="release-button premium" disabled="" title="Installer ZIP not uploaded yet" type="button">PREMIUM UPGRADE · COMING SOON</button></div></article><article class="card bot-card" data-bot="Trend Bot">
-<div class="ct"><div class="bot-title"><span class="bot-icon">↗</span><div class="meta"><h2>Trend Bot</h2><b>TREND FOLLOWING</b></div></div></div>
-<p><strong>Find the trend.</strong> Scans for sustained directional movement and qualifying trend opportunities.</p>
-<div class="tags"><span>IBKR</span><span>Trading Bot</span><span>Local CSV Trade Database</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Trend-following strategy</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div><div class="release-actions"><button class="release-button free" disabled="" title="Installer ZIP not uploaded yet" type="button">FREE BETA · DOWNLOAD SOON</button><button class="release-button premium" disabled="" title="Installer ZIP not uploaded yet" type="button">PREMIUM UPGRADE · COMING SOON</button></div></article><article class="card bot-card" data-bot="ZigZag Bot">
-<div class="ct"><div class="bot-title"><span class="bot-icon">⌁</span><div class="meta"><h2>ZigZag Bot</h2><b>PRICE STRUCTURE</b></div></div></div>
-<p><strong>Trade the swings in between.</strong> Looks for price-structure opportunities between major trends and reversals.</p>
-<div class="tags"><span>IBKR</span><span>Trading Bot</span><span>Local CSV Trade Database</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Price-structure strategy</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div><div class="release-actions"><button class="release-button free" disabled="" title="Installer ZIP not uploaded yet" type="button">FREE BETA · DOWNLOAD SOON</button><button class="release-button premium" disabled="" title="Installer ZIP not uploaded yet" type="button">PREMIUM UPGRADE · COMING SOON</button></div></article></div></section><section class="section" id="advancedChartRelease"><div class="head">03 · ADVANCED CHART · FREE BETA + PREMIUM UPGRADE</div><div class="body grid"></div></section><section class="section" id="controlDownload"><div class="head"><span>04 · CONTROL CENTER</span><span class="badge">FREE DOWNLOAD</span></div><div class="body grid"><article class="card control-card" data-bot="WallStreetBots.org Control Center">
-<a aria-label="Learn more about WallStreetBots.org Control Center" class="control-card-link" href="howitworks.html">
-<div class="ct"><div class="bot-title"><span class="bot-icon">▦</span><div class="meta"><h2>Control Center</h2><b>WallStreetBots.org MANAGEMENT</b></div></div></div>
-<p><strong>One place for all your bots.</strong> Launch, monitor and organize your installed WallStreetBots.org bots from a single central control panel.</p>
-<div class="tags"><span>FREE</span><span>Control Panel</span><span>Learn More →</span></div>
-<div class="bot-feature-title">Key features</div>
-<ul class="bot-list">
-<li>Launch installed WallStreetBots.org bots</li>
-<li>See your bots together</li>
-<li>Persistent saved bot list</li>
-<li>More management features coming</li>
-</ul>
-</a>
-
-<div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div><div class="release-actions"><button class="release-button free" disabled="" title="Installer ZIP not uploaded yet" type="button">FREE DOWNLOAD · COMING SOON</button></div></article></div></section><section class="section" id="comingSoon">
-<div class="head"><span>MORE BOTS</span><span class="badge">COMING SOON</span></div>
-<div class="body grid">
-<article class="card">
-<div class="ct"><div class="bot-title"><span class="bot-icon">⚡</span><div class="meta"><h2>Breakout Bot</h2><b>BREAKOUT TRADING</b></div></div></div>
-<p>Built to look for price breaking out of established ranges and qualifying breakout setups.</p>
-<div class="tags"><span>Coming Soon</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Breakout strategy</li><li>HAL Intelligence</li><li>Coming Soon</li></ul><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article>
-<article class="card platinum-card">
-<div class="ct"><div class="bot-title"><span class="bot-icon">»</span><div class="meta"><h2>Omni Bot</h2><b>LONG / SHORT TRADING</b></div></div></div>
-<p>Multi-strategy trading bot designed to scan for and manage long and short trading opportunities.</p>
-<div class="tags"><span>Coming Soon</span></div>
-<div class="platinum-badge">PLATINUM BOT · COMING SOON</div><div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Multi-strategy long / short</li><li>HAL Intelligence</li><li>Platinum</li><li>Coming Soon</li></ul><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article>
-<article class="card">
-<div class="ct"><div class="bot-title"><span class="bot-icon">0</span><div class="meta"><h2>ZeRO Bot</h2><b>SHORT-DATED OPTIONS</b></div></div></div>
-<p>Short-dated options trading bot focused on 0–3 DTE opportunities.</p>
-<div class="tags"><span>Options</span><span>Coming Soon</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>0–3 DTE options</li><li>HAL Intelligence</li><li>Coming Soon</li></ul><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article>
-<article class="card platinum-card beebot-card">
-<div class="ct"><div class="bot-title"><span class="bot-icon">⬡</span><div class="meta"><h2>BeeBot</h2><b>AUTOMATED TRADING</b></div></div></div>
-<p>BeeBot is your exclusive gateway to The Hive: contribute approved trading statistics, explore shared setups and discover community trends. Optionally import historical CSV records from your other bots. Hive integration is in development.</p>
-<div class="tags"><span>Coming Soon</span><span>Local Trade Records</span><span>Exclusive Hive Gateway Planned</span></div>
-<div class="platinum-badge">PLATINUM BOT · COMING SOON</div><div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Local trade history and performance records</li><li>Exclusive direct Hive synchronization planned</li><li>Optional historical CSV imports from other bots</li><li>HAL Intelligence</li><li>Platinum</li><li>Coming Soon</li></ul><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article>
-<article class="card">
-<div class="ct"><div class="bot-title"><span class="bot-icon">◉</span><div class="meta"><h2>WheelBot</h2><b>OPTIONS WHEEL</b></div></div></div>
-<p>Options-focused bot built around the wheel strategy and position management.</p>
-<div class="tags"><span>Options</span><span>Coming Soon</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Options wheel strategy</li><li>Position management</li><li>Coming Soon</li></ul><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article>
-<article class="card">
-<div class="ct"><div class="bot-title"><span class="bot-icon">$</span><div class="meta"><h2>Dividend Bot</h2><b>DIVIDEND TRACKING</b></div></div></div>
-<p>Dividend-focused automation and tracking tools for income-oriented portfolios.</p>
-<div class="tags"><span>Coming Soon</span></div>
-<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Dividend tracking</li><li>Income-focused automation</li><li>Coming Soon</li></ul><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article>
-</div></section>
-
-
-<div class="footer">Trading software can execute orders when configured for live trading. Start in Observe or Paper and review settings before enabling live execution.</div>
-</main>
-
-
-</body></html>
+</g></svg></div><div class="kicker">BEEBOT + THE HIVE · IN DEVELOPMENT</div><h3>Share setups. Discover trends.</h3><p>BeeBot is the planned direct gateway to The Hive: opt-in strategy sharing, symbol metrics and community setup trends. Other bots keep local trade histories.</p><button class="more" data-info="hive">MORE INFO ↗</button></article></div></section>
+<section class="section" id="other"><div class="heading"><div><div class="kicker">06 · ON THE ROADMAP</div><h2>More bots coming soon</h2></div><p>Additional strategy bots are in development. No downloads are available yet.</p></div><div class="small-grid"><article class="small-card"><strong>Breakout Bot</strong><span>Built to look for price breaking out of established ranges and qualifying breakout setups.</span><button class="more" data-info="soon0">MORE INFO ↗</button></article><article class="small-card"><strong>Omni Bot</strong><span>Multi-strategy trading bot designed to scan for and manage long and short trading opportunities.</span><button class="more" data-info="soon1">MORE INFO ↗</button></article><article class="small-card"><strong>ZeRO Bot</strong><span>Short-dated options trading bot focused on 0–3 DTE opportunities.</span><button class="more" data-info="soon2">MORE INFO ↗</button></article><article class="small-card"><strong>WheelBot</strong><span>Options-focused bot built around the wheel strategy and position management.</span><button class="more" data-info="soon3">MORE INFO ↗</button></article><article class="small-card"><strong>Dividend Bot</strong><span>Dividend-focused automation and tracking tools for income-oriented portfolios.</span><button class="more" data-info="soon4">MORE INFO ↗</button></article></div></section>
+</main><footer><div class="wrap">© WallStreetBots.org · Trading software is experimental. Beta functionality and broker compatibility depend on the specific build. Paper trading does not guarantee live results.<p class="notice">One-click installers will be offered once the packages are verified; no manual Python or broker-library setup is intended. Download buttons remain inactive until then.</p></div></footer>
+<dialog id="infoDialog" aria-label="Product information"><div id="infoContent"></div><button class="close" id="closeDialog">CLOSE</button></dialog>
+<div hidden id="infoBank"><div class="modal-info" id="info-minirsi" hidden><h2>Mini RSI</h2><p>Start with RSI. Learn automated RSI signal trading with a simple paper-trading workflow.</p><ul><li>RSI-based signals</li><li>Paper trading</li><li>Trade and decision logs</li><li>Simple introductory settings</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-miniscalper" hidden><h2>Mini Scalper</h2><p>Stage the trade yourself. Manual chart-based scalping tool for precise entries, protective stops and hands-on position management.</p><ul><li>Manual chart-based trade staging</li><li>Protective stops + position management</li><li>IBKR</li><li>Free introductory bot</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-ifthenbot" hidden><h2>IF/Then Bot</h2><p>Build straightforward IF/THEN trade rules and run them as an individual trading tool.</p><ul><li>Rule-based IF/THEN logic</li><li>Custom trade conditions</li><li>IBKR</li><li>Free introductory bot</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-momentumbot" hidden><h2>Momentum Bot</h2><p>Momentum meets autonomy. Scan and filter candidates, qualify a setup, then automate the opening long and confirmed reversal short cycle.</p><ul><li>Momentum scanner + candidate filters</li><li>Opening long / confirmed reversal short</li><li>Protective stops + trailing management</li><li>Live chart + activity updates</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-reversalbot" hidden><h2>Reversal Bot</h2><p>Find the turn. Looks for reversal setups using RSI divergence and price confirmation.</p><ul><li>RSI divergence + confirmation</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-trendbot" hidden><h2>Trend Bot</h2><p>Find the trend. Scans for sustained directional movement and qualifying trend opportunities.</p><ul><li>Trend-following strategy</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-zigzagbot" hidden><h2>ZigZag Bot</h2><p>Trade the swings in between. Looks for price-structure opportunities between major trends and reversals.</p><ul><li>Price-structure strategy</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-soon0" hidden><h2>Breakout Bot · Coming Soon</h2><p>Built to look for price breaking out of established ranges and qualifying breakout setups.</p><ul><li>Breakout strategy</li><li>HAL Intelligence</li><li>Coming Soon</li></ul></div><div class="modal-info" id="info-soon1" hidden><h2>Omni Bot · Coming Soon</h2><p>Multi-strategy trading bot designed to scan for and manage long and short trading opportunities.</p><ul><li>Multi-strategy long / short</li><li>HAL Intelligence</li><li>Platinum</li><li>Coming Soon</li></ul></div><div class="modal-info" id="info-soon2" hidden><h2>ZeRO Bot · Coming Soon</h2><p>Short-dated options trading bot focused on 0–3 DTE opportunities.</p><ul><li>0–3 DTE options</li><li>HAL Intelligence</li><li>Coming Soon</li></ul></div><div class="modal-info" id="info-soon3" hidden><h2>WheelBot · Coming Soon</h2><p>Options-focused bot built around the wheel strategy and position management.</p><ul><li>Options wheel strategy</li><li>Position management</li><li>Coming Soon</li></ul></div><div class="modal-info" id="info-soon4" hidden><h2>Dividend Bot · Coming Soon</h2><p>Dividend-focused automation and tracking tools for income-oriented portfolios.</p><ul><li>Dividend tracking</li><li>Income-focused automation</li><li>Coming Soon</li></ul></div>
+<div class="modal-info" id="info-chart"><h2>Advanced Chart</h2><p>A private, broker-connected chart workspace with indicators, drawing tools, and analysis features. Free Beta includes core tools; Premium features vary by release.</p><p>Broker subscriptions are required for live data. This standalone chart is not an automated order execution engine.</p></div>
+<div class="modal-info" id="info-control"><h2>Control Panel</h2><p>Free desktop hub for launching and organizing installed WallStreetBots tools. Download package will be linked after upload.</p></div>
+<div class="modal-info" id="info-hal"><h2>HAL Intelligence</h2><p>HAL is the configurable intelligence layer used by higher-level trading bots for signal evaluation and market-context checks. Modes and actual capabilities differ by bot, Free Beta and Premium release.</p></div>
+<div class="modal-info" id="info-hive"><h2>BeeBot + The Hive</h2><p>Planned opt-in network for sharing strategy setups, selected symbol metrics and aggregate results. BeeBot is intended as the sole direct Hive connector. Other bots retain local CSV history, with optional historical imports through BeeBot. Not yet live.</p></div>
+</div>
+<script>
+const dlg=document.getElementById('infoDialog'),content=document.getElementById('infoContent');
+document.addEventListener('click',e=>{const b=e.target.closest('[data-info]');if(!b)return;const src=document.getElementById('info-'+b.dataset.info);if(!src)return;content.innerHTML=src.innerHTML+'<p class="install-footnote"><strong>ONE-CLICK INSTALL (planned):</strong> No need to install Python or broker libraries manually with the packaged Windows installer, once verified. Broker software and market-data access may still be required.</p>';dlg.showModal()});
+document.getElementById('closeDialog').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+</script></body></html>

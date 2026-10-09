@@ -1,0 +1,1 @@
+Botfolios website brand assets. Original supplied SVG/PNG logos preserved. CSS and favicon assets included. Copy files into your website assets folder and add head-snippet.html tags to HTML head. Favicon is cropped from original supplied logo.

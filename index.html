@@ -585,21 +585,38 @@ body{background:radial-gradient(ellipse at 76% 0%,#102a3c 0%,#0a131b 52%,#090e13
 @media(max-width:900px){.home-hero{grid-template-columns:1fr!important;gap:16px!important}.home-hero .home-hero-logo{display:flex!important;justify-content:center!important}.home-hero-logo img{width:100%!important;max-width:510px!important;margin:0 auto!important}.home-hero-copy p,.home-hero-copy p.hero-local{font-size:15px!important}}
 @media(max-width:560px){.home-hero{padding:22px!important}.home-hero-logo img{max-width:100%!important}.home-hero-copy p,.home-hero-copy p.hero-local{font-size:14px!important;line-height:1.62!important;margin-bottom:14px!important}}
 </style><script id="domain-hero-brand-routing">
-/* Shared homepage branding. GoDaddy masked forwarding: ?brand=wxy or ?brand=wallstreet */
+/* Explicit URL brand overrides; otherwise BotZips is the default everywhere. */
 document.addEventListener('DOMContentLoaded', function () {
-  if (document.documentElement.classList.contains('botfolios-domain')) return;
-  const img = document.querySelector('.home-hero-logo img');
-  if (!img) return;
-  const fallback = img.getAttribute('src'); // retain original embedded logo
-  const brandParam = new URLSearchParams(window.location.search).get('brand');
-  const host = window.location.hostname.toLowerCase().replace(/^www\./, '');
-  const brand = ({wxy:'wxy',wxybots:'wxy',wallstreet:'wallstreet',wallstreetbots:'wallstreet',botzips:'botzips'})[String(brandParam || '').toLowerCase()]
-    || (host === 'wxybots.com' ? 'wxy' : host === 'wallstreetbots.org' ? 'wallstreet' : 'botzips');
-  const filenames = {wxy:'assets/wxylogo.png',wallstreet:'assets/wsbhero_nocandles.png',botzips:'assets/logo.png'};
+  const params = new URLSearchParams(window.location.search);
+  const requested = (params.get('brand') || '').trim().toLowerCase();
+  const brand = requested === 'botfolios' || params.has('botfolios') ? 'botfolios'
+    : ['wallstreetbots','wallstreet'].includes(requested) || params.has('wallstreetbots') ? 'wallstreet'
+    : ['wxybots','wxy'].includes(requested) || params.has('wxybots') ? 'wxy'
+    : 'botzips';
+  document.documentElement.dataset.siteBrand = brand;
+  if (brand === 'botfolios') return; // Existing Botfolios embedded logo remains in use.
+  const img = document.querySelector('.home-hero-logo img:not(.botfolios-hero-logo)');
+  const filenames = {wxy:'assets/wxylogo.png',wallstreet:'assets/wsbhero_nocandles.png',botzips:'logo.png'};
   const labels = {wxy:'WXYBots logo',wallstreet:'WallStreetBots logo',botzips:'BotZips logo'};
-  img.alt = labels[brand];
-  img.onerror = function () { img.onerror = null; img.src = fallback; };
-  img.src = filenames[brand];
+  if (img) { img.alt = labels[brand]; img.src = filenames[brand]; }
+  const nav = document.querySelector('.site-nav .site-brand');
+  if (nav) {
+    const wordmark = nav.querySelectorAll('.wsb-nav-wallstreet,.wsb-nav-bots');
+    wordmark.forEach(el => { el.style.display = brand === 'wallstreet' ? '' : 'none'; });
+    let logo = nav.querySelector('.dynamic-site-logo');
+    if (!logo && brand !== 'wallstreet') {
+      logo = document.createElement('img'); logo.className = 'dynamic-site-logo';
+      nav.appendChild(logo);
+    }
+    if (logo) {
+      logo.style.display = brand === 'wallstreet' ? 'none' : 'block';
+      if (brand !== 'wallstreet') { logo.src = filenames[brand]; logo.alt = labels[brand]; }
+    }
+  }
+  const names = {botzips:'BotZips',wallstreet:'WallStreetBots.org',wxy:'WXYBots'};
+  document.title = names[brand] + ' | Automated Trading Bots';
+  const description = document.querySelector('meta[name="description"]');
+  if (description) description.content = names[brand] + ' — trading bots, automated strategies and trading tools.';
 });
 </script>
 
@@ -608,7 +625,7 @@ document.addEventListener('DOMContentLoaded', function () {
 (function(){
   var host=window.location.hostname.toLowerCase().replace(/\.$/, '');
   var requestedBrand=(new URLSearchParams(window.location.search).get('brand')||'').trim().toLowerCase();
-  var isBotfolios=requestedBrand==='botfolios'||(requestedBrand===''&&(host==='botfolios.com'||host==='www.botfolios.com'));
+  var isBotfolios=requestedBrand==='botfolios'||new URLSearchParams(window.location.search).has('botfolios');
   document.documentElement.classList.toggle('botfolios-domain',isBotfolios);
   if(isBotfolios){
     document.title='Botfolios | Automated Trading';
@@ -638,6 +655,10 @@ document.addEventListener('DOMContentLoaded', function () {
 .botfolios-strategy-item svg{width:15px;height:15px;flex:0 0 15px;fill:none;stroke:#4fc8f5;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .botfolios-strategy-item p{margin:6px 0 0;color:#b2c5d2;font-size:12px;line-height:1.4}
 @media(max-width:560px){.botfolios-strategy-preview{padding:14px 12px}.botfolios-strategy-grid{grid-template-columns:1fr}}
+</style>
+<style id="default-botzips-nav-logo-style">
+.site-nav .dynamic-site-logo{display:block;width:155px;max-width:100%;max-height:52px;object-fit:contain}
+@media(max-width:680px){.site-nav .dynamic-site-logo{width:135px}}
 </style>
 </head>
 <body>

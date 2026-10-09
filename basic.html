@@ -12,6 +12,9 @@
 footer{border-top:1px solid #254051;padding:35px 0;color:#8faab9;font-size:12px}.notice{font-size:12px;color:#91aeba}
 dialog{max-width:580px;width:calc(100% - 32px);border:1px solid #5a9db6;border-radius:14px;background:#102330;color:#f0f9ff;padding:28px;box-shadow:0 20px 90px #000b}dialog::backdrop{background:#000b}dialog h2{font-size:29px;margin:0 0 12px}dialog p{color:#b6ccd8}dialog li{margin:6px 0}dialog .close{background:var(--cyan);border:0;border-radius:7px;padding:9px 16px;font-weight:900;cursor:pointer}.modal-info[hidden]{display:none}.feature-visual svg{display:block;width:100%;height:auto;max-height:260px}.hive-diagram svg{display:block;width:100%;height:auto;max-height:235px}.hive-diagram{margin:-10px 0 18px;background:#081c29;border:1px solid #2c5367;border-radius:10px;padding:12px}.hal-art{display:block;width:100%;height:auto;max-height:235px;margin:-10px 0 18px}.install-footnote{border-top:1px solid #35586d;padding-top:14px;font-size:12px;color:#b2d6e4}
 @media(max-width:880px){.cards,.small-grid{grid-template-columns:repeat(2,1fr)}.feature{grid-template-columns:1fr}.links{gap:10px}}@media(max-width:610px){.cards,.small-grid,.pair{grid-template-columns:1fr}.hero{padding:55px 0}.hero h1{letter-spacing:-1.5px}.nav{align-items:flex-start;flex-direction:column}.wrap{padding:0 16px}.heading{display:block}.feature{padding:22px}}
+
+/* Compact itemized download summary */
+.download-cart-rows{display:grid;gap:0}.download-cart-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 2px;border-bottom:1px solid #294657}.download-cart-row span{display:flex;flex-direction:column;gap:1px}.download-cart-row small{font-size:11px;color:#9db9c8}.download-cart-row b{font-size:14px;white-space:nowrap;color:#c6f5ff}.download-cart-total{display:flex;justify-content:space-between;align-items:center;padding:15px 2px 3px;font-size:18px;color:#f1faff}
 </style><style id="bitcoin-checkout-restored-css">
 .payment-panel{display:none;margin-top:14px;padding:16px;border:1px solid #45677b;border-radius:9px;background:#101f2b}
 .payment-panel.show{display:block}.payment-panel code{word-break:break-all;color:#b6e9ff}
@@ -115,10 +118,10 @@ dialog{max-width:580px;width:calc(100% - 32px);border:1px solid #5a9db6;border-r
 <text fill="#79c9db" font-size="12" x="300" y="153">BeeBot direct sync · optional CSV history import</text>
 </g></svg></div><div class="kicker">BEEBOT + THE HIVE · IN DEVELOPMENT</div><h3>Share setups. Discover trends.</h3><p>BeeBot is the planned direct gateway to The Hive: opt-in strategy sharing, symbol metrics and community setup trends. Other bots keep local trade histories.</p><button class="more" data-info="hive">MORE INFO ↗</button></article></div></section>
 <section class="section" id="other"><div class="heading"><div><div class="kicker">06 · ON THE ROADMAP</div><h2>More bots coming soon</h2></div><p>Additional strategy bots are in development. No downloads are available yet.</p></div><div class="small-grid"><article class="small-card"><strong>Breakout Bot</strong><span>Built to look for price breaking out of established ranges and qualifying breakout setups.</span><button class="more" data-info="soon0">MORE INFO ↗</button></article><article class="small-card"><strong>Omni Bot</strong><span>Multi-strategy trading bot designed to scan for and manage long and short trading opportunities.</span><button class="more" data-info="soon1">MORE INFO ↗</button></article><article class="small-card"><strong>ZeRO Bot</strong><span>Short-dated options trading bot focused on 0–3 DTE opportunities.</span><button class="more" data-info="soon2">MORE INFO ↗</button></article><article class="small-card"><strong>WheelBot</strong><span>Options-focused bot built around the wheel strategy and position management.</span><button class="more" data-info="soon3">MORE INFO ↗</button></article><article class="small-card"><strong>Dividend Bot</strong><span>Dividend-focused automation and tracking tools for income-oriented portfolios.</span><button class="more" data-info="soon4">MORE INFO ↗</button></article></div></section>
-<section class="section" id="purchaseCart"><div class="heading"><div><div class="kicker">SHOPPING CART</div><h2>Your selected bots</h2></div></div><div class="box"><h3>Selected downloads</h3><div id="selectedList"><p>No bots selected yet.</p></div><div class="note">Reversal Basic and the Control Center are free. Any Premium Beta selection continues to Bitcoin checkout.</div></div><div class="box"><div class="free" id="readyLabel">MAKE A SELECTION</div><p id="selectionSummary">Choose a beta bot or add the free Control Center.</p><button class="createBtn" disabled="" id="continueSelection">CONTINUE WITH SELECTED ITEMS</button></div><div class="notice" id="recoveryShortcut">Already purchased Premium? Select “Restore existing license” below to open your original recovery form.</div><button class="pill secondary" id="openRecovery">RESTORE EXISTING LICENSE</button></section><section class="section checkout" id="bitcoinCheckout" style="display:none">
+<section class="section" id="purchaseCart"><div class="heading"><div><div class="kicker">SHOPPING CART</div><h2>Your selected bots</h2></div></div><div class="box"><h3>Selected downloads</h3><div id="selectedList"><p>No bots selected yet.</p></div><div class="note">Every Free Beta download is $0. Each Premium Beta upgrade is $10 USD. Prices shown in USD.</div></div><div class="box"><div class="free" id="readyLabel">MAKE A SELECTION</div><p id="selectionSummary">Choose a beta bot or add the free Control Center.</p><button class="createBtn" disabled="" id="continueSelection">CONTINUE WITH SELECTED ITEMS</button></div><div class="notice" id="recoveryShortcut">Already purchased Premium? Select “Restore existing license” below to open your original recovery form.</div><button class="pill secondary" id="openRecovery">RESTORE EXISTING LICENSE</button></section><section class="section checkout" id="bitcoinCheckout" style="display:none">
 <div class="head">PREMIUM · BITCOIN CHECKOUT</div>
 <div class="body">
-<p>Premium Beta access is $10 USD. Payment is processed in Bitcoin and unlocks the Premium installer and license flow. Already paid? Do not pay again — restore your original license below.</p>
+<p>Each Premium Beta upgrade is $10 USD. The selected-downloads list shows your itemized total. The Bitcoin quote must match your selected Premium upgrades at $10 USD each. Multi-upgrade quotes require server-side total validation; checkout will stop if the quote cannot be verified. Already paid? Do not pay again — restore your original license below.</p>
 <button class="btn gold" id="quoteBtn">GENERATE BITCOIN QUOTE</button>
 <div class="payment-panel" id="paymentPanel">
 <div id="quoteDetails">Requesting quote…</div>
@@ -216,11 +219,13 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
       checkout.style.display='none';
       return;
     }
-    list.innerHTML='<ul>'+chosen.map(x=>'<li><strong>'+x.name+'</strong> — '+x.edition+'</li>').join('')+'</ul>';
+    const premiumCount=chosen.filter(x=>x.edition==='Premium').length;
+    const total=premiumCount*10;
+    list.innerHTML='<div class="download-cart-rows">'+chosen.map(x=>'<div class="download-cart-row"><span><strong>'+x.name+'</strong><small>'+ (x.edition==='Premium'?'Premium Beta':'Free Beta') +'</small></span><b>'+ (x.edition==='Premium'?'$10.00':'FREE') +'</b></div>').join('')+'</div><div class="download-cart-total"><strong>TOTAL</strong><strong>$'+total.toFixed(2)+' USD</strong></div>';
     const premium=chosen.some(x=>x.edition==='Premium');
     ready.textContent=premium?'PREMIUM SELECTED':'READY TO DOWNLOAD';
     summary.textContent=premium
-      ? 'Your selection includes Premium. Continue to Bitcoin checkout.'
+      ? premiumCount+' Premium upgrade(s) × $10 USD = $'+total.toFixed(2)+' USD. Review payment instructions before checkout.'
       : 'Your selected items do not require Bitcoin payment.';
     go.disabled=false;
     if(!premium) checkout.style.display='none';
@@ -245,6 +250,9 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
 })();
 </script><script>
 const WORKER='https://falling-sky-7997.algobotbuilder.workers.dev';
+function currentPremiumTotal(){return document.querySelectorAll('input.download-pick[data-edition="Premium"]:checked').length*10 || [...document.querySelectorAll('.bot-card')].filter(c=>c.querySelector('.edition:checked')?.value==='Premium').length*10;}
+function quotedUsd(q){for(const key of ['total_usd','amount_usd','usd_amount','price_usd']){if(q[key]!==undefined && q[key]!==null && q[key]!=='')return Number(q[key]);}return null;}
+
 let quote=null, premiumKey='';
 const licensePattern=/^MBB-[A-F0-9]{8}(?:-[A-F0-9]{8}){7}$/i;
 const $=id=>document.getElementById(id);
@@ -273,12 +281,25 @@ function copyRow(label,value){
 }
 function renderQuote(q){
   const el=$('quoteDetails');el.replaceChildren();
-  el.append(copyRow('Receiving address',q.bitcoin_address),copyRow('Amount (BTC)',q.required_btc));
+  el.append(copyRow('Cart total (USD)','$'+q.cart_total_usd.toFixed(2)),copyRow('Receiving address',q.bitcoin_address),copyRow('Amount (BTC)',q.required_btc));
   const p=document.createElement('p');p.className='fine';p.textContent='Send the exact amount shown. Quote expires '+new Date(q.expires_at).toLocaleString()+'. Quote ID: '+q.quote_id;el.append(p);
 }
 $('quoteBtn').onclick=async()=>{
   $('paymentPanel').classList.add('show');setStatus('paymentStatus','Fetching signed quote…');
-  try{const r=await fetch(WORKER+'/premium/quote',{cache:'no-store'}),q=await r.json();if(!r.ok||!q.ok)throw Error(q.error||'Could not create quote');quote=q;renderQuote(q);setStatus('paymentStatus','Send the exact BTC amount, then enter your TXID and verify.')}
+  try{
+    const total=currentPremiumTotal();
+    if(!total)throw Error('Select at least one Premium upgrade first.');
+    quote=null;
+    const url=WORKER+'/premium/quote?amount_usd='+encodeURIComponent(total);
+    const r=await fetch(url,{cache:'no-store'}),q=await r.json();
+    if(!r.ok||!q.ok)throw Error(q.error||'Could not create quote');
+    const serverUsd=quotedUsd(q);
+    if(serverUsd===null && total!==10)throw Error('The payment server did not confirm the $'+total.toFixed(2)+' USD cart total. No Bitcoin amount can be safely issued for multiple upgrades until the Worker supports itemized totals.');
+    if(serverUsd!==null && (!Number.isFinite(serverUsd)||Math.abs(serverUsd-total)>0.001))throw Error('The server quoted $'+serverUsd+' USD but your cart totals $'+total.toFixed(2)+' USD. Payment blocked.');
+    quote=q;quote.cart_total_usd=total;
+    renderQuote(q);
+    setStatus('paymentStatus','Quote for $'+total.toFixed(2)+' USD. Send the exact BTC amount, then enter your TXID and verify.');
+  }
   catch(e){setStatus('paymentStatus','Quote error: '+e.message,true)}
 };
 function verified(v){
@@ -287,14 +308,14 @@ function verified(v){
   setStatus('paymentStatus','✓ Bitcoin payment verified. Save your original license key before downloading.');
 }
 $('verifyBtn').onclick=async()=>{
-  if(!quote){setStatus('paymentStatus','Generate a quote first.',true);return}
+  if(!quote){setStatus('paymentStatus','Generate a quote first.',true);return}if(quote.cart_total_usd!==currentPremiumTotal()){quote=null;setStatus('paymentStatus','Your Premium selection changed. Generate a fresh Bitcoin quote.',true);return}
   const txid=$('txid').value.trim();if(!/^[a-fA-F0-9]{64}$/.test(txid)){setStatus('paymentStatus','Enter a valid 64-character TXID.',true);return}
   setStatus('paymentStatus','Checking blockchain confirmation…');
   try{const r=await fetch(WORKER+'/premium/verify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({txid,quote_id:quote.quote_id,quote_signature:quote.quote_signature,required_sats:quote.required_sats,expires_at:quote.expires_at})});const v=await r.json();if(!r.ok||!v.ok)throw Error(v.error||'Verification failed');if(v.verified)verified(v);else setStatus('paymentStatus','Payment status: '+v.status+'. '+(v.error||'Try again after confirmation.'))}
   catch(e){setStatus('paymentStatus','Verification error: '+e.message,true)}
 };
 $('statusBtn').onclick=async()=>{
-  if(!quote){setStatus('paymentStatus','Generate a quote first.',true);return}
+  if(!quote){setStatus('paymentStatus','Generate a quote first.',true);return}if(quote.cart_total_usd!==currentPremiumTotal()){quote=null;setStatus('paymentStatus','Your Premium selection changed. Generate a fresh Bitcoin quote.',true);return}
   try{const r=await fetch(WORKER+'/premium/status?quote_id='+encodeURIComponent(quote.quote_id),{cache:'no-store'}),v=await r.json();if(!r.ok||!v.ok)throw Error(v.error||'Status unavailable');if(v.verified||v.status==='verified')verified(v);else setStatus('paymentStatus','Payment status: '+v.status+'. Confirmed: '+v.confirmed+'; received: '+v.received_sats+' sats.')}
   catch(e){setStatus('paymentStatus','Status error: '+e.message,true)}
 };

@@ -1,4 +1,6 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WallStreetBots.org — Trading Bots & Tools</title>
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>WallStreetBots.org — Trading Bots &amp; Tools</title>
 <style>
 :root{--bg:#071019;--panel:#10202c;--line:#2c4a5e;--white:#eff9ff;--muted:#a5bcc9;--cyan:#43d9f1;--green:#65dfa8;--gold:#f4c66e}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font:15px/1.55 system-ui,Segoe UI,Arial,sans-serif}button{font:inherit}a{color:inherit;text-decoration:none}
@@ -10,23 +12,96 @@
 footer{border-top:1px solid #254051;padding:35px 0;color:#8faab9;font-size:12px}.notice{font-size:12px;color:#91aeba}
 dialog{max-width:580px;width:calc(100% - 32px);border:1px solid #5a9db6;border-radius:14px;background:#102330;color:#f0f9ff;padding:28px;box-shadow:0 20px 90px #000b}dialog::backdrop{background:#000b}dialog h2{font-size:29px;margin:0 0 12px}dialog p{color:#b6ccd8}dialog li{margin:6px 0}dialog .close{background:var(--cyan);border:0;border-radius:7px;padding:9px 16px;font-weight:900;cursor:pointer}.modal-info[hidden]{display:none}.feature-visual svg{display:block;width:100%;height:auto;max-height:260px}.hive-diagram svg{display:block;width:100%;height:auto;max-height:235px}.hive-diagram{margin:-10px 0 18px;background:#081c29;border:1px solid #2c5367;border-radius:10px;padding:12px}.hal-art{display:block;width:100%;height:auto;max-height:235px;margin:-10px 0 18px}.install-footnote{border-top:1px solid #35586d;padding-top:14px;font-size:12px;color:#b2d6e4}
 @media(max-width:880px){.cards,.small-grid{grid-template-columns:repeat(2,1fr)}.feature{grid-template-columns:1fr}.links{gap:10px}}@media(max-width:610px){.cards,.small-grid,.pair{grid-template-columns:1fr}.hero{padding:55px 0}.hero h1{letter-spacing:-1.5px}.nav{align-items:flex-start;flex-direction:column}.wrap{padding:0 16px}.heading{display:block}.feature{padding:22px}}
+</style><style id="bitcoin-checkout-restored-css">
+.payment-panel{display:none;margin-top:14px;padding:16px;border:1px solid #45677b;border-radius:9px;background:#101f2b}
+.payment-panel.show{display:block}.payment-panel code{word-break:break-all;color:#b6e9ff}
+.copyrow{display:flex;justify-content:space-between;gap:12px;align-items:baseline;border-bottom:1px solid #263b48;padding:8px 0}
+.copyrow button{border:0;background:transparent;color:#86cfe9;text-decoration:underline;cursor:pointer}
+.field{display:grid;gap:6px;margin:13px 0;color:#b8c9d5}.field input{height:42px;border:1px solid #355061;border-radius:7px;background:#0b1219;color:#fff;padding:8px 10px;width:100%}
+.restore{margin-top:17px;padding:16px;border:1px solid #385263;border-radius:9px;background:#101d28}
+.restore-row{display:flex;gap:9px}.restore-row input{flex:1;height:42px;border:1px solid #355061;border-radius:7px;background:#0b1219;color:#fff;padding:8px 10px}
+.status{margin-top:12px;color:#9fd8e9;min-height:21px;white-space:pre-wrap}.error{color:#ffadad}
+.license{padding:12px;margin:12px 0;border:1px solid #3f8068;background:#122b25;border-radius:8px}.license code{overflow-wrap:anywhere}
+.fine{font-size:12px;color:#8fa4b1}
+.checkout .btn{border:0;border-radius:8px;padding:13px 18px;font-weight:900;cursor:pointer;background:linear-gradient(180deg,#39d4f0,#1299b9);color:#06171d}
+.checkout .btn.secondary{background:#193747;color:#d7f3ff;border:1px solid #3c7896}
+.checkout .btn.gold{background:linear-gradient(180deg,#ffdc89,#d8a638);color:#261a08}
+@media(max-width:560px){.restore-row{flex-direction:column}.checkout .btn{width:100%}}
+</style><style id="bitcoin-button-visibility-fix">
+#bitcoinCheckout .btn{
+  background:linear-gradient(180deg,#42dcf4,#18afd0);
+  color:#04151b;
+  border:1px solid #69e7fb;
+  box-shadow:0 0 0 1px rgba(37,199,232,.18),0 4px 12px rgba(0,0,0,.22);
+  opacity:1;
+}
+#bitcoinCheckout .btn:hover{
+  filter:brightness(1.08);
+  transform:translateY(-1px);
+}
+#bitcoinCheckout .btn.gold{
+  background:linear-gradient(180deg,#ffe29a,#e8b44d);
+  color:#241805;
+  border-color:#ffe09a;
+}
+#bitcoinCheckout .btn.secondary{
+  background:#193747;
+  color:#bfefff;
+  border:1px solid #4c8ca9;
+}
+#bitcoinCheckout .btn:disabled{
+  opacity:.42;
+  filter:saturate(.55);
+  box-shadow:none;
+  cursor:not-allowed;
+}
+</style><style id="premium-license-gate-fix">
+#premiumDownload[hidden],
+#restoredDownload[hidden],
+#issuedLicense[hidden]{
+  display:none !important;
+}
+#premiumDownload:disabled,
+#restoredDownload:disabled{
+  opacity:.38 !important;
+  filter:saturate(.45) !important;
+  cursor:not-allowed !important;
+  pointer-events:none !important;
+}
+</style><style id="checkout-cosmetic-bridge">
+#legacyPurchaseSelectors{position:absolute!important;left:-99999px!important;top:0!important;width:1px!important;height:1px!important;overflow:hidden!important;visibility:hidden!important}
+#purchaseCart{scroll-margin-top:90px}#purchaseCart .box{background:#102331;border:1px solid #325064;border-radius:12px;padding:20px;margin:14px 0}#purchaseCart .box h3{margin-top:0}#purchaseCart .free{font-weight:900;color:#65dfa8;font-size:19px}#purchaseCart .createBtn{border:0;border-radius:8px;padding:14px 18px;font-weight:900;background:#43d9f1;color:#06171d;cursor:pointer}#purchaseCart .createBtn:disabled{opacity:.4;cursor:not-allowed}
+#bitcoinCheckout{margin:22px 0 55px;padding:24px;border:1px solid #35586d;border-radius:14px;background:#102331;scroll-margin-top:100px}#bitcoinCheckout .head{font-size:20px;font-weight:900;color:#f4c66e}#bitcoinCheckout .body{padding-top:10px}#bitcoinCheckout .restore{display:block}
+#purchaseCart .note{font-size:12px;color:#b1c6d2}#purchaseCart #selectedList li{padding:4px 0}#purchaseCart .pill{cursor:pointer;margin-top:12px}
+.actions .cart-add,.actions .cart-control{background:#194a39;border-color:#4ca984;color:#baffd5}.actions .cart-add.upgrade{background:#352a18;border-color:#816939;color:#f9d38b}.actions .cart-add:hover,.actions .cart-control:hover{filter:brightness(1.2)}
+#bitcoinCheckout .payment-panel.show{display:block}#bitcoinCheckout .restore-row input{min-width:0}#bitcoinCheckout .status{font-size:13px}#bitcoinCheckout .license{overflow-wrap:anywhere}
+</style><style id="compact-download-choices">
+.actions{gap:7px!important;align-items:center}
+.download-choice{display:inline-flex;align-items:center;gap:6px;margin:0;padding:6px 9px;border:1px solid #35566a;border-radius:6px;background:#102936;color:#cde9f4;font-size:10px;font-weight:800;line-height:1.25;cursor:pointer;white-space:normal;max-width:100%}
+.download-choice input{width:14px;height:14px;margin:0;accent-color:#43d9f1;flex:none}
+.download-choice:has(input:checked){border-color:#5ed9e9;background:#174051;color:#e6fcff}
+.download-choice.paid{border-color:#735e39;color:#f5d597;background:#2a241b}
+.download-choice.paid:has(input:checked){border-color:#f4c66e;background:#49371e}
+.download-choice+.download-choice{margin-left:0}
+.download-cart-extra{margin-top:10px;padding:10px;border:1px solid #35586d;border-radius:8px;color:#c2dae7}
+.actions .more{padding:7px 9px;font-size:10px}
 </style></head><body>
 <header class="topbar"><div class="wrap nav"><a class="brand" href="#">WALLSTREET<b>BOTS</b>.ORG</a><nav class="links"><a href="#free">Free Bots</a><a href="#premium">Trading Bots</a><a href="#chart">Advanced Chart</a><a href="#control">Control Panel</a><a href="#intelligence">HAL + Hive</a><a href="#other">Coming Soon</a></nav></div></header>
-<main class="wrap"><section class="hero"><div class="eyebrow">DESKTOP TRADING SOFTWARE · FREE BETA RELEASES</div><h1>Start free.<br><em>Trade your way.</em></h1><p>Start with a simple free bot. Move up to automated trading strategies, a private advanced chart, and tools built to manage your trading workspace. <strong>One-click Windows installers are planned for release—no manual Python or broker-library installation.</strong></p><div class="hero-actions"><a class="pill" href="#free">EXPLORE FREE BOTS ↓</a><a class="pill secondary" href="#premium">SEE ADVANCED BOTS →</a></div></section>
-<section class="section" id="free"><div class="heading"><div><div class="kicker">01 · ALWAYS FREE</div><h2>Free introductory bots</h2></div><p>Three simple tools to get started. No paid upgrades. One-click installers planned.</p></div><div class="cards"><article class="product"><div class="product-top"><span class="glyph">∿</span><span class="status">FREE FOREVER</span></div><h3>Mini RSI</h3><p class="lead">RSI signals. Automated paper trading.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="more" data-info="minirsi">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">⌁</span><span class="status">FREE FOREVER</span></div><h3>Mini Scalper</h3><p class="lead">One-click chart plans. Manual entries, stops and targets.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="more" data-info="miniscalper">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">⇄</span><span class="status">FREE FOREVER</span></div><h3>IF/Then Bot</h3><p class="lead">Build IF/THEN rules and test them with IBKR Paper.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="more" data-info="ifthenbot">MORE INFO ↗</button></div></article></div></section>
-<section class="section" id="premium"><div class="heading"><div><div class="kicker">02 · AUTOMATED STRATEGIES</div><h2>Trading bots</h2></div><p>Start with Free Beta. Premium upgrades unlock additional capabilities as they become available.</p></div><div class="cards"><article class="product"><div class="product-top"><span class="glyph">↗</span><span class="status">FREE BETA + PREMIUM</span></div><h3>Momentum Bot</h3><p class="lead">Scan momentum. Manage the opening long and reversal cycle.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="upgrade" disabled title="Premium release will be linked later">PREMIUM · COMING SOON</button><button class="more" data-info="momentumbot">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">↶</span><span class="status">FREE BETA + PREMIUM</span></div><h3>Reversal Bot</h3><p class="lead">RSI divergence and price confirmation to find reversals.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="upgrade" disabled title="Premium release will be linked later">PREMIUM · COMING SOON</button><button class="more" data-info="reversalbot">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">╱</span><span class="status">FREE BETA + PREMIUM</span></div><h3>Trend Bot</h3><p class="lead">Follow directional trends with configurable strategy controls.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="upgrade" disabled title="Premium release will be linked later">PREMIUM · COMING SOON</button><button class="more" data-info="trendbot">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">⌁</span><span class="status">FREE BETA + PREMIUM</span></div><h3>ZigZag Bot</h3><p class="lead">Trade swing structure between trends and reversals.</p><div class="actions"><button disabled title="Download ZIP will be linked after release verification">FREE BETA · ZIP PENDING</button><button class="upgrade" disabled title="Premium release will be linked later">PREMIUM · COMING SOON</button><button class="more" data-info="zigzagbot">MORE INFO ↗</button></div></article></div></section>
-<section class="section" id="chart"><div class="heading"><div><div class="kicker">03 · CHARTING</div><h2>Advanced Chart</h2></div></div><div class="feature"><div><div class="kicker">YOUR CHART · YOUR DRAWINGS</div><h3>Live broker-connected charts.<br>Private workspace.</h3><p>Chart with your broker's market data, technical indicators, drawing tools and editable setups. Your chart drawings stay on your computer.</p><ul><li>IBKR market-data connection; additional sources vary by build</li><li>Indicators, chart drawings, zoom and pan</li><li>Free Beta plus Premium drawing and analysis upgrades</li></ul><div class="actions"><button disabled>FREE BETA · ZIP PENDING</button><button class="upgrade" disabled>PREMIUM · COMING SOON</button><button class="more" data-info="chart">MORE INFO ↗</button></div></div><div class="feature-visual"><svg aria-label="Illustrative chart with X A B C D drawing" role="img" viewbox="0 0 520 240"><g stroke="#244153"><path d="M20 40H500M20 90H500M20 140H500M20 190H500"></path></g><path d="M20 170L55 140L80 155L110 90L140 110L180 80L205 100L245 60L285 90L330 75L370 100L410 55L460 70L500 35" fill="none" stroke="#2dd6ac" stroke-width="3"></path><path d="M90 180L190 50L280 160L360 85L450 185L280 160Z" fill="#608eff22" stroke="#80a7ff" stroke-width="2"></path><g fill="#dce9ff" font-size="16"><text x="82" y="205">X</text><text x="185" y="38">A</text><text x="275" y="180">B</text><text x="355" y="72">C</text><text x="445" y="205">D</text></g></svg><span>ADVANCED CHART · LOCAL WORKSPACE</span></div></div></section>
-<section class="section" id="control"><div class="heading"><div><div class="kicker">04 · FREE TOOL</div><h2>Control Panel</h2></div></div><div class="feature"><div><div class="kicker">ONE PLACE FOR YOUR BOTS</div><h3>Launch. Monitor.<br>Stay organized.</h3><p>A central desktop hub to launch and organize your WallStreetBots software. Completely free to download.</p><div class="actions"><button disabled>FREE DOWNLOAD · ZIP PENDING</button><button class="more" data-info="control">MORE INFO ↗</button></div></div><div class="feature-visual"><div class="big">▦</div><span>CONTROL PANEL · FREE</span></div></div></section>
-<section class="section" id="intelligence"><div class="heading"><div><div class="kicker">05 · THE TECHNOLOGY</div><h2>HAL + The Hive</h2></div><p>Intelligence inside the bots, and a planned community network to share useful trading insights.</p></div><div class="pair"><article class="tile"><svg class="hal-art" viewBox="0 0 480 225" role="img" aria-label="HAL intelligence flow diagram: market data and strategy signals flow through HAL evaluation to trade decisions" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="halg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1bc8e8"/><stop offset="1" stop-color="#9d75ff"/></linearGradient></defs>
-<rect x="4" y="4" width="472" height="217" rx="14" fill="#081b2a" stroke="#32586e"/>
-<g stroke="#2d718d" stroke-width="2" fill="none"><path d="M125 68H170L196 103"/><path d="M125 160H170L196 121"/><path d="M287 112H337"/></g>
-<g fill="#133044" stroke="#3c728e"><rect x="17" y="43" width="112" height="48" rx="7"/><rect x="17" y="135" width="112" height="48" rx="7"/><rect x="337" y="88" width="125" height="52" rx="7"/></g>
-<circle cx="240" cy="112" r="55" fill="#102d48" stroke="url(#halg)" stroke-width="3"/>
-<circle cx="240" cy="112" r="40" fill="none" stroke="#4ca6c6" stroke-dasharray="4 5"/>
-<g fill="#d8f8ff" font-family="Arial,sans-serif" text-anchor="middle"><text x="73" y="62" font-size="11" font-weight="bold">MARKET DATA</text><text x="73" y="77" font-size="9">Price · Volume</text><text x="73" y="154" font-size="11" font-weight="bold">STRATEGY</text><text x="73" y="169" font-size="9">Signals · Filters</text><text x="240" y="119" font-size="25" font-weight="900">HAL</text><text x="399" y="108" font-size="11" font-weight="bold">DECISIONS</text><text x="399" y="124" font-size="9">Evaluate · Log</text></g>
-<g fill="#59dcec"><circle cx="170" cy="68" r="3"/><circle cx="170" cy="160" r="3"/><circle cx="337" cy="112" r="3"/></g>
-<text x="240" y="198" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#9bc7db" letter-spacing="1.2">BOT INTELLIGENCE · CONCEPT DIAGRAM</text></svg><div class="kicker">HAL · BOT INTELLIGENCE</div><h3>Smarter decisions.</h3><p>HAL helps evaluate signals, market conditions and strategy decisions. Manual, Hybrid and Sentience capabilities vary by bot and edition.</p><button class="more" data-info="hal">MORE INFO ↗</button></article><article class="tile"><div class="hive-diagram"><svg aria-label="BeeBot connects directly to The Hive and shares approved statistics; other trading bots keep local CSV histories" role="img" style="width:100%;height:auto;display:block" viewbox="0 0 600 440" xmlns="http://www.w3.org/2000/svg">
+<main class="wrap"><section class="hero"><div class="eyebrow">DESKTOP TRADING SOFTWARE · FREE BETA RELEASES</div><h1>Start free.<br/><em>Trade your way.</em></h1><p>Start with a simple free bot. Move up to automated trading strategies, a private advanced chart, and tools built to manage your trading workspace. <strong>One-click Windows installers are planned for release—no manual Python or broker-library installation.</strong></p><div class="hero-actions"><a class="pill" href="#free">EXPLORE FREE BOTS ↓</a><a class="pill secondary" href="#premium">SEE ADVANCED BOTS →</a></div></section>
+<section class="section" id="free"><div class="heading"><div><div class="kicker">01 · ALWAYS FREE</div><h2>Free introductory bots</h2></div><p>Three simple tools to get started. No paid upgrades. One-click installers planned.</p></div><div class="cards"><article class="product"><div class="product-top"><span class="glyph">∿</span><span class="status">FREE FOREVER</span></div><h3>Mini RSI</h3><p class="lead">RSI signals. Automated paper trading.</p><div class="actions"><label class="download-choice"><input class="download-pick" data-local-free="Mini RSI" type="checkbox"/> FREE BETA · ADD</label><button class="more" data-info="minirsi">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">⌁</span><span class="status">FREE FOREVER</span></div><h3>Mini Scalper</h3><p class="lead">One-click chart plans. Manual entries, stops and targets.</p><div class="actions"><label class="download-choice"><input class="download-pick" data-local-free="Mini Scalper" type="checkbox"/> FREE BETA · ADD</label><button class="more" data-info="miniscalper">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">⇄</span><span class="status">FREE FOREVER</span></div><h3>IF/Then Bot</h3><p class="lead">Build IF/THEN rules and test them with IBKR Paper.</p><div class="actions"><label class="download-choice"><input class="download-pick" data-local-free="IF/Then Bot" type="checkbox"/> FREE BETA · ADD</label><button class="more" data-info="ifthenbot">MORE INFO ↗</button></div></article></div></section>
+<section class="section" id="premium"><div class="heading"><div><div class="kicker">02 · AUTOMATED STRATEGIES</div><h2>Trading bots</h2></div><p>Choose Free Beta for any bot, or select Premium Upgrade to add a paid edition to the original checkout cart.</p></div><div class="cards"><article class="product"><div class="product-top"><span class="glyph">↗</span><span class="status">FREE BETA + PREMIUM</span></div><h3>Momentum Bot</h3><p class="lead">Scan momentum. Manage the opening long and reversal cycle.</p><div class="actions"><label class="download-choice"><input class="download-pick" data-local-free="Momentum Bot" type="checkbox"/> FREE BETA · ADD</label><label class="download-choice paid"><input class="download-pick" data-bot="Open Momentum Bot" data-edition="Premium" type="checkbox"/> PREMIUM · $10 · ADD</label><button class="more" data-info="momentumbot">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">↶</span><span class="status">FREE BETA + PREMIUM</span></div><h3>Reversal Bot</h3><p class="lead">RSI divergence and price confirmation to find reversals.</p><div class="actions"><label class="download-choice"><input class="download-pick" data-bot="Reversal Bot" data-edition="Basic" type="checkbox"/> FREE BETA · ADD</label><label class="download-choice paid"><input class="download-pick" data-bot="Reversal Bot" data-edition="Premium" type="checkbox"/> PREMIUM · $10 · ADD</label><button class="more" data-info="reversalbot">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">╱</span><span class="status">FREE BETA + PREMIUM</span></div><h3>Trend Bot</h3><p class="lead">Follow directional trends with configurable strategy controls.</p><div class="actions"><label class="download-choice"><input class="download-pick" data-local-free="Trend Bot" type="checkbox"/> FREE BETA · ADD</label><label class="download-choice paid"><input class="download-pick" data-bot="Trend Bot" data-edition="Premium" type="checkbox"/> PREMIUM · $10 · ADD</label><button class="more" data-info="trendbot">MORE INFO ↗</button></div></article><article class="product"><div class="product-top"><span class="glyph">⌁</span><span class="status">FREE BETA + PREMIUM</span></div><h3>ZigZag Bot</h3><p class="lead">Trade swing structure between trends and reversals.</p><div class="actions"><label class="download-choice"><input class="download-pick" data-local-free="ZigZag Bot" type="checkbox"/> FREE BETA · ADD</label><label class="download-choice paid"><input class="download-pick" data-bot="ZigZag Bot" data-edition="Premium" type="checkbox"/> PREMIUM · $10 · ADD</label><button class="more" data-info="zigzagbot">MORE INFO ↗</button></div></article></div></section>
+<section class="section" id="chart"><div class="heading"><div><div class="kicker">03 · CHARTING</div><h2>Advanced Chart</h2></div></div><div class="feature"><div><div class="kicker">YOUR CHART · YOUR DRAWINGS</div><h3>Live broker-connected charts.<br/>Private workspace.</h3><p>Chart with your broker's market data, technical indicators, drawing tools and editable setups. Your chart drawings stay on your computer.</p><ul><li>IBKR market-data connection; additional sources vary by build</li><li>Indicators, chart drawings, zoom and pan</li><li>Free Beta plus Premium drawing and analysis upgrades</li></ul><div class="actions"><label class="download-choice"><input class="download-pick" data-local-free="Advanced Chart" type="checkbox"/> FREE BETA · ADD</label><label class="download-choice paid"><input class="download-pick" data-bot="Advanced Chart" data-edition="Premium" type="checkbox"/> PREMIUM · $10 · ADD</label><button class="more" data-info="chart">MORE INFO ↗</button></div></div><div class="feature-visual"><svg aria-label="Illustrative chart with X A B C D drawing" role="img" viewbox="0 0 520 240"><g stroke="#244153"><path d="M20 40H500M20 90H500M20 140H500M20 190H500"></path></g><path d="M20 170L55 140L80 155L110 90L140 110L180 80L205 100L245 60L285 90L330 75L370 100L410 55L460 70L500 35" fill="none" stroke="#2dd6ac" stroke-width="3"></path><path d="M90 180L190 50L280 160L360 85L450 185L280 160Z" fill="#608eff22" stroke="#80a7ff" stroke-width="2"></path><g fill="#dce9ff" font-size="16"><text x="82" y="205">X</text><text x="185" y="38">A</text><text x="275" y="180">B</text><text x="355" y="72">C</text><text x="445" y="205">D</text></g></svg><span>ADVANCED CHART · LOCAL WORKSPACE</span></div></div></section>
+<section class="section" id="control"><div class="heading"><div><div class="kicker">04 · FREE TOOL</div><h2>Control Panel</h2></div></div><div class="feature"><div><div class="kicker">ONE PLACE FOR YOUR BOTS</div><h3>Launch. Monitor.<br/>Stay organized.</h3><p>A central desktop hub to launch and organize your WallStreetBots software. Completely free to download.</p><div class="actions"><label class="download-choice"><input class="download-pick" data-control="1" type="checkbox"/> FREE · ADD</label><button class="more" data-info="control">MORE INFO ↗</button></div></div><div class="feature-visual"><div class="big">▦</div><span>CONTROL PANEL · FREE</span></div></div></section>
+<section class="section" id="intelligence"><div class="heading"><div><div class="kicker">05 · THE TECHNOLOGY</div><h2>HAL + The Hive</h2></div><p>Intelligence inside the bots, and a planned community network to share useful trading insights.</p></div><div class="pair"><article class="tile"><svg aria-label="HAL intelligence flow diagram: market data and strategy signals flow through HAL evaluation to trade decisions" class="hal-art" role="img" viewbox="0 0 480 225" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient id="halg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#1bc8e8"></stop><stop offset="1" stop-color="#9d75ff"></stop></lineargradient></defs>
+<rect fill="#081b2a" height="217" rx="14" stroke="#32586e" width="472" x="4" y="4"></rect>
+<g fill="none" stroke="#2d718d" stroke-width="2"><path d="M125 68H170L196 103"></path><path d="M125 160H170L196 121"></path><path d="M287 112H337"></path></g>
+<g fill="#133044" stroke="#3c728e"><rect height="48" rx="7" width="112" x="17" y="43"></rect><rect height="48" rx="7" width="112" x="17" y="135"></rect><rect height="52" rx="7" width="125" x="337" y="88"></rect></g>
+<circle cx="240" cy="112" fill="#102d48" r="55" stroke="url(#halg)" stroke-width="3"></circle>
+<circle cx="240" cy="112" fill="none" r="40" stroke="#4ca6c6" stroke-dasharray="4 5"></circle>
+<g fill="#d8f8ff" font-family="Arial,sans-serif" text-anchor="middle"><text font-size="11" font-weight="bold" x="73" y="62">MARKET DATA</text><text font-size="9" x="73" y="77">Price · Volume</text><text font-size="11" font-weight="bold" x="73" y="154">STRATEGY</text><text font-size="9" x="73" y="169">Signals · Filters</text><text font-size="25" font-weight="900" x="240" y="119">HAL</text><text font-size="11" font-weight="bold" x="399" y="108">DECISIONS</text><text font-size="9" x="399" y="124">Evaluate · Log</text></g>
+<g fill="#59dcec"><circle cx="170" cy="68" r="3"></circle><circle cx="170" cy="160" r="3"></circle><circle cx="337" cy="112" r="3"></circle></g>
+<text fill="#9bc7db" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.2" text-anchor="middle" x="240" y="198">BOT INTELLIGENCE · CONCEPT DIAGRAM</text></svg><div class="kicker">HAL · BOT INTELLIGENCE</div><h3>Smarter decisions.</h3><p>HAL helps evaluate signals, market conditions and strategy decisions. Manual, Hybrid and Sentience capabilities vary by bot and edition.</p><button class="more" data-info="hal">MORE INFO ↗</button></article><article class="tile"><div class="hive-diagram"><svg aria-label="BeeBot connects directly to The Hive and shares approved statistics; other trading bots keep local CSV histories" role="img" style="width:100%;height:auto;display:block" viewbox="0 0 600 440" xmlns="http://www.w3.org/2000/svg">
 <defs><lineargradient id="hiveNode" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#153b4d"></stop><stop offset="1" stop-color="#0c2333"></stop></lineargradient></defs>
 <g fill="none" stroke="#348ba6" stroke-linecap="round" stroke-width="2"><path d="M95 105V138H300V178"></path><path d="M300 105V178"></path><path d="M505 105V138H300"></path><path d="M300 288V327"></path><path d="M102 327H498"></path><path d="M102 327V348M300 327V348M498 327V348"></path></g>
 <g font-family="Segoe UI,Arial,sans-serif" text-anchor="middle">
@@ -40,9 +115,66 @@ dialog{max-width:580px;width:calc(100% - 32px);border:1px solid #5a9db6;border-r
 <text fill="#79c9db" font-size="12" x="300" y="153">BeeBot direct sync · optional CSV history import</text>
 </g></svg></div><div class="kicker">BEEBOT + THE HIVE · IN DEVELOPMENT</div><h3>Share setups. Discover trends.</h3><p>BeeBot is the planned direct gateway to The Hive: opt-in strategy sharing, symbol metrics and community setup trends. Other bots keep local trade histories.</p><button class="more" data-info="hive">MORE INFO ↗</button></article></div></section>
 <section class="section" id="other"><div class="heading"><div><div class="kicker">06 · ON THE ROADMAP</div><h2>More bots coming soon</h2></div><p>Additional strategy bots are in development. No downloads are available yet.</p></div><div class="small-grid"><article class="small-card"><strong>Breakout Bot</strong><span>Built to look for price breaking out of established ranges and qualifying breakout setups.</span><button class="more" data-info="soon0">MORE INFO ↗</button></article><article class="small-card"><strong>Omni Bot</strong><span>Multi-strategy trading bot designed to scan for and manage long and short trading opportunities.</span><button class="more" data-info="soon1">MORE INFO ↗</button></article><article class="small-card"><strong>ZeRO Bot</strong><span>Short-dated options trading bot focused on 0–3 DTE opportunities.</span><button class="more" data-info="soon2">MORE INFO ↗</button></article><article class="small-card"><strong>WheelBot</strong><span>Options-focused bot built around the wheel strategy and position management.</span><button class="more" data-info="soon3">MORE INFO ↗</button></article><article class="small-card"><strong>Dividend Bot</strong><span>Dividend-focused automation and tracking tools for income-oriented portfolios.</span><button class="more" data-info="soon4">MORE INFO ↗</button></article></div></section>
-</main><footer><div class="wrap">© WallStreetBots.org · Trading software is experimental. Beta functionality and broker compatibility depend on the specific build. Paper trading does not guarantee live results.<p class="notice">One-click installers will be offered once the packages are verified; no manual Python or broker-library setup is intended. Download buttons remain inactive until then.</p></div></footer>
-<dialog id="infoDialog" aria-label="Product information"><div id="infoContent"></div><button class="close" id="closeDialog">CLOSE</button></dialog>
-<div hidden id="infoBank"><div class="modal-info" id="info-minirsi" hidden><h2>Mini RSI</h2><p>Start with RSI. Learn automated RSI signal trading with a simple paper-trading workflow.</p><ul><li>RSI-based signals</li><li>Paper trading</li><li>Trade and decision logs</li><li>Simple introductory settings</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-miniscalper" hidden><h2>Mini Scalper</h2><p>Stage the trade yourself. Manual chart-based scalping tool for precise entries, protective stops and hands-on position management.</p><ul><li>Manual chart-based trade staging</li><li>Protective stops + position management</li><li>IBKR</li><li>Free introductory bot</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-ifthenbot" hidden><h2>IF/Then Bot</h2><p>Build straightforward IF/THEN trade rules and run them as an individual trading tool.</p><ul><li>Rule-based IF/THEN logic</li><li>Custom trade conditions</li><li>IBKR</li><li>Free introductory bot</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-momentumbot" hidden><h2>Momentum Bot</h2><p>Momentum meets autonomy. Scan and filter candidates, qualify a setup, then automate the opening long and confirmed reversal short cycle.</p><ul><li>Momentum scanner + candidate filters</li><li>Opening long / confirmed reversal short</li><li>Protective stops + trailing management</li><li>Live chart + activity updates</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-reversalbot" hidden><h2>Reversal Bot</h2><p>Find the turn. Looks for reversal setups using RSI divergence and price confirmation.</p><ul><li>RSI divergence + confirmation</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-trendbot" hidden><h2>Trend Bot</h2><p>Find the trend. Scans for sustained directional movement and qualifying trend opportunities.</p><ul><li>Trend-following strategy</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-zigzagbot" hidden><h2>ZigZag Bot</h2><p>Trade the swings in between. Looks for price-structure opportunities between major trends and reversals.</p><ul><li>Price-structure strategy</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" id="info-soon0" hidden><h2>Breakout Bot · Coming Soon</h2><p>Built to look for price breaking out of established ranges and qualifying breakout setups.</p><ul><li>Breakout strategy</li><li>HAL Intelligence</li><li>Coming Soon</li></ul></div><div class="modal-info" id="info-soon1" hidden><h2>Omni Bot · Coming Soon</h2><p>Multi-strategy trading bot designed to scan for and manage long and short trading opportunities.</p><ul><li>Multi-strategy long / short</li><li>HAL Intelligence</li><li>Platinum</li><li>Coming Soon</li></ul></div><div class="modal-info" id="info-soon2" hidden><h2>ZeRO Bot · Coming Soon</h2><p>Short-dated options trading bot focused on 0–3 DTE opportunities.</p><ul><li>0–3 DTE options</li><li>HAL Intelligence</li><li>Coming Soon</li></ul></div><div class="modal-info" id="info-soon3" hidden><h2>WheelBot · Coming Soon</h2><p>Options-focused bot built around the wheel strategy and position management.</p><ul><li>Options wheel strategy</li><li>Position management</li><li>Coming Soon</li></ul></div><div class="modal-info" id="info-soon4" hidden><h2>Dividend Bot · Coming Soon</h2><p>Dividend-focused automation and tracking tools for income-oriented portfolios.</p><ul><li>Dividend tracking</li><li>Income-focused automation</li><li>Coming Soon</li></ul></div>
+<section class="section" id="purchaseCart"><div class="heading"><div><div class="kicker">SHOPPING CART</div><h2>Your selected bots</h2></div></div><div class="box"><h3>Selected downloads</h3><div id="selectedList"><p>No bots selected yet.</p></div><div class="note">Reversal Basic and the Control Center are free. Any Premium Beta selection continues to Bitcoin checkout.</div></div><div class="box"><div class="free" id="readyLabel">MAKE A SELECTION</div><p id="selectionSummary">Choose a beta bot or add the free Control Center.</p><button class="createBtn" disabled="" id="continueSelection">CONTINUE WITH SELECTED ITEMS</button></div><div class="notice" id="recoveryShortcut">Already purchased Premium? Select “Restore existing license” below to open your original recovery form.</div><button class="pill secondary" id="openRecovery">RESTORE EXISTING LICENSE</button></section><section class="section checkout" id="bitcoinCheckout" style="display:none">
+<div class="head">PREMIUM · BITCOIN CHECKOUT</div>
+<div class="body">
+<p>Premium Beta access is $10 USD. Payment is processed in Bitcoin and unlocks the Premium installer and license flow. Already paid? Do not pay again — restore your original license below.</p>
+<button class="btn gold" id="quoteBtn">GENERATE BITCOIN QUOTE</button>
+<div class="payment-panel" id="paymentPanel">
+<div id="quoteDetails">Requesting quote…</div>
+<label class="field">Bitcoin transaction ID (TXID)<input autocomplete="off" id="txid" maxlength="64" placeholder="Paste your 64-character transaction ID"/></label>
+<div style="display:flex;gap:9px;flex-wrap:wrap"><button class="btn" id="verifyBtn">VERIFY PAYMENT</button><button class="btn secondary" id="statusBtn">CHECK PAYMENT STATUS</button></div>
+<div class="status" id="paymentStatus"></div>
+<div class="license" hidden="" id="issuedLicense"><strong>✓ PAYMENT VERIFIED — SAVE THIS LICENSE KEY</strong><div style="margin:8px 0"><code id="licenseText"></code></div><button class="btn secondary" id="copyLicense">COPY LICENSE KEY</button></div>
+<button class="btn" disabled="" hidden="" id="premiumDownload">DOWNLOAD PREMIUM INSTALLER</button>
+</div>
+<div class="restore">
+<h3 style="margin-top:0">Reinstalling Premium?</h3>
+<p>Enter your original Premium license key. No additional payment is required.</p>
+<div class="restore-row"><input autocomplete="off" id="restoreKey" placeholder="Your Premium license key"/><button class="btn secondary" id="restoreBtn">RESTORE ACCESS</button></div>
+<div class="status" id="restoreStatus"></div>
+<button class="btn" disabled="" hidden="" id="restoredDownload">DOWNLOAD PREMIUM INSTALLER</button>
+</div>
+</div>
+</section><div aria-hidden="true" id="legacyPurchaseSelectors"><article class="card bot-card reversal-basic-card" data-bot="Reversal Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">↶</span><div class="meta"><h2>Reversal Bot</h2><b>RSI · REVERSAL</b></div></div></div>
+<p><strong>Find the turn.</strong> Looks for reversal setups using RSI divergence and price confirmation.</p>
+<div class="tags"><span>IBKR</span><span>Trading Bot</span><span>Local CSV Trade Database</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>RSI divergence + confirmation</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Basic / Premium Beta</li></ul><div class="editions standalone-editions">
+<label class="basic-free"><input class="edition" name="reversal-edition" type="radio" value="Basic"/><span><strong>BASIC</strong><small>FREE</small></span></label>
+<label class="premium"><input class="edition" name="reversal-edition" type="radio" value="Premium"/><span><strong>PREMIUM BETA</strong><small>$10</small></span></label>
+</div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article><article class="card bot-card" data-bot="Trend Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">↗</span><div class="meta"><h2>Trend Bot</h2><b>TREND FOLLOWING</b></div></div></div>
+<p><strong>Find the trend.</strong> Scans for sustained directional movement and qualifying trend opportunities.</p>
+<div class="tags"><span>IBKR</span><span>Trading Bot</span><span>Local CSV Trade Database</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Trend-following strategy</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" name="trend-edition" type="radio" value="Premium"/><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article><article class="card bot-card" data-bot="ZigZag Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">⌁</span><div class="meta"><h2>ZigZag Bot</h2><b>PRICE STRUCTURE</b></div></div></div>
+<p><strong>Trade the swings in between.</strong> Looks for price-structure opportunities between major trends and reversals.</p>
+<div class="tags"><span>IBKR</span><span>Trading Bot</span><span>Local CSV Trade Database</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Price-structure strategy</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" name="zigzag-edition" type="radio" value="Premium"/><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article><article class="card bot-card" data-bot="Scalp Bot" id="miniScalperCard">
+<div class="ct"><div class="bot-title"><span class="bot-icon">◎</span><div class="meta"><h2>Mini Scalper</h2><b>MANUAL SCALPER</b></div></div></div>
+<p><strong>Stage the trade yourself.</strong> Manual chart-based scalping tool for precise entries, protective stops and hands-on position management.</p>
+<div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Manual chart-based trade staging</li><li>Protective stops + position management</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" name="scalp-edition" type="radio" value="Premium"/><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article><article class="card bot-card" data-bot="IF/Then Bot">
+<div class="ct"><div class="bot-title"><span class="bot-icon">⇄</span><div class="meta"><h2>IF/Then Bot</h2><b>RULE-BASED TRADING</b></div></div></div>
+<p>Build straightforward IF/THEN trade rules and run them as an individual trading tool.</p>
+<div class="tags"><span>IBKR</span><span>Trading Bot</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Rule-based IF/THEN logic</li><li>Custom trade conditions</li><li>IBKR</li><li>Premium Beta</li></ul><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" name="ifthen-edition" type="radio" value="Premium"/><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article><article class="card bot-card" data-bot="Open Momentum Bot" id="momentumCard">
+<div class="ct"><div class="bot-title"><span class="bot-icon">↗</span><div class="meta"><h2>Momentum Bot</h2><b>AUTOMATED SCALPING</b></div></div></div>
+<p><strong>Momentum meets autonomy.</strong> Scan and filter candidates, qualify a setup, then automate the opening long and confirmed reversal short cycle.</p>
+<div class="tags"><span>IBKR</span><span>Automated Trading Bot</span></div>
+<div class="bot-feature-title">Key features</div><ul class="bot-list"><li>Momentum scanner + candidate filters</li><li>Opening long / confirmed reversal short</li><li>Protective stops + trailing management</li><li>Live chart + activity updates</li></ul>
+<a class="momentum-live-demo" href="assets/videos/demo_change_stop_order_momentum_bot.mp4" rel="noopener" target="_blank"><span aria-hidden="true" class="demo-play">▶</span> WATCH LIVE DEMO ↗</a><div class="editions premium-only standalone-editions"><label class="premium"><input class="edition" name="momentum-edition" type="radio" value="Premium"/><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div><div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR supported</span><span class="compat-pill testing">MT5 in beta testing</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Trading execution currently uses IBKR; MT5 trading support is not yet released. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article><article aria-label="Advanced Chart standalone download promotion" class="advanced-chart-promo bot-card" data-bot="Advanced Chart" id="advancedChartCard">
+<div><div class="chart-promo-eyebrow">STANDALONE TRADING TOOL · BETA</div><h2>Advanced Chart.<br/><em>Your data. Your drawings.</em></h2>
+<p>A professional charting workspace connected directly to your broker's market data. Analyze the market locally, with your own private drawings and technical tools.</p>
+<div class="chart-promo-points"><span>Broker-connected IBKR + MT5 pricing</span><span>Fibonacci, Wyckoff and pattern drawing tools</span><span>Indicators, multi-timeframe views and chart pop-out</span><span>Local workspace — chart drawings stay private</span></div>
+<div class="editions premium-only standalone-editions" style="max-width:310px;margin:12px 0"><label class="premium"><input class="edition" name="advanced-chart-edition" type="radio" value="Premium"/><span><strong>PREMIUM BETA</strong><small>$10</small></span></label></div><div class="chart-promo-actions"><button class="chart-download" disabled="" title="Advanced Chart installer download has not been published" type="button">↓ DOWNLOAD BETA · SOON</button><a class="chart-view" href="#advancedChart">EXPLORE ADVANCED CHART ↗</a></div>
+<p class="chart-promo-note">Download will activate when the standalone installer is published. Live data requires your broker's market-data subscription.</p></div>
+<div class="chart-promo-screen"><div class="screen-head"><strong>ADVANCED CHART · ABC · 5 MIN</strong><span>LOCAL WORKSPACE</span></div>
+<svg aria-label="Illustrative technical analysis candlestick chart with trendlines and Fibonacci levels" role="img" viewbox="0 0 480 300"><rect fill="#091925" height="300" rx="6" width="480"></rect><g stroke="#244152" stroke-width="1"><path d="M15 45H465M15 90H465M15 135H465M15 180H465M15 225H465M15 270H465M95 15V285M185 15V285M275 15V285M365 15V285"></path></g><g stroke-width="2"><path d="M42 207V258M70 194V239M98 173V220M126 185V229M154 151V198M182 129V181M210 145V190M238 109V163M266 92V142M294 109V153M322 77V132M350 63V114M378 87V137M406 49V105" stroke="#60cddd"></path></g><g fill="#42d6b1"><rect height="22" width="12" x="36" y="224"></rect><rect height="22" width="12" x="64" y="208"></rect><rect height="23" width="12" x="92" y="185"></rect><rect height="24" width="12" x="148" y="165"></rect><rect height="25" width="12" x="176" y="142"></rect><rect height="27" width="12" x="232" y="120"></rect><rect height="26" width="12" x="260" y="105"></rect><rect height="29" width="12" x="316" y="88"></rect><rect height="26" width="12" x="344" y="75"></rect><rect height="28" width="12" x="400" y="61"></rect></g><g fill="#f38d9b"><rect height="22" width="12" x="120" y="198"></rect><rect height="22" width="12" x="204" y="158"></rect><rect height="23" width="12" x="288" y="122"></rect><rect height="24" width="12" x="372" y="101"></rect></g><path d="M25 262L190 160L290 190L434 32" fill="none" stroke="#ffd36e" stroke-dasharray="6 5" stroke-width="2"></path><path d="M90 234L200 65L300 195L385 91L440 210" fill="#648cff16" stroke="#9bb5ff" stroke-width="2"></path><g fill="#c4d8f5" font-size="13" font-weight="bold"><text x="85" y="253">X</text><text x="193" y="55">A</text><text x="295" y="214">B</text><text x="380" y="80">C</text><text x="436" y="229">D</text></g><g stroke="#3b718c" stroke-dasharray="4 5"><path d="M20 112H460M20 165H460M20 220H460"></path></g><text fill="#9cdbed" font-size="10" x="22" y="23">SMA 20 · VWAP · FIBONACCI · CYPHER</text></svg></div>
+<div aria-label="Platform, broker and installation compatibility" class="compat-strip"><span class="compat-label">COMPATIBILITY</span><span class="compat-pill ready">IBKR</span><span class="compat-pill ready">MT5</span><span class="compat-pill ready">Yahoo backup</span><span class="compat-pill ready">Windows desktop</span><span class="compat-pill testing">32/64-bit: verify builds</span><span class="compat-pill install">ONE-CLICK INSTALL · NO PYTHON OR BROKER LIBRARIES TO SET UP</span><span class="compat-note">Broker live data requires subscriptions; Yahoo backup may be delayed. No Python installation or manual broker-library setup required with the packaged installer (pending release verification).</span></div></article><input id="controlCenterPick" type="checkbox"/></div></main><footer><div class="wrap">© WallStreetBots.org · Trading software is experimental. Beta functionality and broker compatibility depend on the specific build. Paper trading does not guarantee live results.<p class="notice">One-click installers will be offered once the packages are verified; no manual Python or broker-library setup is intended. Download buttons remain inactive until then.</p></div></footer>
+<dialog aria-label="Product information" id="infoDialog"><div id="infoContent"></div><button class="close" id="closeDialog">CLOSE</button></dialog>
+<div hidden="" id="infoBank"><div class="modal-info" hidden="" id="info-minirsi"><h2>Mini RSI</h2><p>Start with RSI. Learn automated RSI signal trading with a simple paper-trading workflow.</p><ul><li>RSI-based signals</li><li>Paper trading</li><li>Trade and decision logs</li><li>Simple introductory settings</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" hidden="" id="info-miniscalper"><h2>Mini Scalper</h2><p>Stage the trade yourself. Manual chart-based scalping tool for precise entries, protective stops and hands-on position management.</p><ul><li>Manual chart-based trade staging</li><li>Protective stops + position management</li><li>IBKR</li><li>Free introductory bot</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" hidden="" id="info-ifthenbot"><h2>IF/Then Bot</h2><p>Build straightforward IF/THEN trade rules and run them as an individual trading tool.</p><ul><li>Rule-based IF/THEN logic</li><li>Custom trade conditions</li><li>IBKR</li><li>Free introductory bot</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" hidden="" id="info-momentumbot"><h2>Momentum Bot</h2><p>Momentum meets autonomy. Scan and filter candidates, qualify a setup, then automate the opening long and confirmed reversal short cycle.</p><ul><li>Momentum scanner + candidate filters</li><li>Opening long / confirmed reversal short</li><li>Protective stops + trailing management</li><li>Live chart + activity updates</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" hidden="" id="info-reversalbot"><h2>Reversal Bot</h2><p>Find the turn. Looks for reversal setups using RSI divergence and price confirmation.</p><ul><li>RSI divergence + confirmation</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" hidden="" id="info-trendbot"><h2>Trend Bot</h2><p>Find the trend. Scans for sustained directional movement and qualifying trend opportunities.</p><ul><li>Trend-following strategy</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" hidden="" id="info-zigzagbot"><h2>ZigZag Bot</h2><p>Trade the swings in between. Looks for price-structure opportunities between major trends and reversals.</p><ul><li>Price-structure strategy</li><li>HAL Intelligence</li><li>Searchable local CSV trade history</li><li>IBKR</li><li>Free Beta / Premium upgrades</li></ul><p class="caution">One-click Windows installation is the release goal: no need to install Python or broker libraries separately. Installer packaging is pending verification. IBKR TWS or Gateway and any required market-data subscriptions remain separate. Downloads will be enabled when verified packages are uploaded.</p></div><div class="modal-info" hidden="" id="info-soon0"><h2>Breakout Bot · Coming Soon</h2><p>Built to look for price breaking out of established ranges and qualifying breakout setups.</p><ul><li>Breakout strategy</li><li>HAL Intelligence</li><li>Coming Soon</li></ul></div><div class="modal-info" hidden="" id="info-soon1"><h2>Omni Bot · Coming Soon</h2><p>Multi-strategy trading bot designed to scan for and manage long and short trading opportunities.</p><ul><li>Multi-strategy long / short</li><li>HAL Intelligence</li><li>Platinum</li><li>Coming Soon</li></ul></div><div class="modal-info" hidden="" id="info-soon2"><h2>ZeRO Bot · Coming Soon</h2><p>Short-dated options trading bot focused on 0–3 DTE opportunities.</p><ul><li>0–3 DTE options</li><li>HAL Intelligence</li><li>Coming Soon</li></ul></div><div class="modal-info" hidden="" id="info-soon3"><h2>WheelBot · Coming Soon</h2><p>Options-focused bot built around the wheel strategy and position management.</p><ul><li>Options wheel strategy</li><li>Position management</li><li>Coming Soon</li></ul></div><div class="modal-info" hidden="" id="info-soon4"><h2>Dividend Bot · Coming Soon</h2><p>Dividend-focused automation and tracking tools for income-oriented portfolios.</p><ul><li>Dividend tracking</li><li>Income-focused automation</li><li>Coming Soon</li></ul></div>
 <div class="modal-info" id="info-chart"><h2>Advanced Chart</h2><p>A private, broker-connected chart workspace with indicators, drawing tools, and analysis features. Free Beta includes core tools; Premium features vary by release.</p><p>Broker subscriptions are required for live data. This standalone chart is not an automated order execution engine.</p></div>
 <div class="modal-info" id="info-control"><h2>Control Panel</h2><p>Free desktop hub for launching and organizing installed WallStreetBots tools. Download package will be linked after upload.</p></div>
 <div class="modal-info" id="info-hal"><h2>HAL Intelligence</h2><p>HAL is the configurable intelligence layer used by higher-level trading bots for signal evaluation and market-context checks. Modes and actual capabilities differ by bot, Free Beta and Premium release.</p></div>
@@ -53,4 +185,180 @@ const dlg=document.getElementById('infoDialog'),content=document.getElementById(
 document.addEventListener('click',e=>{const b=e.target.closest('[data-info]');if(!b)return;const src=document.getElementById('info-'+b.dataset.info);if(!src)return;content.innerHTML=src.innerHTML+'<p class="install-footnote"><strong>ONE-CLICK INSTALL (planned):</strong> No need to install Python or broker libraries manually with the packaged Windows installer, once verified. Broker software and market-data access may still be required.</p>';dlg.showModal()});
 document.getElementById('closeDialog').addEventListener('click',()=>dlg.close());
 dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
-</script></body></html>
+</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FT272GQ5T5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-FT272GQ5T5');</script><script>
+(function(){
+  const cards=[...document.querySelectorAll('.bot-card')];
+  const control=document.getElementById('controlCenterPick');
+  const list=document.getElementById('selectedList');
+  const summary=document.getElementById('selectionSummary');
+  const ready=document.getElementById('readyLabel');
+  const go=document.getElementById('continueSelection');
+  const checkout=document.getElementById('bitcoinCheckout');
+
+  function selections(){
+    const chosen=[];
+    cards.forEach(card=>{
+      const edition=card.querySelector('.edition:checked');
+      if(edition) chosen.push({name:card.dataset.bot, edition:edition.value});
+    });
+    if(control && control.checked) chosen.push({name:'WallStreetBots.org Control Center', edition:'Control Panel'});
+    document.querySelectorAll('input.download-pick[data-local-free]:checked').forEach(p=>chosen.push({name:p.dataset.localFree,edition:'Free Beta'}));
+    return chosen;
+  }
+
+  function update(){
+    const chosen=selections();
+    if(!chosen.length){
+      list.innerHTML='<p>No bots selected yet.</p>';
+      summary.textContent='Choose a beta bot or add the free Control Center.';
+      ready.textContent='MAKE A SELECTION';
+      go.disabled=true;
+      checkout.style.display='none';
+      return;
+    }
+    list.innerHTML='<ul>'+chosen.map(x=>'<li><strong>'+x.name+'</strong> — '+x.edition+'</li>').join('')+'</ul>';
+    const premium=chosen.some(x=>x.edition==='Premium');
+    ready.textContent=premium?'PREMIUM SELECTED':'READY TO DOWNLOAD';
+    summary.textContent=premium
+      ? 'Your selection includes Premium. Continue to Bitcoin checkout.'
+      : 'Your selected items do not require Bitcoin payment.';
+    go.disabled=false;
+    if(!premium) checkout.style.display='none';
+  }
+
+  document.querySelectorAll('.edition').forEach(el=>el.addEventListener('change',update));
+  document.querySelectorAll('input.download-pick[data-local-free]').forEach(el=>el.addEventListener('change',update));
+  if(control) control.addEventListener('change',update);
+
+  go.addEventListener('click',()=>{
+    const chosen=selections();
+    const premium=chosen.some(x=>x.edition==='Premium');
+    checkout.style.display=premium?'block':'none';
+    if(premium){
+      checkout.scrollIntoView({behavior:'smooth',block:'start'});
+    } else {
+      alert('Your free selections are saved in the download list. Installers will become available when their packages are verified and published.');
+    }
+  });
+
+  update();
+})();
+</script><script>
+const WORKER='https://falling-sky-7997.algobotbuilder.workers.dev';
+let quote=null, premiumKey='';
+const licensePattern=/^MBB-[A-F0-9]{8}(?:-[A-F0-9]{8}){7}$/i;
+const $=id=>document.getElementById(id);
+function setStatus(id,text,error=false){const el=$(id);el.textContent=text;el.className='status '+(error?'error':'');}
+async function installer(product,key=''){
+  const premium=product==='premium';
+  const r=await fetch(WORKER+'/'+(premium?'premium/download':'basic-reversal/download'),{
+    method:premium?'POST':'GET',
+    headers:premium?{'Content-Type':'application/json'}:{},
+    body:premium?JSON.stringify({license_key:key}):undefined,
+    cache:'no-store'
+  });
+  if(!r.ok){let msg='Download unavailable ('+r.status+').';try{const j=await r.json();msg=j.error||msg}catch(e){}throw Error(msg)}
+  const type=r.headers.get('content-type')||'';
+  if(type.includes('json')||type.includes('text/html'))throw Error('The server returned a page instead of the installer.');
+  const blob=await r.blob();if(!blob.size)throw Error('Installer download was empty.');
+  const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=premium?'Premium_Setup.exe':'Basic_Setup.exe';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),60000);
+}
+
+
+function copyRow(label,value){
+  const row=document.createElement('div');row.className='copyrow';
+  const info=document.createElement('span');const strong=document.createElement('strong');strong.textContent=label+': ';const code=document.createElement('code');code.textContent=String(value);info.append(strong,code);
+  const b=document.createElement('button');b.type='button';b.textContent='Copy';b.onclick=()=>navigator.clipboard.writeText(String(value)).then(()=>{b.textContent='Copied ✓';setTimeout(()=>b.textContent='Copy',1500)});
+  row.append(info,b);return row;
+}
+function renderQuote(q){
+  const el=$('quoteDetails');el.replaceChildren();
+  el.append(copyRow('Receiving address',q.bitcoin_address),copyRow('Amount (BTC)',q.required_btc));
+  const p=document.createElement('p');p.className='fine';p.textContent='Send the exact amount shown. Quote expires '+new Date(q.expires_at).toLocaleString()+'. Quote ID: '+q.quote_id;el.append(p);
+}
+$('quoteBtn').onclick=async()=>{
+  $('paymentPanel').classList.add('show');setStatus('paymentStatus','Fetching signed quote…');
+  try{const r=await fetch(WORKER+'/premium/quote',{cache:'no-store'}),q=await r.json();if(!r.ok||!q.ok)throw Error(q.error||'Could not create quote');quote=q;renderQuote(q);setStatus('paymentStatus','Send the exact BTC amount, then enter your TXID and verify.')}
+  catch(e){setStatus('paymentStatus','Quote error: '+e.message,true)}
+};
+function verified(v){
+  const key=typeof v.license_key==='string'?v.license_key.trim().toUpperCase():'';
+  if(licensePattern.test(key)){premiumKey=key;$('licenseText').textContent=key;$('issuedLicense').hidden=false;$('premiumDownload').disabled=false;$('premiumDownload').hidden=false}
+  setStatus('paymentStatus','✓ Bitcoin payment verified. Save your original license key before downloading.');
+}
+$('verifyBtn').onclick=async()=>{
+  if(!quote){setStatus('paymentStatus','Generate a quote first.',true);return}
+  const txid=$('txid').value.trim();if(!/^[a-fA-F0-9]{64}$/.test(txid)){setStatus('paymentStatus','Enter a valid 64-character TXID.',true);return}
+  setStatus('paymentStatus','Checking blockchain confirmation…');
+  try{const r=await fetch(WORKER+'/premium/verify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({txid,quote_id:quote.quote_id,quote_signature:quote.quote_signature,required_sats:quote.required_sats,expires_at:quote.expires_at})});const v=await r.json();if(!r.ok||!v.ok)throw Error(v.error||'Verification failed');if(v.verified)verified(v);else setStatus('paymentStatus','Payment status: '+v.status+'. '+(v.error||'Try again after confirmation.'))}
+  catch(e){setStatus('paymentStatus','Verification error: '+e.message,true)}
+};
+$('statusBtn').onclick=async()=>{
+  if(!quote){setStatus('paymentStatus','Generate a quote first.',true);return}
+  try{const r=await fetch(WORKER+'/premium/status?quote_id='+encodeURIComponent(quote.quote_id),{cache:'no-store'}),v=await r.json();if(!r.ok||!v.ok)throw Error(v.error||'Status unavailable');if(v.verified||v.status==='verified')verified(v);else setStatus('paymentStatus','Payment status: '+v.status+'. Confirmed: '+v.confirmed+'; received: '+v.received_sats+' sats.')}
+  catch(e){setStatus('paymentStatus','Status error: '+e.message,true)}
+};
+$('copyLicense').onclick=()=>{if(premiumKey)navigator.clipboard.writeText(premiumKey).then(()=>setStatus('paymentStatus','License key copied. Store it securely.'))};
+$('premiumDownload').onclick=async()=>{try{await installer('premium',premiumKey);setStatus('paymentStatus','Premium installer download requested.')}catch(e){setStatus('paymentStatus',e.message,true)}};
+$('restoreBtn').onclick=async()=>{
+  const key=$('restoreKey').value.trim().toUpperCase();if(!licensePattern.test(key)){setStatus('restoreStatus','Enter your complete original Premium license key.',true);return}
+  const b=$('restoreBtn');$('restoredDownload').hidden=true;$('restoredDownload').disabled=true;b.disabled=true;setStatus('restoreStatus','Checking your license…');
+  try{const r=await fetch(WORKER+'/premium/recover',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({license_key:key})}),v=await r.json();if(!r.ok||!v.ok||!v.active)throw Error(v.error||'License not active');premiumKey=key;$('restoredDownload').disabled=false;$('restoredDownload').hidden=false;setStatus('restoreStatus','✓ Premium unlocked. No additional payment required.')}
+  catch(e){setStatus('restoreStatus','Restore failed: '+e.message,true)}
+  finally{b.disabled=false}
+};
+$('restoredDownload').onclick=async()=>{try{await installer('premium',premiumKey);setStatus('restoreStatus','Premium installer download requested.')}catch(e){setStatus('restoreStatus',e.message,true)}};
+</script><script id="beta-feature-download-config">
+/* All three featured beta buttons open checkout, not installer URLs. */
+const betaCheckoutProducts = {
+  advancedChart: { selector: '#advancedChartCard input.edition[value="Premium"]' },
+  openMomentumBot: { selector: '#momentumCard input.edition[value="Premium"]' },
+  miniScalper: { selector: '#miniScalperCard input.edition[value="Premium"]' }
+};
+document.querySelectorAll('[data-beta-download]').forEach(function(button){
+  button.removeAttribute('aria-disabled');
+  button.removeAttribute('onclick');
+  button.addEventListener('click',function(event){
+    event.preventDefault();
+    const product=betaCheckoutProducts[button.dataset.betaDownload];
+    const choice=product && document.querySelector(product.selector);
+    const next=document.getElementById('continueSelection');
+    if(!choice || !next){ console.error('Beta checkout selection unavailable',button.dataset.betaDownload);return; }
+    choice.checked=true;
+    choice.dispatchEvent(new Event('change',{bubbles:true}));
+    next.click();
+  });
+});
+</script><script id="cosmetic-cart-bridge">(function(){
+ const cart=document.getElementById('purchaseCart');
+ const control=document.getElementById('controlCenterPick');
+ const picks=[...document.querySelectorAll('input.download-pick')];
+ function syncFromLegacy(){
+   picks.forEach(p=>{
+     if(p.dataset.control){p.checked=!!(control&&control.checked);return;}
+     if(p.dataset.localFree)return;
+     const card=[...document.querySelectorAll('#legacyPurchaseSelectors .bot-card')].find(c=>c.dataset.bot===p.dataset.bot);
+     const radio=card&&[...card.querySelectorAll('input.edition')].find(i=>i.value===p.dataset.edition);
+     p.checked=!!(radio&&radio.checked);
+   });
+   const extras=picks.filter(p=>p.dataset.localFree&&p.checked).map(p=>p.dataset.localFree);
+   // Free Beta picks are rendered directly by the original cart update() listener.
+ }
+ picks.forEach(p=>p.addEventListener('change',()=>{
+   if(p.dataset.control){if(control){control.checked=p.checked;control.dispatchEvent(new Event('change',{bubbles:true}));}}
+   else if(!p.dataset.localFree){
+     const card=[...document.querySelectorAll('#legacyPurchaseSelectors .bot-card')].find(c=>c.dataset.bot===p.dataset.bot);
+     const radio=card&&[...card.querySelectorAll('input.edition')].find(i=>i.value===p.dataset.edition);
+     if(!radio){p.checked=false;alert('This product is not connected to the original checkout.');return;}
+     if(p.checked){radio.checked=true;}else if(radio.checked){radio.checked=false;}
+     radio.dispatchEvent(new Event('change',{bubbles:true}));
+   }
+   syncFromLegacy();
+ }));
+ document.querySelectorAll('#legacyPurchaseSelectors .edition').forEach(r=>r.addEventListener('change',syncFromLegacy));
+ if(control)control.addEventListener('change',syncFromLegacy);
+ document.getElementById('openRecovery').addEventListener('click',()=>{
+   const checkout=document.getElementById('bitcoinCheckout');checkout.style.display='block';checkout.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('restoreKey').focus({preventScroll:true});
+ });
+ syncFromLegacy();
+})();</script></body></html>

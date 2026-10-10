@@ -158,6 +158,35 @@ dialog{max-width:580px;width:calc(100% - 32px);border:1px solid #5a9db6;border-r
 .product .actions .slideshow-home-link{margin-top:2px}
 .feature .actions .slideshow-home-link{margin-top:0}
 @media(max-width:610px){#chart .feature-visual,#control .feature-visual{width:70%!important;max-width:70%!important}}
+</style><style>
+/* Compact product banners with in-page screenshot zoom. */
+#chart .feature.advanced-chart-feature, #control .feature {
+ display:grid!important;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr)!important;
+ gap:24px!important;align-items:center!important;padding:22px 24px!important;
+}
+#chart .feature.advanced-chart-feature > div:first-child, #control .feature > div:first-child{min-width:0!important}
+#chart .feature-visual,#control .feature-visual{
+ width:100%!important;max-width:100%!important;min-height:0!important;height:auto!important;
+ aspect-ratio:auto!important;margin:0!important;padding:8px!important;
+ display:block!important;background:#081723!important;border:1px solid #315268!important;
+ border-radius:11px!important;overflow:hidden!important;
+}
+#chart .feature-visual .fullsize-shot,#control .feature-visual .fullsize-shot{display:block!important;width:100%!important;cursor:zoom-in!important}
+#chart .feature-visual img,#control .feature-visual img{
+ display:block!important;width:100%!important;height:auto!important;max-width:100%!important;
+ max-height:260px!important;object-fit:contain!important;border-radius:6px!important;
+}
+#chart .feature-visual span,#control .feature-visual span{font-size:10px!important;padding:7px 4px!important;letter-spacing:1px!important}
+#chart .shot-hint,#control .shot-hint{font-size:11px!important;padding:4px!important}
+#chart .feature-visual .fullsize-shot:focus-visible,#control .feature-visual .fullsize-shot:focus-visible{outline:2px solid #43d9f1;outline-offset:2px}
+#shotZoom{position:fixed;inset:0;width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;
+ padding:52px 20px 22px;margin:0;border:0;background:rgba(3,12,20,.96);color:#eaf8ff;overflow:auto}
+#shotZoom::backdrop{background:rgba(0,0,0,.88)}
+#shotZoom img{display:block;max-width:100%;max-height:calc(100dvh - 110px);width:auto;height:auto;margin:auto;object-fit:contain}
+#shotZoom .zoom-toolbar{position:fixed;top:9px;right:18px;display:flex;gap:10px;align-items:center;z-index:2}
+#shotZoom button{background:#17435a;color:#fff;border:1px solid #4b93aa;border-radius:7px;padding:9px 15px;font-weight:700;cursor:pointer}
+@media(max-width:950px){#chart .feature.advanced-chart-feature,#control .feature{grid-template-columns:1fr!important}}
+@media(max-width:610px){#chart .feature.advanced-chart-feature,#control .feature{padding:18px!important;gap:16px!important}#chart .feature-visual img,#control .feature-visual img{max-height:220px!important}}
 </style></head><body>
 <header class="topbar"><div class="wrap nav"><a class="brand" href="#">WALLSTREET<b>BOTS</b>.ORG</a><nav class="links"><a href="#free">Free Bots</a><a href="#premium">Trading Bots</a><a href="#chart">Advanced Chart</a><a href="#control">Control Panel</a><a href="#intelligence">HAL Intelligence</a><a href="#other">Coming Soon</a><a href="#beebot-banner">BeeBot + The HIVE</a></nav></div></header>
 <main class="wrap"><section aria-label="Introduction" class="hero"><div class="eyebrow">DESKTOP TRADING SOFTWARE · FREE BETA RELEASES</div><h1>Trading bots.<br/><em>Start free.</em></h1><p>Explore free introductory bots and advanced automated trading tools.</p><div class="hero-actions"><a class="pill" href="#free">EXPLORE FREE BOTS ↓</a><a class="pill secondary" href="#premium">ADVANCED BOTS →</a></div></section>
@@ -452,4 +481,4 @@ document.querySelectorAll('[data-beta-download]').forEach(function(button){
    const checkout=document.getElementById('bitcoinCheckout');checkout.style.display='block';checkout.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('restoreKey').focus({preventScroll:true});
  });
  syncFromLegacy();
-})();</script></body></html>
+})();</script><dialog aria-label="Screenshot enlarged view" id="shotZoom"><div class="zoom-toolbar"><button id="closeShotZoom" type="button">✕ Close</button></div><img alt="Enlarged software screenshot" id="zoomedShot"/></dialog><script>(function(){const dlg=document.getElementById('shotZoom'),pic=document.getElementById('zoomedShot');document.querySelectorAll('#chart .fullsize-shot,#control .fullsize-shot').forEach(a=>{a.setAttribute('title','Click to enlarge here');a.addEventListener('click',e=>{e.preventDefault();const im=a.querySelector('img');pic.src=im.src;pic.alt=im.alt;dlg.showModal();});});document.getElementById('closeShotZoom').addEventListener('click',()=>dlg.close());dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});dlg.addEventListener('close',()=>pic.removeAttribute('src'));})();</script></body></html>

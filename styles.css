@@ -1769,4 +1769,21 @@ body {
   margin-left: 3px;
 }
 
+.hero-message {
+  max-width: 850px;
+  margin: 18px auto 28px;
+  text-align: center;
+}
+
+.hero-message h2 {
+  color: #43d9f1;
+  font-size: clamp(22px, 3vw, 32px);
+  margin: 0 0 10px;
+}
+
+.hero-message p {
+  color: #c0d2dd;
+  font-size: 16px;
+  line-height: 1.6;
+}
 

@@ -601,7 +601,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.documentElement.dataset.siteBrand = brand;
   if (brand === 'botfolios') return; // Existing Botfolios embedded logo remains in use.
   const img = document.querySelector('.home-hero-logo img:not(.botfolios-hero-logo)');
-  const filenames = {wxy:'assets/wxylogo.png',wallstreet:'assets/wsbhero_nocandles.png',botzips:'logo.png'};
+  const filenames = {wxy:'assets/wxylogo.png',wallstreet:'assets/wsbhero_nocandles.png',botzips:'assets/logo.png'};
   const labels = {wxy:'WXYBots logo',wallstreet:'WallStreetBots logo',botzips:'BotZips logo'};
   if (img) { img.alt = labels[brand]; img.src = filenames[brand]; }
   const nav = document.querySelector('.site-nav .site-brand');
